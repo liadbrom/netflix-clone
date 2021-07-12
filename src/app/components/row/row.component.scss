@@ -1,0 +1,70 @@
+.cubes-container{
+    // --thumbnail: 0.25;
+    // --margin: 0.1rem;
+    // --items-in-row: calc( 4 + var(--thumbnail));
+    // // --thumbnail-width: calc(var(--thumbnail) * var(--cube-width));
+    // --cube-width: calc( 
+    //     (100vw - 2rem - (var(--items-in-row) * 2 - 1 ) * var(--margin) )  / 
+    //     var(--items-in-row)
+    //     );
+    //  --cube-height: calc(var(--cube-width) * 9 / 16);
+    // display: flex;
+    // overflow-x: auto; width: calc(100% - 2rem);
+    // // padding:  2rem calc(var(--thumbnail) * var(--cube-width));
+    // margin: 2rem;
+    // position: relative;
+    // scroll-behavior: smooth;
+
+    --sides: 4vw; 
+    --cube-margin: 0.1rem;
+    --items-in-row: 4;
+    width: 100vw;
+    padding: 0 var(--sides);
+    margin: 2rem 0;
+
+    --cube-width: calc(
+        (100vw - 2 * var(--sides) - (var(--items-in-row) -1 ) * var(--cube-margin) * 2 )
+         /
+         var(--items-in-row)
+    );
+    --cube-height: calc(var(--cube-width) * 9 / 16);
+
+    
+    display: flex;
+    overflow-x: auto; 
+    position: relative;
+    scroll-behavior: smooth;
+    
+    hupi-cube{
+        flex-shrink: 0; 
+        margin: 0 var(--cube-margin);
+        height: var(--cube-height); width: var(--cube-width);
+    }
+
+    & :first-child{
+        margin: 0; margin-left: var(--margin);
+    }
+
+    .scroll-btn{
+        height: var(--cube-height); 
+        width: var(--sides);
+        padding: 1rem;
+        font-size: 25px; font-weight: bold;
+        position: fixed; left: 0; 
+        color: rgba(255, 255, 255, 0.8); border: none;
+        background: rgba(0, 0, 0, 0.4); 
+        transition: .2s ease-in;
+
+        &.back{
+            right: 0; direction: ltr;
+        }
+    }
+
+    .scroll-btn:hover{
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.cubes-container::-webkit-scrollbar{
+    display: none;
+}

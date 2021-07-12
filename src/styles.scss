@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+html, body{
+    overflow: hidden; margin: 0;
+    direction: rtl;
+    background: #141414;
+}
+
+button:hover{
+    cursor: pointer;
+}
