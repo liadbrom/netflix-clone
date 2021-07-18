@@ -1,0 +1,12 @@
+<h1 class="row-title">{{row?.title}}</h1>
+
+<div class="row-container">
+    <button [hidden]="scrollOffset >= 0" class="scroll-btn back" (click)="scroll(1)"> > </button>
+    <div #container class="cubes-container">
+        <hupi-cube *ngFor="let cube of row?.cubes" [cube]="cube">
+        </hupi-cube>
+    </div>
+    <button #scrollBtn [hidden]="scrollOffset * -1  >= container.scrollWidth - container.offsetWidth" class="scroll-btn"
+        (click)="scroll(-1)"> >
+    </button>
+</div>

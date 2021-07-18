@@ -1,0 +1,70 @@
+:host {
+    --sides: 4vw; 
+    display: block;
+    // margin: 2px 0;
+}
+
+.row-container {
+    position: relative;
+    --cube-margin: 2px;
+    --items-in-row: 3;
+    --cube-width: calc(
+            (100vw - 2 * var(--sides) - (var(--items-in-row) ) * var(--cube-margin) * 2 )
+            /
+            var(--items-in-row)
+        );
+    --cube-height: calc(var(--cube-width) * 9 / 16);
+
+    .cubes-container {
+        width: 100vw;
+        padding: 0 var(--sides);
+
+        display: flex;
+        overflow-x: auto; 
+        position: relative;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+        
+        hupi-cube{
+            flex-shrink: 0; 
+            margin: 0 var(--cube-margin);
+            height: var(--cube-height); width: var(--cube-width);
+            cursor: pointer;
+        }
+
+        & :first-child{
+            margin: 0; margin-left: var(--cube-margin);
+        }
+
+    }
+    .scroll-btn{
+        z-index: 1;
+        height: var(--cube-height); 
+        width: var(--sides);
+        // padding: 1rem;
+        font-size: 25px; font-weight: bold;
+        position: absolute; left: 0; top: 0; 
+        color: rgba(255, 255, 255, 0.8); border: none;
+        background: rgba(0, 0, 0, 0.4); 
+        transition: .2s ease-in;
+
+        &.back{
+            right: 0; direction: ltr;
+        }
+    }
+
+    .scroll-btn:hover{
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .cubes-container::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+.row-title {
+    color: white;
+    font-family: helvetica;
+    margin: 0 var(--sides) 0 0;
+    line-height: 2em;
+}
