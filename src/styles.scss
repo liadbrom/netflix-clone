@@ -1,7 +1,14 @@
+@import './stylesheets/fonts.scss';
+
 html, body{
     overflow-x: hidden; margin: 0;
-    direction: rtl;
     background: #141414;
+    font-family: $primary-font; direction: rtl;
+    width: calc(100vw - (100vw - 100%));
+}
+
+body{
+    overflow-y: hidden;
 }
 
 button:hover{

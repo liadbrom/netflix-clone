@@ -1,5 +1,8 @@
-import { Container } from '@angular/compiler/src/i18n/i18n_ast';
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+
+import { ConditionalExpr } from '@angular/compiler';
+import { AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { fromEvent, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { ICube } from '../cube/cube.component';
 
 
@@ -7,36 +10,64 @@ import { ICube } from '../cube/cube.component';
   selector: 'hupi-row',
   templateUrl: './row.component.html',
   styleUrls: ['./row.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RowComponent implements OnInit, AfterViewInit {
+export class RowComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @ViewChild('container') cubesContainer: ElementRef | undefined;
   @ViewChild('scrollBtn') scrollBtn: ElementRef | undefined;
   @Input() row: IRow | undefined;
 
-  scrollOffset = 0;
+  page = 0;
+  maxPage: number | undefined;
   toScroll = 0;
+
+  destroy$ = new Subject<void>();
 
   constructor() { }
 
   ngOnInit(): void {
-
+    const resize$ = fromEvent(window, 'resize');
+    resize$.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      takeUntil(this.destroy$)
+    ).subscribe(() => {
+      this.calculateScroll();
+      this.scroll(0);
+    });
   }
 
   ngAfterViewInit(): void {
-    if (this.cubesContainer) {
-      const thumbnailWidth = Number(this.scrollBtn?.nativeElement.clientWidth);
-      this.toScroll = this.cubesContainer.nativeElement.offsetWidth - 2 * thumbnailWidth;
-    }
+    this.setMaxPage();
+    setTimeout(() => {
+      this.calculateScroll();
+    }, 0);
   }
 
   scroll(direction: number): void {
     if (this.cubesContainer) {
-      this.scrollOffset += this.toScroll * direction;
-      this.cubesContainer.nativeElement.scrollLeft = this.scrollOffset;
+      this.page += direction;
+      this.cubesContainer.nativeElement.scrollLeft = this.toScroll * this.page;
     }
     // IDEA: loop scrolling (wrap around)
+  }
+
+  calculateScroll(): void {
+    if (this.cubesContainer && this.scrollBtn) {
+      const thumbnailWidth = this.scrollBtn.nativeElement.getBoundingClientRect().width;
+      const containerWidth = this.cubesContainer.nativeElement.getBoundingClientRect().width;
+      this.toScroll = - containerWidth + 2 * thumbnailWidth;
+    }
+  }
+
+  setMaxPage(): void {
+    this.maxPage = this.cubesContainer?.nativeElement.scrollWidth / this.cubesContainer?.nativeElement.clientWidth;
+    this.maxPage = Math.floor(this.maxPage);
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
 }
