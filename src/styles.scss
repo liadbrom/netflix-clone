@@ -1,9 +1,33 @@
+@import './stylesheets/fonts.scss';
+
 html, body{
     overflow-x: hidden; margin: 0;
-    direction: rtl;
     background: #141414;
+    direction: rtl;
+    width: calc(100vw - (100vw - 100%));
+
+    //* global vars *//
+    --top-bar-height: 68px;
+}
+
+body{
+    overflow-y: hidden;
 }
 
 button:hover{
     cursor: pointer;
+}
+
+* {
+    font-family: $primary-font;
+}
+
+html::-webkit-scrollbar{
+    background: transparent; width: 20px;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, 0.9);
+    border: 7px solid transparent; background-clip: padding-box;
+    border-radius: 20rem;
 }

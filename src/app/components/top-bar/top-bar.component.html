@@ -1,1 +1,19 @@
-<p>top-bar works!</p>
+<div class="top-bar-container">
+    <img class="logo" src="assets/logo.png">
+    <ul class="top-bar-nav">
+        <li>מטוסים</li>
+        <li>מסוקים</li>
+        <li>מזל"טים</li>
+        <li>הגנ"א</li>
+    </ul>
+
+    <div class="spacer"></div>
+
+    <div class="search-box" [class.focused]="focused" (click)="onSearchClick()">
+        <img class="icon icon-search" src="assets/icons/search-icon.png">
+        <input #searchInput (blur)="onSearchBlur()" class="search-input" placeholder="חפש, חפש, חפש..." type="search">
+    </div>
+
+    <img class="icon" src="assets/icons/baha21.png">
+    <img class="icon" src="assets/icons/hupi.svg">
+</div>

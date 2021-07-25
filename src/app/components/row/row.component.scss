@@ -1,22 +1,21 @@
 :host {
-    --sides: 4vw; 
+    --sides: calc( 0.04 * var(--virtual-width)); 
     display: block;
-    // margin: 2px 0;
 }
 
 .row-container {
     position: relative;
     --cube-margin: 2px;
-    --items-in-row: 3;
+    --items-in-row: 4;
     --cube-width: calc(
-            (100vw - 2 * var(--sides) - (var(--items-in-row) ) * var(--cube-margin) * 2 )
+            (var(--virtual-width) - 2 * var(--sides) - (var(--items-in-row) ) * var(--cube-margin) * 2 )
             /
             var(--items-in-row)
         );
     --cube-height: calc(var(--cube-width) * 9 / 16);
 
     .cubes-container {
-        width: 100vw;
+        width: var(--virtual-width);
         padding: 0 var(--sides);
 
         display: flex;
@@ -40,16 +39,32 @@
     .scroll-btn{
         z-index: 1;
         height: var(--cube-height); 
-        width: var(--sides);
-        // padding: 1rem;
+        width: calc(var(--sides) + 1px);
         font-size: 25px; font-weight: bold;
         position: absolute; left: 0; top: 0; 
         color: rgba(255, 255, 255, 0.8); border: none;
         background: rgba(0, 0, 0, 0.4); 
-        transition: .2s ease-in;
+        transition: background .2s ease-in;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-image: url("../../../assets/icons/slider-indicator.png");
+            background-size: calc(var(--sides)) calc(var(--sides));
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.1s;
+        }
+
+        &:hover::after {
+            transform: scale(1.4);
+        }
 
         &.back{
-            right: 0; direction: ltr;
+            right: 0;
+            transform: scaleX(-1)
         }
     }
 
@@ -64,7 +79,6 @@
 
 .row-title {
     color: white;
-    font-family: helvetica;
     margin: 0 var(--sides) 0 0;
     line-height: 2em;
 }

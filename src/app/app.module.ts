@@ -7,6 +7,8 @@ import { CubeComponent } from './components/cube/cube.component';
 import { RowComponent } from './components/row/row.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { IntroComponent } from './pages/intro/intro.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
     CubeComponent,
     RowComponent,
     HomepageComponent,
-    TopBarComponent
+    TopBarComponent,
+    IntroComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
