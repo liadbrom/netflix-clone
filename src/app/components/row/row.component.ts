@@ -75,7 +75,6 @@ export class RowComponent implements OnInit, OnDestroy {
     this.destroy$.next();
     this.destroy$.complete();
   }
-
 }
 
 export interface IRow {
