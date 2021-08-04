@@ -5,6 +5,7 @@ export const rows: IRow[] = [
         cubes: [
             {
                 imgSrc: 'https://wallpapercave.com/wp/s9i6Az9.jpg',
+                tags: ["מטוס", "אדיר", "טעות כלכלית"],
             },
             {
                 imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/IAF_F-16I_119_Tayeset_119-Bat_28649997154a.jpg/399px-IAF_F-16I_119_Tayeset_119-Bat_28649997154a.jpg',

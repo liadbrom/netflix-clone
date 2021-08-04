@@ -4,6 +4,8 @@
     <hupi-row *ngFor="let row of rows" [row]="row" [viewReady]="!introEnabled"></hupi-row>
 </div>
 
+<hupi-preview-cube [active]="previewActive" (mouseleave)="hidePreview()"></hupi-preview-cube>
+
 <hupi-footer></hupi-footer>
 
 <hupi-intro *ngIf="introEnabled" (ended)="introEnabled = $event"></hupi-intro>

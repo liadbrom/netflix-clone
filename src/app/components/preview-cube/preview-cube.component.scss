@@ -1,0 +1,101 @@
+:host {
+    z-index: 9999;
+}
+
+@keyframes preview-in {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes preview-out {
+    from {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.preview-container {
+    width: min-content;
+    transform-origin: center;
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    &[hidden] {
+        visibility: hidden; 
+    }
+    border-radius: 0 0 4px 4px;
+    box-shadow: rgba(0 0 0 / 75%) 0px 3px 10px;
+    
+    .preview-bar {
+        transition: opacity 150ms linear;
+        border-radius: 0 0 4px 4px;
+        background-color: #181818;
+        height: calc(0.75 * var(--cube-height));
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        color: white;
+        padding: 4% 4% 6% 4%;
+        box-sizing: border-box;
+        font-size: 0.7vw;
+        --text-margin: 7px;
+        .actions {
+            display: flex;
+            button {
+                margin: 0.2vw;
+                background-color: #2a2a2a;
+                border: solid rgba(255, 255, 255, 0.6) 0.15vw;
+                border-radius: 100%;
+                display: flex;
+                padding: 0.2vw;
+                width: 1.8vw;
+                height: 1.8vw;
+                svg path {
+                    fill: white;
+                }
+                &:hover {
+                    border-color: white;
+                }
+                &:last-child {
+                    margin-right: auto;
+                    margin-left: 0;
+                }
+                &.play-btn {
+                    margin-right: 0;
+                    background-color: white;
+                    svg path {
+                        fill: black;
+                    }
+                }
+            }
+        }
+        .meta-data {
+            display: flex;
+            span {
+                margin-left: var(--text-margin);
+            }
+        }
+        .tags {
+            display: flex;
+            span:not(:first-child){
+                margin-right: var(--text-margin);
+                &::before {
+                    content:"\2022";
+                    color: rgba(255, 255, 255, 0.6);
+                    margin-left: var(--text-margin);
+                }
+            }
+        }
+    }
+}

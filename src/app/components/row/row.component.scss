@@ -1,41 +1,30 @@
 :host {
-    --sides: calc( 0.04 * var(--virtual-width)); 
     display: block;
 }
 
 .row-container {
     position: relative;
-    --cube-margin: 2px;
-    --items-in-row: 4;
-    --cube-width: calc(
-            (var(--virtual-width) - 2 * var(--sides) - (var(--items-in-row) ) * var(--cube-margin) * 2 )
-            /
-            var(--items-in-row)
-        );
-    --cube-height: calc(var(--cube-width) * 9 / 16);
-
+    $item: 4;
+    
     .cubes-container {
         width: var(--virtual-width);
         padding: 0 var(--sides);
-
+        
         display: flex;
         overflow-x: auto; 
         position: relative;
         scroll-behavior: smooth;
         box-sizing: border-box;
-        
         hupi-cube{
             flex-shrink: 0; 
             margin: 0 var(--cube-margin);
-            height: var(--cube-height); width: var(--cube-width);
+            &:first-child {
+                margin-right: 0;
+            }
             cursor: pointer;
         }
-
-        & :first-child{
-            margin: 0; margin-left: var(--cube-margin);
-        }
-
     }
+
     .scroll-btn{
         z-index: 1;
         height: var(--cube-height); 

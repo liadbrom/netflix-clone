@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { HomepageComponent } from './pages/homepage/homepage.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { IntroComponent } from './pages/intro/intro.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PreviewCubeComponent } from './components/preview-cube/preview-cube.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,12 @@ import { FooterComponent } from './components/footer/footer.component';
     HomepageComponent,
     TopBarComponent,
     IntroComponent,
-    FooterComponent
+    FooterComponent,
+    PreviewCubeComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   providers: [],
