@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ICube } from '../cube/cube.component';
+import { ICubePosition } from 'src/app/services/cube-data.service';
 import { CubeDataService } from 'src/app/services/cube-data.service';
 import {
   trigger,
@@ -7,10 +8,8 @@ import {
   style,
   animate,
   transition,
-  AnimationEvent
-} from '@angular/animations';
-import { fakeAsync } from '@angular/core/testing';
-import { createOfflineCompileUrlResolver } from '@angular/compiler';
+  AnimationEvent,
+} from '@angular/animations'; 
 
 @Component({
   selector: 'hupi-preview-cube',
@@ -18,10 +17,10 @@ import { createOfflineCompileUrlResolver } from '@angular/compiler';
   styleUrls: ['./preview-cube.component.scss'],
   animations: [
     trigger('growShrink', [
-      state('grow', style({transform: 'scale(1.3)'})),
+      state('grow', style({transform: 'scale(1.3) translateY(calc(-1 * (0.5* var(--cube-height))))'})),
       state('shrink', style({transform: 'scale(1)'})),
-      transition('shrink => grow', animate('150ms')),
-      transition('grow => shrink', animate('150ms')),
+      transition('shrink => grow', animate('130ms ease-out')),
+      transition('grow => shrink', animate('130ms ease-out')),
     ]),
   ],
 })
@@ -30,17 +29,21 @@ export class PreviewCubeComponent implements OnInit {
   constructor(private cubeDataService: CubeDataService) { }
 
   cube: ICube | undefined;
-  position: IPosition | undefined;
+  position: ICubePosition | undefined;
   tempCubePosition?: {
-    position: IPosition;
+    position: ICubePosition;
     cube: ICube | undefined;
   }
   @Input() active = false;
   shrinked = true;
   barOpacity = 0;
   transformOrigin = "center";
+  expandedActive = false;
 
   ngOnInit(): void {
+    this.cubeDataService.expandedActive$.subscribe(value => {
+      this.expandedActive = value;
+    })
     this.cubeDataService.currentCubePosition$.subscribe(value => {
       if (this.shrinked) {
         this.assignData(value);
@@ -60,7 +63,9 @@ export class PreviewCubeComponent implements OnInit {
 
   onAnimationStart(event: AnimationEvent): void {
     if (event.fromState === "grow") {
-      this.shrinked = false;
+      if (!this.expandedActive) {
+        this.shrinked = false;
+      }
       this.barOpacity = 0;
     }
     if (event.fromState === "shrink") {
@@ -68,15 +73,13 @@ export class PreviewCubeComponent implements OnInit {
     }
   }
 
-  assignData(value: {position: IPosition; cube: ICube | undefined;}): void {
+  assignData(value: {position: ICubePosition; cube: ICube | undefined;}): void {
     this.position = value.position;
     this.cube = value.cube;
   }
-}
 
-export interface IPosition {
-  top: number;
-  left: number;
-  right: number;
-  transformOrigin: string;
+  expand(): void {
+    this.active = false;
+    this.cubeDataService.expandedActive$.next(true);
+  }
 }

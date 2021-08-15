@@ -1,11 +1,11 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject, fromEvent, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil, timeout } from 'rxjs/operators';
 import { CssService } from 'src/app/services/css.service';
 import { CubeDataService } from 'src/app/services/cube-data.service';
 import { ICube } from '../cube/cube.component';
-import { IPosition } from '../preview-cube/preview-cube.component';
+import { ICubePosition } from 'src/app/services/cube-data.service';
 
 @Component({
   selector: 'hupi-row',
@@ -31,6 +31,7 @@ export class RowComponent implements OnInit, OnDestroy {
   toScroll = 0;
   destroy$ = new Subject<void>();
   showPreviewTimer: any;
+  mouseOverCube = false;
 
   constructor(private cssService: CssService, private cdRef: ChangeDetectorRef, private cubeDataService: CubeDataService) { }
 
@@ -77,29 +78,51 @@ export class RowComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  sendData(cube: ICube, cubeElement: any): void {
+  onMouseEnter(cube: ICube, cubeElement: any): void {
+    this.mouseOverCube = true;
     this.cubeDataService.setData(this.getPosition(cubeElement), cube);
+    this.startTimer();
+  }
+
+  onMouseOut(): void {
+    this.mouseOverCube = false;
+    console.log(this.mouseOverCube);
+    this.clearTimer();
+  }
+
+  sendData(cube: ICube, cubeElement: any): void {
+  }
+
+  startTimer() {
     this.showPreviewTimer = setTimeout(() => {
       this.cubeDataService.previewActive$.next(true);
     }, 500);
+  }
+
+  @HostListener('mousewheel', ['$event']) 
+  onScroll(event: WheelEvent): void {
+    this.clearTimer();
+    if (this.mouseOverCube) {
+      this.startTimer();
+    }
   }
 
   clearTimer(): void {
     clearTimeout(this.showPreviewTimer);
   }
 
-  getPosition(cubeElement: any): IPosition {
-    let left = cubeElement.hostElement.nativeElement.getBoundingClientRect().left + document.documentElement.scrollLeft;
-    let right = cubeElement.hostElement.nativeElement.getBoundingClientRect().right + document.documentElement.scrollLeft;
+  getPosition(cubeElement: any): ICubePosition {
+    let left = cubeElement.hostElement.nativeElement.getBoundingClientRect().left + document.body.scrollLeft;
+    let right = cubeElement.hostElement.nativeElement.getBoundingClientRect().right + document.body.scrollLeft;
     let width = right - left;
-    let transformOrigin = "center";
+    let transformOrigin = "top";
     if (left < width) {
-      transformOrigin = "left";
+      transformOrigin = "top left";
     } else if (right > window.innerWidth - width) {
-      transformOrigin = "right";
+      transformOrigin = "top right";
     }
     return {
-      top: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + document.documentElement.scrollTop,
+      top: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + document.body.scrollTop,
       left: left,
       right: right,
       transformOrigin: transformOrigin

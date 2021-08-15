@@ -8,6 +8,6 @@ export class CssService {
   constructor() { }
 
   setVirtualWidth(): void {
-    document.body.style.setProperty('--virtual-width', `${document.body.getBoundingClientRect().width}px`);
+    document.body.style.setProperty('--virtual-width', `${document.body.clientWidth}px`);
   }
 }

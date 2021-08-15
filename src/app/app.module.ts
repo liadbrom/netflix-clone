@@ -11,6 +11,8 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { IntroComponent } from './pages/intro/intro.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PreviewCubeComponent } from './components/preview-cube/preview-cube.component';
+import { ExpandedCubeComponent } from './components/expanded-cube/expanded-cube.component';
+import { CubeControlsComponent } from './components/cube-controls/cube-controls.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PreviewCubeComponent } from './components/preview-cube/preview-cube.com
     TopBarComponent,
     IntroComponent,
     FooterComponent,
-    PreviewCubeComponent
+    PreviewCubeComponent,
+    ExpandedCubeComponent,
+    CubeControlsComponent
   ],
   imports: [
     BrowserModule,

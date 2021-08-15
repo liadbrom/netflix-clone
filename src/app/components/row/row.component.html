@@ -1,9 +1,9 @@
 <h1 class="row-title">{{row?.title}}</h1>
 
-<div class="row-container">
+<div class="row-container" (scroll)="clearTimer()">
     <button [hidden]="page === 0" class="scroll-btn back" (click)="scroll(-1)"></button>
     <div #container class="cubes-container">
-        <hupi-cube *ngFor="let cube of row?.cubes" #cubeElement [cube]="cube" (mouseout)="clearTimer()" (mouseenter)="sendData(cube, cubeElement)">
+        <hupi-cube *ngFor="let cube of row?.cubes" #cubeElement [cube]="cube" (mouseout)="onMouseOut()" (mouseenter)="onMouseEnter(cube, cubeElement);">
         </hupi-cube>
     </div>
     <button #scrollBtn [hidden]="page === (maxPage$ | async)" class="scroll-btn" (click)="scroll(1)">

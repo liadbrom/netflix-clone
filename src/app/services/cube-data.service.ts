@@ -1,16 +1,24 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, fromEvent, Subject } from 'rxjs';
 import { ICube } from '../components/cube/cube.component';
-import { IPosition } from '../components/preview-cube/preview-cube.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CubeDataService {
   previewActive$ = new BehaviorSubject<boolean>(false);
-  currentCubePosition$ = new Subject<{position: IPosition, cube: ICube | undefined}>();
+  expandedActive$ = new BehaviorSubject<boolean>(false);
+  currentCubePosition$ = new Subject<{position: ICubePosition, cube: ICube | undefined}>();
   constructor() { }
-  setData(position: IPosition, cube: ICube | undefined): void {
+  setData(position: ICubePosition, cube: ICube | undefined): void {
     this.currentCubePosition$.next({position, cube});
   }
 }
+
+export interface ICubePosition {
+  top: number;
+  left: number;
+  right: number;
+  transformOrigin: string;
+}
+

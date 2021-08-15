@@ -1,0 +1,78 @@
+@keyframes darken {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    } 
+    to {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+@keyframes transparent {
+    from {
+        opacity: 1;
+    } 
+    to {
+        opacity: 0;
+    }
+}
+
+.modal-wrapper {
+    position: fixed;
+    z-index: 9999;
+    &.dark {
+        animation: darken 350ms ease-out forwards;
+    }
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    overflow: auto;
+    direction: ltr;
+    .modal-container {
+        position: absolute;
+        transform-origin: center top;
+        width: fit-content;
+        border-radius: 4px;
+        .player-container {
+            display: flex;
+            position: relative;
+            .close-btn {
+                position: absolute;
+                top: 0; left: 0;
+                margin: 0.3vw;
+                border: none;
+                display: flex;
+                width: 0.8vw;
+                aspect-ratio: 1 / 1;
+                cursor: pointer;
+                svg {
+                    padding: 0.15vw;
+                    border-radius: 100%;
+                    background-color: #181818;
+                }
+            }
+            .gradient {
+                position: absolute;
+                top: 0; left: 0;
+                height: 100%;
+                width: 100%;
+                background: linear-gradient(to top,#181818,transparent 50%);
+            }
+            .title-area {
+                position: absolute;
+                bottom: 0; right: 0;
+                padding: 5%;
+                direction: rtl;
+                .title {
+                    color: white;
+                }
+            }
+        }
+        .content {
+            height: 100vh;
+            background-color: #181818;
+        }
+    }
+}
+
+.transparent {
+    animation: transparent 200ms ease-out forwards;
+}

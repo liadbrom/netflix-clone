@@ -5,7 +5,7 @@ html, body{
     background: #141414;
     direction: rtl;
     width: calc(100vw - (100vw - 100%));
-
+    height: 100%;
     //* global vars *//
     --top-bar-height: 68px;
     --sides: calc( 0.04 * var(--virtual-width)); 
@@ -19,7 +19,21 @@ html, body{
     --cube-height: calc(var(--cube-width) * 9 / 16);
 }
 
-body{
+html.hidden-scrollbar {
+    overflow-y: hidden;
+}
+
+body {
+    direction: ltr; 
+    & > * {
+        direction: rtl;
+    }
+    &.hidden-scrollbar::-webkit-scrollbar-thumb {
+        visibility: hidden;
+    }
+}
+
+html {
     overflow-y: hidden;
 }
 
@@ -31,11 +45,11 @@ button:hover{
     font-family: $primary-font;
 }
 
-html::-webkit-scrollbar{
+.stylized-scrollbar::-webkit-scrollbar{
     background: transparent; width: 20px;
 }
 
-html::-webkit-scrollbar-thumb{
+.stylized-scrollbar::-webkit-scrollbar-thumb{
     background: rgba(255, 255, 255, 0.9);
     border: 7px solid transparent; background-clip: padding-box;
     border-radius: 20rem;

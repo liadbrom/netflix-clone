@@ -1,16 +1,11 @@
 
 :host{
-    position: relative; display: flex;
-
+    position: relative;
     .rows-container{
         margin: var(--top-bar-height) 0;
     }
+    .footer {
+        margin: 5rem 0 0.5rem 0;
+    }
 }
 
-hupi-footer{
-    position: absolute; bottom: calc( var(--top-bar-height) * -1); right: 50%;
-    color: white; 
-    bottom: 0;
-    transform: translateX(50%);
-    // transform: translate(50% 50%);
-}
