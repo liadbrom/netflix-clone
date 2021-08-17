@@ -17,6 +17,7 @@ export class RowComponent implements OnInit, OnDestroy {
   @ViewChild('container', { static: true }) cubesContainer: ElementRef | undefined;
   @ViewChild('scrollBtn', { static: true }) scrollBtn: ElementRef | undefined;
 
+  @Input() asList = false;
   @Input() row: IRow | undefined;
   @Input() set viewReady(ready: boolean) {
     if (ready) {
@@ -121,6 +122,8 @@ export class RowComponent implements OnInit, OnDestroy {
     } else if (right > window.innerWidth - width) {
       transformOrigin = "top right";
     }
+    console.log(cubeElement.hostElement.nativeElement.getBoundingClientRect().top );
+    console.log(document.body.scrollTop);
     return {
       top: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + document.body.scrollTop,
       left: left,

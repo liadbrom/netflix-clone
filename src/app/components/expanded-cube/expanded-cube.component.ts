@@ -26,7 +26,7 @@ import {
       }), {params: {top: 0, left: 0, transformOrigin:"center", scale: 1, translateY: 0, opacity: 1}}),
       state('expanded', style({
         transformOrigin: 'left top',
-        transform: 'scale(2) translateX(-50%)',
+        transform: 'scale(2.6) translateX(-50%)',
         top: '3vh',
         left: '50%',
       })),

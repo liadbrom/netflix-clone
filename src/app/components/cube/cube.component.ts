@@ -21,6 +21,7 @@ export interface ICube {
   imgSrc?: string;
   tags?: Array<String>;
   metaData?: Object;
+  description?: string;
   height?: string;
   width?: string;
 }

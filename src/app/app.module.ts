@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PreviewCubeComponent } from './components/preview-cube/preview-cube.component';
 import { ExpandedCubeComponent } from './components/expanded-cube/expanded-cube.component';
 import { CubeControlsComponent } from './components/cube-controls/cube-controls.component';
+import { ListComponent } from './pages/list/list.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CubeControlsComponent } from './components/cube-controls/cube-controls.
     FooterComponent,
     PreviewCubeComponent,
     ExpandedCubeComponent,
-    CubeControlsComponent
+    CubeControlsComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

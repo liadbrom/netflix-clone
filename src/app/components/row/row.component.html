@@ -1,8 +1,17 @@
-<h1 class="row-title">{{row?.title}}</h1>
+<div class="row-header">
+    <h1 class="row-title">{{row?.title}}</h1>
+    <div *ngIf="!asList" class="see-all">
+        <a [routerLink]="'/' + row?.title" class="see-all-link">הצג את כל התכנים</a>
+        <span class="arrow-icon"></span>
+    </div>
+</div>
+<ng-template #listTitle>
+    <div>{{row?.title}}</div>
+</ng-template>
 
 <div class="row-container" (scroll)="clearTimer()">
     <button [hidden]="page === 0" class="scroll-btn back" (click)="scroll(-1)"></button>
-    <div #container class="cubes-container">
+    <div #container class="cubes-container" [class.list]="asList" >
         <hupi-cube *ngFor="let cube of row?.cubes" #cubeElement [cube]="cube" (mouseout)="onMouseOut()" (mouseenter)="onMouseEnter(cube, cubeElement);">
         </hupi-cube>
     </div>

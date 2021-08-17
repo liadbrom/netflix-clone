@@ -1,7 +1,7 @@
 <div class="modal-wrapper stylized-scrollbar" [class.dark]="shrinked">
     <div class="modal-container" [@expand]="{value: (active && shrinked) ? 'expanded' : 'shrinked', params: {top: position?.top, left: position?.left, transformOrigin: position?.transformOrigin, scale: shrinked ? 1.3 : 1, translateY: shrinked ? 'calc(-1 * 0.5 * var(--cube-height))' : 0, opacity: shrinked ? 1 : 0}}" (@expand.done)="onAnimationEnd($event)" [style.top.px]="position?.top" [style.left.px]="position?.left" [style.transformOrigin]="this.position?.transformOrigin" >
         <div class="player-container">
-            <hupi-cube [cube]="(cubeDataService.currentCubePosition$ | async)?.cube"></hupi-cube>
+            <hupi-cube [isPreviewCube]="true" [cube]="(cubeDataService.currentCubePosition$ | async)?.cube"></hupi-cube>
             <div class="hud" [class.transparent]="!shrinked">
                 <div class="gradient"></div>
                 <div class="close-btn" (click)="close()">
@@ -14,7 +14,18 @@
             </div>
         </div>
         <div class="content" [class.transparent]="!shrinked">
-
+            <div class="details">
+                <div class="description">
+                    {{cube?.description}}
+                </div>
+                <div class="info">
+                </div>
+            </div>
+            <div class="items-selector">
+                <div class="items-selector-header">
+                    פריטים
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-<hupi-top-bar></hupi-top-bar>
+<hupi-top-bar [fixed]="true"></hupi-top-bar>
 
 <div class="rows-container" [hidden]="introEnabled">
     <hupi-row *ngFor="let row of rows" [row]="row" [viewReady]="!introEnabled"></hupi-row>

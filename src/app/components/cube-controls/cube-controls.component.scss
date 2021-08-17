@@ -1,10 +1,11 @@
 .controls {
     display: flex;
     &.expanded button {
-        width: 1vw;
-        height: 1vw;
+        width: 0.9vw;
+        height: 0.9vw;
         padding: 0 0.1vw;
         margin: 0.1vw;
+        box-sizing: border-box;
     }
     button {
         margin: 0.2vw;
@@ -27,11 +28,15 @@
             border-color: white;
         }
         &:last-child {
-            &.expanded {
-                display: none;
-            }
             margin-right: auto;
             margin-left: 0;
+        }
+        &.audio-toggle {
+            opacity: 0.5;
+            transition: opacity 300ms linear;
+            &:hover {
+                opacity: 1;
+            }
         }
         &.play-btn {
             &.expanded {

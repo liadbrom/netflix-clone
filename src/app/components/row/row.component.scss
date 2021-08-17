@@ -1,5 +1,6 @@
 :host {
     display: block;
+    margin-bottom: 2vw;
 }
 
 .row-container {
@@ -9,7 +10,6 @@
     .cubes-container {
         width: var(--virtual-width);
         padding: 0 var(--sides);
-        
         display: flex;
         overflow-x: auto; 
         position: relative;
@@ -17,11 +17,14 @@
         box-sizing: border-box;
         hupi-cube{
             flex-shrink: 0; 
-            margin: 0 var(--cube-margin);
-            &:first-child {
-                margin-right: 0;
-            }
+            margin-left: var(--cube-margin);
             cursor: pointer;
+        }
+        &.list {
+            flex-wrap: wrap;
+            hupi-cube{
+                margin-bottom: 7vh;
+            }
         }
     }
 
@@ -40,7 +43,7 @@
             width: 100%;
             height: 100%;
             display: block;
-            background-image: url("../../../assets/icons/slider-indicator.png");
+            background-image: url("../../../assets/icons/arrow-icon.png");
             background-size: calc(var(--sides)) calc(var(--sides));
             background-repeat: no-repeat;
             background-position: center;
@@ -66,8 +69,53 @@
     }
 }
 
-.row-title {
+.row-header {
     color: white;
     margin: 0 var(--sides) 0 0;
     line-height: 2em;
+    display: flex;
+    align-items: baseline;
+    position: sticky; top: 0;
+    z-index: 1;
+    background-color: var(--background-color);
+    &:hover {
+        .see-all {
+            * {
+                opacity: 1;
+            }
+            a {
+                right: 15px;
+            }
+            .arrow-icon {
+                right: 12px;
+                width: 1.2vw; height: 1.2vw;
+            }
+        }
+    }
+    .see-all {
+        display: flex;
+        align-items: center;
+        * {
+            position: relative;
+            opacity: 0;
+        }
+        a {
+            font-weight: bold;
+            font-size: 0.9vw;
+            transition: all 500ms ease-out;
+            right: 0px;
+            color: inherit;
+            text-decoration: none;
+        }
+        .arrow-icon {
+            transition: right 350ms linear, width 350ms linear, height 350ms linear;
+            right: -100%;
+            display: inline-block;
+            width: 2vw; height: 2vw;
+            background-image: url("../../../assets/icons/arrow-icon.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
 }

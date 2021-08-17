@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'hupi-top-bar',
@@ -8,6 +8,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class TopBarComponent implements OnInit {
   focused = false;
   @ViewChild('searchInput') searchInput: ElementRef | undefined;
+  @Input() fixed = false;
 
   constructor() { }
 
