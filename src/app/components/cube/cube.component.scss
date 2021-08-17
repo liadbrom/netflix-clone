@@ -1,5 +1,25 @@
-img{
-    height: 100%; width: 100%;
-    border-radius: 3px;
+:host {
+    // position: relative;
+    // &:hover .popup{
+    //     display: block;
+    // }
+    // overflow: visible;
+    height: var(--cube-height); width: var(--cube-width);
 }
+
+img {
+    border-radius: 4px;
+    height: 100%; width: 100%;
+    &.preview-img {
+        border-radius: 4px 4px 0 0;
+    }
+}
+
+// .popup {
+//     position: absolute;
+//     top: 0; right: 0;
+//     height: 100%; width: 100%;
+//     transform: scale(1.2);
+//     display: none;
+// }
 

@@ -1,5 +1,12 @@
-<!-- <iframe style="border: none;" width="100%" height="800" src="https://www.youtube.com/embed/QrM8hUmt5cA?autoplay=1&mute=1">
-</iframe> -->
-<div class="rows-container">
-    <hupi-row *ngFor="let row of rows" [row]="row"></hupi-row>
+<hupi-top-bar [fixed]="true"></hupi-top-bar>
+
+<div class="rows-container" [hidden]="introEnabled">
+    <hupi-row *ngFor="let row of rows" [row]="row" [viewReady]="!introEnabled"></hupi-row>
 </div>
+
+<hupi-preview-cube [active]="previewActive" (mouseleave)="hidePreview()"></hupi-preview-cube>
+<hupi-expanded-cube [hidden]="!expandedActive" [active]="expandedActive" ></hupi-expanded-cube>
+
+<hupi-footer></hupi-footer>
+
+<hupi-intro *ngIf="introEnabled" (ended)="introEnabled = $event"></hupi-intro>

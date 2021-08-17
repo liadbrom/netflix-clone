@@ -1,0 +1,17 @@
+<!-- preview-container: [hidden]="!active && shrinked"  -->
+<!-- preview-bar: [style.opacity]="barOpacity" -->
+<div class="preview-container" [hidden]="!active && shrinked" [style.transformOrigin]="this.position?.transformOrigin" [@growShrink]="(active && shrinked) ? 'grow' : 'shrink'" (@growShrink.done)="onAnimationEnd($event)" (@growShrink.start)="onAnimationStart($event)" [style.top.px]="position?.top" [style.left.px]="position?.left">
+    <hupi-cube [isPreviewCube]="true" [cube]="cube"></hupi-cube>
+    <div class="preview-bar" (click)="expand()" [style.opacity]="barOpacity">
+       <hupi-cube-controls></hupi-cube-controls>
+        <div class="meta-data">
+            <span>טקסט בובה</span>
+            <span>meta data</span>
+            <span>טקסט בובה</span>
+            <span>meta data</span>
+        </div>
+        <div class="tags">
+            <span *ngFor="let tag of cube?.tags">{{tag}}</span>
+        </div>
+    </div>
+</div>

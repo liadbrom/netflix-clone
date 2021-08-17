@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'hupi-cube',
@@ -8,8 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CubeComponent implements OnInit {
 
   @Input() cube: ICube | undefined;
+  @Input() isPreviewCube = false;
 
-  constructor() { }
+  constructor(private hostElement: ElementRef) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,9 @@ export class CubeComponent implements OnInit {
 
 export interface ICube {
   imgSrc?: string;
+  tags?: Array<String>;
+  metaData?: Object;
+  description?: string;
   height?: string;
   width?: string;
 }

@@ -1,55 +1,62 @@
 :host {
-    --sides: 4vw; 
     display: block;
-    // margin: 2px 0;
+    margin-bottom: 2vw;
 }
 
 .row-container {
     position: relative;
-    --cube-margin: 2px;
-    --items-in-row: 3;
-    --cube-width: calc(
-            (100vw - 2 * var(--sides) - (var(--items-in-row) ) * var(--cube-margin) * 2 )
-            /
-            var(--items-in-row)
-        );
-    --cube-height: calc(var(--cube-width) * 9 / 16);
-
+    $item: 4;
+    
     .cubes-container {
-        width: 100vw;
+        width: var(--virtual-width);
         padding: 0 var(--sides);
-
         display: flex;
         overflow-x: auto; 
         position: relative;
         scroll-behavior: smooth;
         box-sizing: border-box;
-        
         hupi-cube{
             flex-shrink: 0; 
-            margin: 0 var(--cube-margin);
-            height: var(--cube-height); width: var(--cube-width);
+            margin-left: var(--cube-margin);
             cursor: pointer;
         }
-
-        & :first-child{
-            margin: 0; margin-left: var(--cube-margin);
+        &.list {
+            flex-wrap: wrap;
+            hupi-cube{
+                margin-bottom: 7vh;
+            }
         }
-
     }
+
     .scroll-btn{
         z-index: 1;
         height: var(--cube-height); 
-        width: var(--sides);
-        // padding: 1rem;
+        width: calc(var(--sides) + 1px);
         font-size: 25px; font-weight: bold;
         position: absolute; left: 0; top: 0; 
         color: rgba(255, 255, 255, 0.8); border: none;
         background: rgba(0, 0, 0, 0.4); 
-        transition: .2s ease-in;
+        transition: background .2s ease-in;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-image: url("../../../assets/icons/arrow-icon.png");
+            background-size: calc(var(--sides)) calc(var(--sides));
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.1s;
+        }
+
+        &:hover::after {
+            transform: scale(1.4);
+        }
 
         &.back{
-            right: 0; direction: ltr;
+            right: 0;
+            transform: scaleX(-1)
         }
     }
 
@@ -62,9 +69,53 @@
     }
 }
 
-.row-title {
+.row-header {
     color: white;
-    font-family: helvetica;
     margin: 0 var(--sides) 0 0;
     line-height: 2em;
+    display: flex;
+    align-items: baseline;
+    position: sticky; top: 0;
+    z-index: 1;
+    background-color: var(--background-color);
+    &:hover {
+        .see-all {
+            * {
+                opacity: 1;
+            }
+            a {
+                right: 15px;
+            }
+            .arrow-icon {
+                right: 12px;
+                width: 1.2vw; height: 1.2vw;
+            }
+        }
+    }
+    .see-all {
+        display: flex;
+        align-items: center;
+        * {
+            position: relative;
+            opacity: 0;
+        }
+        a {
+            font-weight: bold;
+            font-size: 0.9vw;
+            transition: all 500ms ease-out;
+            right: 0px;
+            color: inherit;
+            text-decoration: none;
+        }
+        .arrow-icon {
+            transition: right 350ms linear, width 350ms linear, height 350ms linear;
+            right: -100%;
+            display: inline-block;
+            width: 2vw; height: 2vw;
+            background-image: url("../../../assets/icons/arrow-icon.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
 }

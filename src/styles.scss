@@ -1,9 +1,57 @@
+@import './stylesheets/fonts.scss';
+
 html, body{
     overflow-x: hidden; margin: 0;
+    background: var(--background-color);
     direction: rtl;
-    background: #141414;
+    width: calc(100vw - (100vw - 100%));
+    height: 100%;
+    //* global vars *//
+    --background-color: #141414;
+    --top-bar-height: 68px;
+    --sides: calc( 0.04 * var(--virtual-width)); 
+    --cube-margin: 4px;
+    --items-in-row: 5;
+    --cube-width: calc(
+    (var(--virtual-width) - 2 * var(--sides) - (var(--items-in-row) ) * var(--cube-margin) )
+    /
+    var(--items-in-row)
+    );
+    --cube-height: calc(var(--cube-width) * 9 / 16);
+}
+
+html.hidden-scrollbar {
+    overflow-y: hidden;
+}
+
+body {
+    direction: ltr; 
+    & > * {
+        direction: rtl;
+    }
+    &.hidden-scrollbar::-webkit-scrollbar-thumb {
+        visibility: hidden;
+    }
+}
+
+html {
+    overflow-y: hidden;
 }
 
 button:hover{
     cursor: pointer;
+}
+
+* {
+    font-family: $primary-font;
+}
+
+.stylized-scrollbar::-webkit-scrollbar{
+    background: transparent; width: 20px;
+}
+
+.stylized-scrollbar::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, 0.9);
+    border: 7px solid transparent; background-clip: padding-box;
+    border-radius: 20rem;
 }
