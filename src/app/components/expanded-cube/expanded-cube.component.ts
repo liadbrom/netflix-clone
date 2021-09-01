@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { CubeDataService } from 'src/app/services/cube-data.service';
 import { ICube } from '../cube/cube.component';
 import { ICubePosition } from 'src/app/services/cube-data.service';
@@ -11,6 +11,7 @@ import {
   AnimationEvent,
   animation,
 } from '@angular/animations'; 
+import { MapOperator } from 'rxjs/internal/operators/map';
 
 @Component({
   selector: 'hupi-expanded-cube',
@@ -37,10 +38,13 @@ import {
 })
 export class ExpandedCubeComponent implements OnInit {
 
-  _active = false;
+  @ViewChild('modalWrapper', { static: true }) modal: ElementRef | undefined;
+  modalElement: HTMLElement | undefined;
+  // _active = false; DELETE
   cube: ICube | undefined;
   position: ICubePosition = {
-    top: 0,
+    previewTop: 0,
+    expandedTop: 0,
     left: 0,
     right: 0,
     transformOrigin: ""
@@ -71,8 +75,9 @@ export class ExpandedCubeComponent implements OnInit {
 
   onAnimationStart(event: AnimationEvent): void {
     if (event.fromState === "expanded") {
-      this.shrinked = false;
-      console.log(this.position.top);
+      if (this.modal) {
+        this.modal.nativeElement.scroll(0, 0);
+      }
     }
   }
 

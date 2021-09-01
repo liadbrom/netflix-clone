@@ -78,12 +78,21 @@
     position: sticky; top: 0;
     z-index: 1;
     background-color: var(--background-color);
+    &.clickable {
+        cursor: pointer;
+        color: #e5e5e5;
+        background-color: transparent;
+        width: fit-content;
+        &:hover {
+            color: white;
+        }
+    }
     &:hover {
         .see-all {
             * {
                 opacity: 1;
             }
-            a {
+            .see-all-link {
                 right: 15px;
             }
             .arrow-icon {
@@ -95,11 +104,12 @@
     .see-all {
         display: flex;
         align-items: center;
+        cursor: pointer;
         * {
             position: relative;
             opacity: 0;
         }
-        a {
+        .see-all-link {
             font-weight: bold;
             font-size: 0.9vw;
             transition: all 500ms ease-out;

@@ -16,7 +16,8 @@ export class CubeDataService {
 }
 
 export interface ICubePosition {
-  top: number;
+  previewTop: number;
+  expandedTop: number;
   left: number;
   right: number;
   transformOrigin: string;

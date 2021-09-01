@@ -28,6 +28,7 @@ body {
     direction: ltr; 
     & > * {
         direction: rtl;
+        user-select: none;
     }
     &.hidden-scrollbar::-webkit-scrollbar-thumb {
         visibility: hidden;

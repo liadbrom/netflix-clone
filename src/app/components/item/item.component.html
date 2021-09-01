@@ -1,0 +1,30 @@
+<div class="item-container">
+    <span class="number">{{item?.id}}</span>
+    <img [src]="item?.thumbnail"/>
+    <div class="info">
+        <div class="title">
+            <span class="title-text">{{item?.title}}</span>
+            <span class="type">{{item?.type}}</span>
+        </div>
+        <ul class="data">
+            <li class="description">{{item?.description}}</li>
+            <li>
+                <label>תחום על: </label><span>מטוסי תקיפה</span> |
+                <label>תחום תוכן: </label><span>אדיר</span> |
+                <label>פתרון: </label><span>סרטון הדרכה</span>
+            </li>
+            <li>
+                <label>מומחה תוכן: </label><span>מושיקו דנים</span> | 
+                <label>מבצע: </label><span>גיא שני</span>
+            </li>
+            <li>
+                <label>בסיס: </label><span>בח"א 21</span> | 
+                <label>מקצוע: </label><span>9002</span>
+            </li>
+            <li>
+                <label>סוג קובץ: </label><span>Movie</span> | 
+                <label>תאריך הפצה: </label><span>19.04.2022</span>
+            </li>
+        </ul>
+    </div>
+</div>

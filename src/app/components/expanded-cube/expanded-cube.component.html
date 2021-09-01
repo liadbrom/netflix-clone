@@ -1,5 +1,5 @@
-<div class="modal-wrapper stylized-scrollbar" [class.dark]="shrinked">
-    <div class="modal-container" [@expand]="{value: (active && shrinked) ? 'expanded' : 'shrinked', params: {top: position?.top, left: position?.left, transformOrigin: position?.transformOrigin, scale: shrinked ? 1.3 : 1, translateY: shrinked ? 'calc(-1 * 0.5 * var(--cube-height))' : 0, opacity: shrinked ? 1 : 0}}" (@expand.done)="onAnimationEnd($event)" [style.top.px]="position?.top" [style.left.px]="position?.left" [style.transformOrigin]="this.position?.transformOrigin" >
+<div #modalWrapper class="modal-wrapper stylized-scrollbar" [class.dark]="shrinked" (click)="close()">
+    <div class="modal-container" (click)="$event.stopPropagation();" [@expand]="{value: (active && shrinked) ? 'expanded' : 'shrinked', params: {top: this.position?.expandedTop, left: position?.left, transformOrigin: position?.transformOrigin, scale: shrinked ? 1.3 : 1, translateY: shrinked ? 'calc(-1 * 0.5 * var(--cube-height))' : 0, opacity: shrinked ? 1 : 0}}" (@expand.done)="onAnimationEnd($event)" (@expand.start)="onAnimationStart($event)" [style.top.px]="position?.expandedTop" [style.left.px]="position?.left" [style.transformOrigin]="this.position?.transformOrigin" >
         <div class="player-container">
             <hupi-cube [isPreviewCube]="true" [cube]="(cubeDataService.currentCubePosition$ | async)?.cube"></hupi-cube>
             <div class="hud" [class.transparent]="!shrinked">
@@ -8,7 +8,7 @@
                     <svg viewBox="0 0 24 24" role="button" aria-label="close"><path d="M12 10.586l7.293-7.293 1.414 1.414L13.414 12l7.293 7.293-1.414 1.414L12 13.414l-7.293 7.293-1.414-1.414L10.586 12 3.293 4.707l1.414-1.414L12 10.586z" fill="white"></path></svg>
                 </div>
                 <div class="title-area">
-                    <h2 class="title">כותרת פריט</h2>
+                    <h2 class="title">{{cube?.title}}</h2>
                     <hupi-cube-controls [expanded]="true"></hupi-cube-controls>
                 </div>
             </div>
@@ -18,13 +18,12 @@
                 <div class="description">
                     {{cube?.description}}
                 </div>
-                <div class="info">
-                </div>
             </div>
             <div class="items-selector">
                 <div class="items-selector-header">
                     פריטים
                 </div>
+                <hupi-item *ngFor="let item of cube?.items" [item]="item"></hupi-item>
             </div>
         </div>
     </div>

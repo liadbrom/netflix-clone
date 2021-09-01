@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
+import { IItem } from '../item/item.component';
 
 @Component({
   selector: 'hupi-cube',
@@ -22,6 +23,8 @@ export interface ICube {
   tags?: Array<String>;
   metaData?: Object;
   description?: string;
+  title?: string;
+  items?: IItem[];
   height?: string;
   width?: string;
 }
