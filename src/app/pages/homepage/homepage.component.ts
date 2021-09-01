@@ -19,6 +19,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.enableTestMode();
+    this.cubeDataService.expandedActive$.next(false);
     this.cubeDataService.previewActive$.subscribe(value => {
       this.previewActive = value;
     });

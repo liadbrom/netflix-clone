@@ -6,6 +6,7 @@ import { CssService } from 'src/app/services/css.service';
 import { CubeDataService } from 'src/app/services/cube-data.service';
 import { ICube } from '../cube/cube.component';
 import { ICubePosition } from 'src/app/services/cube-data.service';
+import { ConditionalExpr } from '@angular/compiler';
 
 @Component({
   selector: 'hupi-row',
@@ -100,6 +101,10 @@ export class RowComponent implements OnInit, OnDestroy {
     }, 500);
   }
 
+  expandCube() {
+    this.cubeDataService.expandedActive$.next(true);
+  }
+
   @HostListener('mousewheel', ['$event']) 
   onScroll(event: WheelEvent): void {
     this.clearTimer();
@@ -122,10 +127,11 @@ export class RowComponent implements OnInit, OnDestroy {
     } else if (right > window.innerWidth - width) {
       transformOrigin = "top right";
     }
-    console.log(cubeElement.hostElement.nativeElement.getBoundingClientRect().top );
     console.log(document.body.scrollTop);
+    console.log(cubeElement.hostElement.nativeElement.getBoundingClientRect().top);
     return {
-      top: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + document.body.scrollTop,
+      previewTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + document.body.scrollTop,
+      expandedTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top,
       left: left,
       right: right,
       transformOrigin: transformOrigin
