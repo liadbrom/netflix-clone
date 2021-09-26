@@ -10,8 +10,7 @@ import {
   transition,
   AnimationEvent,
   animation,
-} from '@angular/animations'; 
-import { MapOperator } from 'rxjs/internal/operators/map';
+} from '@angular/animations';
 
 @Component({
   selector: 'hupi-expanded-cube',
@@ -19,18 +18,35 @@ import { MapOperator } from 'rxjs/internal/operators/map';
   styleUrls: ['./expanded-cube.component.scss'],
   animations: [
     trigger('expand', [
+      // state('shrinked', style({
+      //   transform: 'scale({{scale}}) translateY({{translateY}})',
+      //   left: "{{left}}px",
+      //   top: "{{top}}px",
+      //   width: "var(--cube-width)",
+      //   fontSize: "5px",
+      //   transformOrigin: "{{transformOrigin}}"
+      // }), { params: { top: 0, left: 0, transformOrigin: "center", scale: 1, translateY: 0, opacity: 1 } }),
+      // state('expanded', style({
+      //   transformOrigin: 'left top',
+      //   transform: 'scale({{scale}}) translateX(-50%)',
+      //   width: 'calc(850px / {{scale}})',
+      //   maxWidth: 'calc(90vw / {{scale}})',
+      //   fontSize: "16px",
+      //   top: '2em',
+      //   left: '50%',
+      // }), { params: { scale: 1 } }),
       state('shrinked', style({
-        transform: 'scale({{scale}}) translateY({{translateY}})',
-        left: "{{left}}px",
-        top: "{{top}}px",
-        transformOrigin: "{{transformOrigin}}"
-      }), {params: {top: 0, left: 0, transformOrigin:"center", scale: 1, translateY: 0, opacity: 1}}),
+        transformOrigin: "top left",
+        transform: 'scale({{scale}}) translateX(calc(-50% * {{transformFactor}}))',
+        left: "calc({{left}}px + calc({{transformFactor}} * 0.5 * var(--cube-width)))",
+        top: "{{top}}",
+      }), { params: { top: 0, left: 0, transformFactor: 0, scale: 1, opacity: 1 } }),
       state('expanded', style({
-        transformOrigin: 'left top',
-        transform: 'scale(2.6) translateX(-50%)',
-        top: '3vh',
+        transformOrigin: 'top left',
+        transform: 'scale(1) translateX(-50%)',
+        top: '2em',
         left: '50%',
-      })),
+      }), { params: { scale: 1 } }),
       transition('shrinked => expanded', animate('350ms ease-out')),
       transition('expanded => shrinked', animate('300ms ease-out')),
     ]),
@@ -39,6 +55,7 @@ import { MapOperator } from 'rxjs/internal/operators/map';
 export class ExpandedCubeComponent implements OnInit {
 
   @ViewChild('modalWrapper', { static: true }) modal: ElementRef | undefined;
+  @ViewChild('modalContainer', { static: true }) modalContainer: ElementRef | undefined;
   modalElement: HTMLElement | undefined;
   // _active = false; DELETE
   cube: ICube | undefined;
@@ -47,7 +64,9 @@ export class ExpandedCubeComponent implements OnInit {
     expandedTop: 0,
     left: 0,
     right: 0,
-    transformOrigin: ""
+    transformOrigin: "top",
+    transformFactor: 1,
+    baseWidth: 0
   };
   backgroundColor: string | undefined;
   lastCubePosition?: {
@@ -60,7 +79,7 @@ export class ExpandedCubeComponent implements OnInit {
   constructor(public cubeDataService: CubeDataService) { }
 
   ngOnInit(): void {
-      this.cubeDataService.currentCubePosition$.subscribe(value => {
+    this.cubeDataService.currentCubePosition$.subscribe(value => {
       this.lastCubePosition = value;
       this.assignData(value);
     });
@@ -78,15 +97,27 @@ export class ExpandedCubeComponent implements OnInit {
       if (this.modal) {
         this.modal.nativeElement.scroll(0, 0);
       }
+      console.log(this.shrinked)
     }
   }
 
-  assignData(value: {position: ICubePosition; cube: ICube | undefined;}): void {
+  assignData(value: { position: ICubePosition; cube: ICube | undefined; }): void {
     this.position = value.position;
     this.cube = value.cube;
   }
 
   close(): void {
     this.shrinked = false;
+  }
+
+  // TODO: fix translateY
+  getAnimationParams(): any {
+    return {
+      top: this.shrinked ? `calc((-0.75 * var(--cube-height)) + ${this.position?.expandedTop}px)` : this.position?.expandedTop + "px",
+      left: this.position?.left,
+      transformFactor: this.position?.transformFactor,
+      scale: this.shrinked ? (this.position?.baseWidth * 1.5 / 850) : (this.position?.baseWidth / 850),
+      opacity: this.shrinked ? 1 : 0
+    }
   }
 }

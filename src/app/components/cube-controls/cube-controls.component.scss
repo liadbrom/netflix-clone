@@ -1,10 +1,18 @@
+:host.expanded {
+    display: block;
+    height: 12%;
+}
+
 .controls {
     display: flex;
+    height: 100%;
     &.expanded button {
-        width: 0.9vw;
-        height: 0.9vw;
-        padding: 0 0.1vw;
-        margin: 0.1vw;
+        height: 100%;
+        min-height: 22px;
+        width: fit-content;
+        aspect-ratio: 1/1;
+        padding: 0 4px;
+        margin: 3px;
         box-sizing: border-box;
     }
     button {
@@ -43,13 +51,13 @@
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;
-                width: 3.8vw;
-                border-radius: 2px;
-                &::after {
-                    content: "הפעל";
-                    font-size: 0.5vw;
-                    font-weight: bold;
-                }
+                width: 22%;
+                border-radius: 3px;
+                // &::after {
+                //     content: "הפעל";
+                //     font-size: 18px;
+                //     font-weight: bold;
+                // }
             }
             margin-right: 0;
             background-color: white;

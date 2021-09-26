@@ -9,7 +9,7 @@ import {
   animate,
   transition,
   AnimationEvent,
-} from '@angular/animations'; 
+} from '@angular/animations';
 
 @Component({
   selector: 'hupi-preview-cube',
@@ -17,10 +17,10 @@ import {
   styleUrls: ['./preview-cube.component.scss'],
   animations: [
     trigger('growShrink', [
-      state('grow', style({transform: 'scale(1.3) translateY(calc(-1 * (0.5* var(--cube-height))))'})),
-      state('shrink', style({transform: 'scale(1)'})),
-      transition('shrink => grow', animate('130ms ease-out')),
-      transition('grow => shrink', animate('130ms ease-out')),
+      state('grow', style({ transform: 'scale(1.5) translateY(calc(-0.5 * var(--cube-height)))' })),
+      state('shrink', style({ transform: 'scale(1)' })),
+      transition('shrink => grow', animate('150ms ease-out')),
+      transition('grow => shrink', animate('150ms ease-out')),
     ]),
   ],
 })
@@ -69,11 +69,11 @@ export class PreviewCubeComponent implements OnInit {
       this.barOpacity = 0;
     }
     if (event.fromState === "shrink") {
-        this.barOpacity = 1;
+      this.barOpacity = 1;
     }
   }
 
-  assignData(value: {position: ICubePosition; cube: ICube | undefined;}): void {
+  assignData(value: { position: ICubePosition; cube: ICube | undefined; }): void {
     this.position = value.position;
     this.cube = value.cube;
   }

@@ -8,10 +8,10 @@ import { ICube } from '../components/cube/cube.component';
 export class CubeDataService {
   previewActive$ = new BehaviorSubject<boolean>(false);
   expandedActive$ = new BehaviorSubject<boolean>(false);
-  currentCubePosition$ = new Subject<{position: ICubePosition, cube: ICube | undefined}>();
+  currentCubePosition$ = new Subject<{ position: ICubePosition, cube: ICube | undefined }>();
   constructor() { }
   setData(position: ICubePosition, cube: ICube | undefined): void {
-    this.currentCubePosition$.next({position, cube});
+    this.currentCubePosition$.next({ position, cube });
   }
 }
 
@@ -21,5 +21,7 @@ export interface ICubePosition {
   left: number;
   right: number;
   transformOrigin: string;
+  transformFactor: number;
+  baseWidth: number;
 }
 

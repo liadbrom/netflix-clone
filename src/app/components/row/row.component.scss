@@ -1,11 +1,10 @@
 :host {
     display: block;
-    margin-bottom: 2vw;
+    margin: 1vw 0;
 }
 
 .row-container {
     position: relative;
-    $item: 4;
     
     .cubes-container {
         width: var(--virtual-width);
@@ -97,9 +96,12 @@
             }
             .arrow-icon {
                 right: 12px;
-                width: 1.2vw; height: 1.2vw;
+                width: 1.2vw; height: 1.5vw;
             }
         }
+    }
+    .row-title {
+        font-size: 2vw;
     }
     .see-all {
         display: flex;
@@ -111,7 +113,7 @@
         }
         .see-all-link {
             font-weight: bold;
-            font-size: 0.9vw;
+            font-size: 1vw;
             transition: all 500ms ease-out;
             right: 0px;
             color: inherit;

@@ -1,11 +1,12 @@
 
 :host{
     position: relative;
-    .rows-container{
-        margin: var(--top-bar-height) 0;
-    }
-    .footer {
-        margin: 5rem 0 0.5rem 0;
-    }
 }
 
+.rows-container{
+    margin-top: calc((9/16) * var(--virtual-width) - 1.5 * var(--cube-height));
+}
+
+.footer {
+    margin: 5rem 0 0.5rem 0;
+}

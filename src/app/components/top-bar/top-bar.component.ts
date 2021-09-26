@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, OnDestroy } from '@angular/core';
+import { fromEvent, Subject, timer } from 'rxjs';
+import { debounce, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'hupi-top-bar',
@@ -9,10 +11,21 @@ export class TopBarComponent implements OnInit {
   focused = false;
   @ViewChild('searchInput') searchInput: ElementRef | undefined;
   @Input() fixed = false;
+  destroy$ = new Subject<void>();
+  solid = false;
+  transitionDebounceTime = 0;
 
   constructor() { }
 
   ngOnInit(): void {
+    const scroll$ = fromEvent(document.body, 'scroll');
+    scroll$.pipe(
+      debounce(() => timer(this.transitionDebounceTime)),
+    ).subscribe(() => {
+      let scrollTop = !!document.body.scrollTop;
+      this.solid = scrollTop;
+      this.transitionDebounceTime = scrollTop ? 100 : 0;
+    });
   }
 
   onSearchClick(): void {

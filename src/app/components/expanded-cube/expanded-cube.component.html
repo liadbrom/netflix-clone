@@ -1,15 +1,26 @@
 <div #modalWrapper class="modal-wrapper stylized-scrollbar" [class.dark]="shrinked" (click)="close()">
-    <div class="modal-container" (click)="$event.stopPropagation();" [@expand]="{value: (active && shrinked) ? 'expanded' : 'shrinked', params: {top: this.position?.expandedTop, left: position?.left, transformOrigin: position?.transformOrigin, scale: shrinked ? 1.3 : 1, translateY: shrinked ? 'calc(-1 * 0.5 * var(--cube-height))' : 0, opacity: shrinked ? 1 : 0}}" (@expand.done)="onAnimationEnd($event)" (@expand.start)="onAnimationStart($event)" [style.top.px]="position?.expandedTop" [style.left.px]="position?.left" [style.transformOrigin]="this.position?.transformOrigin" >
+    <div #modalContainer class="modal-container" (click)="$event.stopPropagation();"
+        [@expand]="{value: (active && shrinked) ? 'expanded' : 'shrinked', params: getAnimationParams()}"
+        (@expand.done)="onAnimationEnd($event)" (@expand.start)="onAnimationStart($event)">
         <div class="player-container">
-            <hupi-cube [isPreviewCube]="true" [cube]="(cubeDataService.currentCubePosition$ | async)?.cube"></hupi-cube>
+            <hupi-cube class="expanded-cube" #hupiCube [isPreviewCube]="true"
+                [cube]="(cubeDataService.currentCubePosition$ | async)?.cube">
+            </hupi-cube>
             <div class="hud" [class.transparent]="!shrinked">
                 <div class="gradient"></div>
-                <div class="close-btn" (click)="close()">
-                    <svg viewBox="0 0 24 24" role="button" aria-label="close"><path d="M12 10.586l7.293-7.293 1.414 1.414L13.414 12l7.293 7.293-1.414 1.414L12 13.414l-7.293 7.293-1.414-1.414L10.586 12 3.293 4.707l1.414-1.414L12 10.586z" fill="white"></path></svg>
-                </div>
                 <div class="title-area">
-                    <h2 class="title">{{cube?.title}}</h2>
-                    <hupi-cube-controls [expanded]="true"></hupi-cube-controls>
+                    <!-- <h2 class="title">{{cube?.title}}</h2> -->
+                    <svg class="title" viewBox="0 0 200 24">
+                        <text x="200" y="18" style="font-weight: bold;">{{cube?.title}}</text>
+                    </svg>
+                    <hupi-cube-controls class="expanded" [expanded]="true"></hupi-cube-controls>
+                </div>
+                <div class="close-btn" (click)="close()">
+                    <svg viewBox="0 0 24 24" role="button" aria-label="close">
+                        <path
+                            d="M12 10.586l7.293-7.293 1.414 1.414L13.414 12l7.293 7.293-1.414 1.414L12 13.414l-7.293 7.293-1.414-1.414L10.586 12 3.293 4.707l1.414-1.414L12 10.586z"
+                            fill="white"></path>
+                    </svg>
                 </div>
             </div>
         </div>

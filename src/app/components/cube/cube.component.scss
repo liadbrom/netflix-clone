@@ -5,6 +5,12 @@
     // }
     // overflow: visible;
     height: var(--cube-height); width: var(--cube-width);
+    &.expanded-cube {
+        transition: width 300ms linear;
+        height: unset;
+        min-width: 100%;
+        aspect-ratio: 16/9;
+    }
 }
 
 img {

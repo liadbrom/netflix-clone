@@ -56,3 +56,7 @@ button:hover{
     border: 7px solid transparent; background-clip: padding-box;
     border-radius: 20rem;
 }
+
+#getCubeWidth {
+    width: var(--cube-width);
+}

@@ -1,4 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { fromEvent } from 'rxjs';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { IRow } from 'src/app/components/row/row.component';
 import { rows } from 'src/app/mock/rows-mock';
 import { CubeDataService } from 'src/app/services/cube-data.service';
@@ -15,11 +17,15 @@ export class HomepageComponent implements OnInit {
   previewActive = false;
   expandedActive = false;
 
-  constructor(private renderer2: Renderer2, private cubeDataService: CubeDataService ) {}
+  constructor(private renderer2: Renderer2, private cubeDataService: CubeDataService) { }
 
   ngOnInit(): void {
     this.enableTestMode();
-    this.cubeDataService.expandedActive$.next(false);
+    if (sessionStorage.getItem("firstVisit") === "false") {
+      this.introEnabled = false;
+    } else {
+      sessionStorage.setItem("firstVisit", "false")
+    }
     this.cubeDataService.previewActive$.subscribe(value => {
       this.previewActive = value;
     });
@@ -33,11 +39,15 @@ export class HomepageComponent implements OnInit {
     });
   }
 
+  ngAfterContentInit(): void {
+
+  }
+
   hidePreview(): void {
     this.cubeDataService.previewActive$.next(false);
   }
-  
-  enableTestMode(): void{
+
+  enableTestMode(): void {
     setTimeout(() => {
       this.introEnabled = false;
     }, 0);

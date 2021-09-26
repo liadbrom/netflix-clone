@@ -1,12 +1,13 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject, fromEvent, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, takeUntil, timeout } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, max, takeUntil, timeout } from 'rxjs/operators';
 import { CssService } from 'src/app/services/css.service';
 import { CubeDataService } from 'src/app/services/cube-data.service';
 import { ICube } from '../cube/cube.component';
 import { ICubePosition } from 'src/app/services/cube-data.service';
 import { ConditionalExpr } from '@angular/compiler';
+import { Scroll } from '@angular/router';
 
 @Component({
   selector: 'hupi-row',
@@ -21,13 +22,13 @@ export class RowComponent implements OnInit, OnDestroy {
   @Input() asList = false;
   @Input() row: IRow | undefined;
   @Input() set viewReady(ready: boolean) {
-    if (ready) {
-      this.cssService.setVirtualWidth();
-      this.setMaxPage();
-      this.calculateScroll();
-    }
+    this._viewReady = true;
+    if (this.viewInitialized)
+      this.initialize();
   }
 
+  _viewReady = false;
+  viewInitialized = false;
   page = 0;
   maxPage$ = new BehaviorSubject(0);
   toScroll = 0;
@@ -47,6 +48,20 @@ export class RowComponent implements OnInit, OnDestroy {
       this.calculateScroll();
       this.scroll(0);
     });
+  }
+
+  ngAfterViewInit(): void {
+    this.viewInitialized = true;
+    if (this._viewReady) {
+      this.initialize();
+    }
+  }
+
+  initialize(): void {
+    console.log("init");
+    this.cssService.setVirtualWidth();
+    this.setMaxPage();
+    this.calculateScroll();
   }
 
 
@@ -69,6 +84,8 @@ export class RowComponent implements OnInit, OnDestroy {
   }
 
   setMaxPage(): void {
+    console.log(this.cubesContainer?.nativeElement.scrollWidth);
+    // console.log(this.cubesContainer?.nativeElement.scrollWidth / this.cubesContainer?.nativeElement.offsetWidth);
     let maxPage = this.cubesContainer?.nativeElement.scrollWidth / this.cubesContainer?.nativeElement.clientWidth;
     maxPage = Math.ceil(maxPage) - 1;
     this.maxPage$.next(maxPage);
@@ -88,7 +105,6 @@ export class RowComponent implements OnInit, OnDestroy {
 
   onMouseOut(): void {
     this.mouseOverCube = false;
-    console.log(this.mouseOverCube);
     this.clearTimer();
   }
 
@@ -105,7 +121,7 @@ export class RowComponent implements OnInit, OnDestroy {
     this.cubeDataService.expandedActive$.next(true);
   }
 
-  @HostListener('mousewheel', ['$event']) 
+  @HostListener('mousewheel', ['$event'])
   onScroll(event: WheelEvent): void {
     this.clearTimer();
     if (this.mouseOverCube) {
@@ -118,23 +134,27 @@ export class RowComponent implements OnInit, OnDestroy {
   }
 
   getPosition(cubeElement: any): ICubePosition {
-    let left = cubeElement.hostElement.nativeElement.getBoundingClientRect().left + document.body.scrollLeft;
-    let right = cubeElement.hostElement.nativeElement.getBoundingClientRect().right + document.body.scrollLeft;
+    let cubeRect = cubeElement.hostElement.nativeElement.getBoundingClientRect();
+    let left = cubeRect.left + document.body.scrollLeft;
+    let right = cubeRect.right + document.body.scrollLeft;
     let width = right - left;
+    let transformFactor = 1;
     let transformOrigin = "top";
     if (left < width) {
-      transformOrigin = "top left";
+      transformFactor = 0;
+      transformOrigin = "left top";
     } else if (right > window.innerWidth - width) {
-      transformOrigin = "top right";
+      transformFactor = 2;
+      transformOrigin = "right top";
     }
-    console.log(document.body.scrollTop);
-    console.log(cubeElement.hostElement.nativeElement.getBoundingClientRect().top);
     return {
       previewTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + document.body.scrollTop,
       expandedTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top,
       left: left,
       right: right,
-      transformOrigin: transformOrigin
+      transformOrigin: transformOrigin,
+      transformFactor: transformFactor,
+      baseWidth: width
     }
   }
 }

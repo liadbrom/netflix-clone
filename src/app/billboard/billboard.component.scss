@@ -1,0 +1,96 @@
+.billboard-container {
+    width: var(--virtual-width);
+    position: absolute;
+    height: fit-content;
+    .gradient {
+        position: absolute;
+        top: 0; left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to top,#141414, transparent 100%);
+    }
+    img {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+    .title-area {
+        position: absolute;
+        background: linear-gradient(-77deg, rgba(20, 20, 20, .6) 0,rgba(20 ,20, 20, 0) 85%);
+        bottom: 0; right: 0;
+        padding: 0 var(--sides) 10%;
+        direction: rtl;
+        width: 40%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        .description {
+            text-shadow: -2px 2px 4px rgb(0 0 0 / 45%);
+            font-size: 1.5vw;
+        }
+        .title {
+            font-weight: bold;
+            width: 100%;
+            font-size: 6vw;
+            margin: 0;
+        }
+        .controls {
+            display: flex;
+            height: 3.3vw;
+            margin: 2vw 0 0;
+            .btn {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                border-radius: 4px;
+                margin-right: 0;
+                border-color: transparent;
+                margin-left: 10px;
+                height: 100%;
+                min-height: 22px;
+                width: fit-content;
+                padding: 0.6vw;
+                box-sizing: border-box;
+                display: flex;
+                &.play-btn {
+                    background-color: white;
+                    aspect-ratio: 2.8/1;
+                    svg path {
+                        fill: black;
+                    }
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.5);
+                    }
+                }
+                &.info-btn {
+                    background-color: rgba(109,109,110,0.7);
+                    aspect-ratio: 3.5/1;
+                    color: white;
+                    svg path {
+                        fill: white;
+                    }
+                    &:hover {
+                        background-color: rgba(109, 109, 110, 0.5);
+                    }
+                }
+                span {
+                    font-size: 1.3vw;
+                    font-weight: bold;
+                }
+                svg {
+                    height: 100%;
+                }
+                &.audio-toggle {
+                    border-radius: 100%; 
+                    opacity: 0.5;
+                    transition: opacity 300ms linear;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

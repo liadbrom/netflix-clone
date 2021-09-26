@@ -1,10 +1,16 @@
 .top-bar-container {
-    height: var(--top-bar-height); width: 100%;
+    height: var(--top-bar-height); width: var(--virtual-width);
     display: flex; align-items: center;
     padding: 0 4%; box-sizing: border-box;
-
-    background-color: rgb(20, 20, 20); color: white;
+    background-image: linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0));
+    background-color: rgb(20, 20, 20);
+    color: white;
+    transition: background-color 200ms linear;
     &.fixed {
+        background-color: transparent;
+        &.solid {
+            background-color: rgb(20, 20, 20);
+        }
         position: fixed;
         top: 0; z-index: 999;  
     }
@@ -69,7 +75,7 @@
             background: none;
             border: none;
             color: white;
-            font-size: 11spt;
+            font-size: 11pt;
             &:focus {
                 outline: none;
             }

@@ -79,7 +79,7 @@ export const rows: IRow[] = [
                 imgSrc: 'https://www.news-desk.co.il/wp-content/uploads/Ez1TbdOXIAAwgIm.jpg',
             },
         ],
-        title: 'F-35I אדיר'
+        title: 'F-35 אדיר'
     },
     {
         cubes: [
