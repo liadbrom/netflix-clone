@@ -75,11 +75,12 @@ export class ExpandedCubeComponent implements OnInit {
   }
   @Input() active: boolean = false;
   shrinked = true;
+  itemsFilterOpen = false;
 
   constructor(public cubeDataService: CubeDataService) { }
 
   ngOnInit(): void {
-    this.cubeDataService.currentCubePosition$.subscribe(value => {
+    this.cubeDataService.currentCubeData$.subscribe(value => {
       this.lastCubePosition = value;
       this.assignData(value);
     });
@@ -119,5 +120,9 @@ export class ExpandedCubeComponent implements OnInit {
       scale: this.shrinked ? (this.position?.baseWidth * 1.5 / 850) : (this.position?.baseWidth / 850),
       opacity: this.shrinked ? 1 : 0
     }
+  }
+
+  toggleItemsFilter(): void {
+    this.itemsFilterOpen = !this.itemsFilterOpen;
   }
 }

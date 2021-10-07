@@ -35,6 +35,7 @@ export class RowComponent implements OnInit, OnDestroy {
   destroy$ = new Subject<void>();
   showPreviewTimer: any;
   mouseOverCube = false;
+  currCubeElement?: object;
 
   constructor(private cssService: CssService, private cdRef: ChangeDetectorRef, private cubeDataService: CubeDataService) { }
 
@@ -58,7 +59,6 @@ export class RowComponent implements OnInit, OnDestroy {
   }
 
   initialize(): void {
-    console.log("init");
     this.cssService.setVirtualWidth();
     this.setMaxPage();
     this.calculateScroll();
@@ -99,7 +99,8 @@ export class RowComponent implements OnInit, OnDestroy {
 
   onMouseEnter(cube: ICube, cubeElement: any): void {
     this.mouseOverCube = true;
-    this.cubeDataService.setData(this.getPosition(cubeElement), cube);
+    this.currCubeElement = cubeElement;
+    this.cubeDataService.setData(cubeElement, cube);
     this.startTimer();
   }
 
@@ -131,31 +132,6 @@ export class RowComponent implements OnInit, OnDestroy {
 
   clearTimer(): void {
     clearTimeout(this.showPreviewTimer);
-  }
-
-  getPosition(cubeElement: any): ICubePosition {
-    let cubeRect = cubeElement.hostElement.nativeElement.getBoundingClientRect();
-    let left = cubeRect.left + document.body.scrollLeft;
-    let right = cubeRect.right + document.body.scrollLeft;
-    let width = right - left;
-    let transformFactor = 1;
-    let transformOrigin = "top";
-    if (left < width) {
-      transformFactor = 0;
-      transformOrigin = "left top";
-    } else if (right > window.innerWidth - width) {
-      transformFactor = 2;
-      transformOrigin = "right top";
-    }
-    return {
-      previewTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + document.body.scrollTop,
-      expandedTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top,
-      left: left,
-      right: right,
-      transformOrigin: transformOrigin,
-      transformFactor: transformFactor,
-      baseWidth: width
-    }
   }
 }
 

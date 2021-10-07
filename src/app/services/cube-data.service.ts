@@ -8,10 +8,36 @@ import { ICube } from '../components/cube/cube.component';
 export class CubeDataService {
   previewActive$ = new BehaviorSubject<boolean>(false);
   expandedActive$ = new BehaviorSubject<boolean>(false);
-  currentCubePosition$ = new Subject<{ position: ICubePosition, cube: ICube | undefined }>();
+  currentCubeData$ = new Subject<{
+    position: ICubePosition,
+    cube: ICube | undefined,
+    cubeElement: any
+  }>();
   constructor() { }
-  setData(position: ICubePosition, cube: ICube | undefined): void {
-    this.currentCubePosition$.next({ position, cube });
+  setData(cubeElement: any, cube: ICube | undefined): void {
+    let cubeRect = cubeElement.hostElement.nativeElement.getBoundingClientRect();
+    let left = cubeRect.left + document.body.scrollLeft;
+    let right = cubeRect.right + document.body.scrollLeft;
+    let width = right - left;
+    let transformFactor = 1;
+    let transformOrigin = "top";
+    if (left < width) {
+      transformFactor = 0;
+      transformOrigin = "left top";
+    } else if (right > window.innerWidth - width) {
+      transformFactor = 2;
+      transformOrigin = "right top";
+    }
+    let position = {
+      previewTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + document.body.scrollTop,
+      expandedTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top,
+      left: left,
+      right: right,
+      transformOrigin: transformOrigin,
+      transformFactor: transformFactor,
+      baseWidth: width
+    }
+    this.currentCubeData$.next({ position, cube, cubeElement });
   }
 }
 

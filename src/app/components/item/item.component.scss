@@ -1,6 +1,6 @@
 .item-container {
     --border-radius: 2px;
-    --height: 6.2em;
+    --height: 6.7em;
     display: flex;
     align-items: center;
     height: fit-content;
@@ -32,7 +32,7 @@
         padding: 0 2%;
         justify-content: flex-start;
         .title {
-            font-size: 0.8em;
+            font-size: 16px;
             .title-text {
                 font-weight: bold;
             }
@@ -42,9 +42,9 @@
         }
         .data {
             margin: 1em 0 0; padding: 0;
-            font-size: 0.6em;
+            font-size: 12px;
             .description {
-                font-size: 120%;
+                font-size: 14px;
                 // font-style: italic;
                 border-right: solid #b6b6b6 0.1px;
                 height: min-content;

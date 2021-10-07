@@ -111,14 +111,72 @@
                 display: flex;
                 .description {
                     width: 65%;
-                    font-size: 1em;
+                    font-size: 1.1em;
                 }
             }
             .items-selector {
                 .items-selector-header {
-                    font-size: 1em;
+                    font-size: 24px;
                     font-weight: bold;
-                    margin: 1em 0;
+                    margin: 48px 0 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .items-filter {
+                        position: relative;
+                        font-size: 18px;
+                        button {
+                            background-color: rgb(36, 36, 36);
+                            color: white;
+                            border: solid 0.1em rgb(77, 77, 77);
+                            padding: 0.6em 1em;
+                            font-weight: bold;
+                            border-radius: 0.2em;
+                            display: flex;
+                            align-items: center;
+                            font-size: inherit;
+                            &::after {
+                                content: "";
+                                border-right: 0.32em solid transparent;
+                                border-left: 0.32em solid transparent;
+                                border-top: 0.42em solid rgb(255, 255, 255);
+                                transition: transform 0.2s linear 0s;
+                                margin-right: 1em;
+                                transform: none;
+                            }
+                            &.open::after {
+                                transform: rotate(180deg);
+                            }
+                        }
+                        ul {
+                            position: absolute;
+                            left: 0;
+                            width: max-content;
+                            background-color: rgb(36, 36, 36);
+                            color: white;
+                            border: solid 0.1em rgb(77, 77, 77);
+                            margin-top: 0.15em;
+                            padding: 0.5em 0;
+                            .divider {
+                                margin: 0.5rem;
+                                border: 1px solid rgb(77, 77, 77);
+                                width: fill-available; padding: 0;
+                            }
+                            li {
+                                min-width: 4em;
+                                padding: 0.5em 1em;
+                                display: block;
+                                cursor: pointer;
+                                span {
+                                    font-weight: normal;
+                                }
+                                &:hover {
+                                    background-color: rgb(77, 77, 77)
+                                }
+                                // break-inside: avoid;
+                            }
+                        }
+                    }
                 }
                 hupi-item {
                     display: block;

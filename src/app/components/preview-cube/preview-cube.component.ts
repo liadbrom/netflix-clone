@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { ICube } from '../cube/cube.component';
 import { ICubePosition } from 'src/app/services/cube-data.service';
 import { CubeDataService } from 'src/app/services/cube-data.service';
@@ -28,11 +28,15 @@ export class PreviewCubeComponent implements OnInit {
 
   constructor(private cubeDataService: CubeDataService) { }
 
-  cube: ICube | undefined;
-  position: ICubePosition | undefined;
-  tempCubePosition?: {
+  cubeData?: {
+    position: ICubePosition | undefined,
+    cube: ICube | undefined,
+    cubeElement: any
+  }
+  tempCubeData?: {
     position: ICubePosition;
     cube: ICube | undefined;
+    cubeElement: any;
   }
   @Input() active = false;
   shrinked = true;
@@ -44,19 +48,19 @@ export class PreviewCubeComponent implements OnInit {
     this.cubeDataService.expandedActive$.subscribe(value => {
       this.expandedActive = value;
     })
-    this.cubeDataService.currentCubePosition$.subscribe(value => {
+    this.cubeDataService.currentCubeData$.subscribe(value => {
       if (this.shrinked) {
         this.assignData(value);
       }
-      this.tempCubePosition = value;
+      this.tempCubeData = value;
     });
   }
 
   onAnimationEnd(event: AnimationEvent): void {
     if (event.fromState === "grow" && event.toState === "shrink") {
       this.shrinked = true;
-      if (this.tempCubePosition) {
-        this.assignData(this.tempCubePosition);
+      if (this.tempCubeData) {
+        this.assignData(this.tempCubeData);
       }
     }
   }
@@ -73,13 +77,17 @@ export class PreviewCubeComponent implements OnInit {
     }
   }
 
-  assignData(value: { position: ICubePosition; cube: ICube | undefined; }): void {
-    this.position = value.position;
-    this.cube = value.cube;
+  assignData(value: any): void {
+    this.cubeData = { ...value };
   }
 
   expand(): void {
     this.active = false;
     this.cubeDataService.expandedActive$.next(true);
+  }
+
+  @HostListener('mousewheel', ['$event'])
+  onScroll(event: WheelEvent): void {
+    this.cubeDataService.setData(this.cubeData?.cubeElement, this.cubeData?.cube);
   }
 }

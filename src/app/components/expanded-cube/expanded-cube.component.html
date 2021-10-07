@@ -4,7 +4,7 @@
         (@expand.done)="onAnimationEnd($event)" (@expand.start)="onAnimationStart($event)">
         <div class="player-container">
             <hupi-cube class="expanded-cube" #hupiCube [isPreviewCube]="true"
-                [cube]="(cubeDataService.currentCubePosition$ | async)?.cube">
+                [cube]="(cubeDataService.currentCubeData$ | async)?.cube">
             </hupi-cube>
             <div class="hud" [class.transparent]="!shrinked">
                 <div class="gradient"></div>
@@ -32,7 +32,19 @@
             </div>
             <div class="items-selector">
                 <div class="items-selector-header">
-                    פריטים
+                    <span>פריטים</span>
+                    <div class="items-filter">
+                        <button [class.open]="itemsFilterOpen" (click)="toggleItemsFilter()"
+                            (blur)="toggleItemsFilter()">כל הפריטים</button>
+                        <ul *ngIf="itemsFilterOpen">
+                            <li>לומדות&nbsp;&nbsp;<span>(1 פריטים)</span></li>
+                            <li>מודל 3D&nbsp;&nbsp;<span>(1 פריטים)</span></li>
+                            <li>סרטי 2D&nbsp;&nbsp;<span>(1 פריטים)</span></li>
+                            <li>מצגות&nbsp;&nbsp;<span>(1 פריטים)</span></li>
+                            <div class="divider"></div>
+                            <li>כל הפריטים&nbsp;&nbsp;<span>(4 פריטים)</span></li>
+                        </ul>
+                    </div>
                 </div>
                 <hupi-item *ngFor="let item of cube?.items" [item]="item"></hupi-item>
             </div>
