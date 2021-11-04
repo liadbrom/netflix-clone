@@ -1,6 +1,6 @@
 :host {
     display: block;
-    margin: 1vw 0;
+    margin: 2vw 0;
 }
 
 .row-container {
@@ -10,7 +10,7 @@
         width: var(--virtual-width);
         padding: 0 var(--sides);
         display: flex;
-        overflow-x: auto; 
+        overflow-x: hidden; 
         position: relative;
         scroll-behavior: smooth;
         box-sizing: border-box;
@@ -27,6 +27,12 @@
         }
     }
 
+    &:hover {
+        .scroll-btn::after {
+            visibility: visible;
+        }
+    }
+
     .scroll-btn{
         z-index: 1;
         height: var(--cube-height); 
@@ -35,15 +41,16 @@
         position: absolute; left: 0; top: 0; 
         color: rgba(255, 255, 255, 0.8); border: none;
         background: rgba(0, 0, 0, 0.4); 
-        transition: background .2s ease-in;
-
+        transition: background .1s ease-in;
+        
         &::after {
             content: '';
             width: 100%;
             height: 100%;
             display: block;
+            visibility: hidden;
             background-image: url("../../../assets/icons/arrow-icon.png");
-            background-size: calc(var(--sides)) calc(var(--sides));
+            background-size: 80% auto;
             background-repeat: no-repeat;
             background-position: center;
             transition: transform 0.1s;
@@ -70,64 +77,90 @@
 
 .row-header {
     color: white;
-    margin: 0 var(--sides) 0 0;
+    padding: 0.5vw var(--sides) 0.5vw calc(var(--sides) + var(--cube-margin));
     line-height: 2em;
     display: flex;
-    align-items: baseline;
+    align-items: flex-end;
     position: sticky; top: 0;
     z-index: 1;
     background-color: var(--background-color);
     &.clickable {
-        cursor: pointer;
         color: #e5e5e5;
         background-color: transparent;
-        width: fit-content;
-        &:hover {
-            color: white;
-        }
-    }
-    &:hover {
-        .see-all {
-            * {
-                opacity: 1;
-            }
-            .see-all-link {
-                right: 15px;
-            }
-            .arrow-icon {
-                right: 12px;
-                width: 1.2vw; height: 1.5vw;
-            }
-        }
+        width: var(--virtual-width);
+        box-sizing: border-box;
     }
     .row-title {
-        font-size: 2vw;
+        width: max-content;
+        display: flex;
+        h1 {
+            font-size: 1.6vw;
+            margin: 0;
+        }
+        &:hover {
+            color: white;
+            .see-all {
+                --deviation: 15px;
+                .see-all-link {
+                    right: var(--deviation);
+                    opacity: 1;
+                }
+                .arrow-icon {
+                    right: calc(100% + var(--deviation));
+                    width: 1vw; height: 1vw;
+                }
+            }
+        }
     }
     .see-all {
         display: flex;
         align-items: center;
         cursor: pointer;
-        * {
-            position: relative;
-            opacity: 0;
-        }
+        position: relative;
         .see-all-link {
+            opacity: 0;
             font-weight: bold;
             font-size: 1vw;
             transition: all 500ms ease-out;
+            position: relative;
             right: 0px;
             color: inherit;
             text-decoration: none;
         }
         .arrow-icon {
             transition: right 350ms linear, width 350ms linear, height 350ms linear;
-            right: -100%;
+            position: absolute;
+            right: 0;
+            opacity: 0;
             display: inline-block;
-            width: 2vw; height: 2vw;
+            width: 1.2vw; height: 1.2vw;
             background-image: url("../../../assets/icons/arrow-icon.png");
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
         }
+    }
+    .pagination-indicator {
+        padding: 0;
+        list-style-type: none;
+        margin: 0 auto 0 0;
+        li {
+            display: inline-block;
+            width: 1.2vw;
+            height: 0.2vw;
+            background-color: #4d4d4d;
+            margin-right: 0.2vw;
+            transition: background-color .7s;
+            vertical-align: sub;
+            &.active {
+                background-color: #aaa;
+            }
+        }
+    }
+}
+
+.row-wrapper:hover {
+    .arrow-icon {
+        opacity: 1 !important;
     }
 }

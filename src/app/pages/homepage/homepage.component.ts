@@ -32,9 +32,9 @@ export class HomepageComponent implements OnInit {
     this.cubeDataService.expandedActive$.subscribe(value => {
       this.expandedActive = value;
       if (this.expandedActive) {
-        this.renderer2.addClass(document.body, 'hidden-scrollbar');
+        this.renderer2.addClass(document.getElementById("app-root"), 'hidden-scrollbar');
       } else {
-        this.renderer2.removeClass(document.body, 'hidden-scrollbar');
+        this.renderer2.removeClass(document.getElementById("app-root"), 'hidden-scrollbar');
       }
     });
   }

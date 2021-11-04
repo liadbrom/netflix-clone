@@ -10,7 +10,11 @@
         height: unset;
         min-width: 100%;
         aspect-ratio: 16/9;
+        .title {
+            display: none;
+        }
     }
+    position: relative;
 }
 
 img {
@@ -19,6 +23,20 @@ img {
     &.preview-img {
         border-radius: 4px 4px 0 0;
     }
+}
+
+.title {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1% 0;
+    color: #ffffff;
+    font-size: 1.7vw;
+    font-weight: 700;
+    letter-spacing: 0.1vw;
+    // filter: drop-shadow(1px 1px 5px black);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 // .popup {

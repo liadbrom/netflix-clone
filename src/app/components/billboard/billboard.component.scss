@@ -93,4 +93,18 @@
             }
         }
     }
+    .group-flag {
+        position: absolute;
+        bottom: 35%; left: 0;
+        border: solid 3px #dcdcdc;
+        color: white;
+        border-style: none solid none none;
+        background-color: rgba(51,51,51,.6);
+        font-size: 1.2vw;
+        padding: .7vw .8vw .7vw 3vw;
+        display: flex;
+        align-items: center;
+        height: 2.4vw;
+        box-sizing: border-box;
+    }
 }

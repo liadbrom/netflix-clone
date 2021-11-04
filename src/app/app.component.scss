@@ -1,0 +1,14 @@
+:host {
+    direction: ltr;
+    height: calc(100% - var(--top));
+    top: var(--top);
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: overlay;
+}
+
+hupi-titlebar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}

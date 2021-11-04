@@ -15,7 +15,8 @@ import { ExpandedCubeComponent } from './components/expanded-cube/expanded-cube.
 import { CubeControlsComponent } from './components/cube-controls/cube-controls.component';
 import { ListComponent } from './pages/list/list.component';
 import { ItemComponent } from './components/item/item.component';
-import { BillboardComponent } from './billboard/billboard.component';
+import { BillboardComponent } from './components/billboard/billboard.component';
+import { TitlebarComponent } from './components/titlebar/titlebar.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BillboardComponent } from './billboard/billboard.component';
     CubeControlsComponent,
     ListComponent,
     ItemComponent,
-    BillboardComponent
+    BillboardComponent,
+    TitlebarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CssService } from './services/css.service';
 import { CubeDataService } from './services/cube-data.service';
-import { Event, NavigationStart, Router } from '@angular/router'
+import { Event, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
         this.cubeDataService.previewActive$.next(false);
       }
     });
+
   }
 
   ngOnInit(): void {

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Input, OnDestroy } from '@angular/core';
 import { fromEvent, Subject, timer } from 'rxjs';
+import { FromEventTarget } from 'rxjs/internal/observable/fromEvent';
 import { debounce, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -11,6 +12,7 @@ export class TopBarComponent implements OnInit {
   focused = false;
   @ViewChild('searchInput') searchInput: ElementRef | undefined;
   @Input() fixed = false;
+  appRoot = document.getElementById("app-root");
   destroy$ = new Subject<void>();
   solid = false;
   transitionDebounceTime = 0;
@@ -18,11 +20,11 @@ export class TopBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const scroll$ = fromEvent(document.body, 'scroll');
+    const scroll$ = fromEvent(this.appRoot as FromEventTarget<Event>, 'scroll');
     scroll$.pipe(
       debounce(() => timer(this.transitionDebounceTime)),
     ).subscribe(() => {
-      let scrollTop = !!document.body.scrollTop;
+      let scrollTop = !!this.appRoot?.scrollTop;
       this.solid = scrollTop;
       this.transitionDebounceTime = scrollTop ? 100 : 0;
     });

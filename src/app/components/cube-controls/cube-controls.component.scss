@@ -1,6 +1,16 @@
 :host.expanded {
     display: block;
     height: 12%;
+    button[data-hint]:hover::before {
+        transform-origin: bottom;
+        margin-bottom: 1.5vw !important;
+        transform: translateX(-50%) scale(1.5) !important;
+    }
+    button[data-hint]:hover::after {
+        top: -1.5vw !important;
+        transform: translate(-50%, -25%) scale(1.5) !important;
+        
+    }
 }
 
 .controls {
@@ -11,11 +21,12 @@
         min-height: 22px;
         width: fit-content;
         aspect-ratio: 1/1;
-        padding: 0 4px;
+        padding: 0 6px;
         margin: 3px;
         box-sizing: border-box;
     }
     button {
+        position: relative;
         margin: 0.2vw;
         background-color: #2a2a2a;
         border: solid #848184 0.1vw;
@@ -35,6 +46,35 @@
             background-color: #2a2a2a;
             border-color: white;
         }
+        &[data-hint]:hover::before {
+            content: attr(data-hint);
+            position: absolute;
+            bottom: 100%;
+            left: 50%; transform: translateX(-50%);
+            margin-bottom: 1vw;
+            padding: 0.3vw 0.8vw;
+            font-size: 0.9vw;
+            font-weight: 700;
+            color: rgb(24, 24, 24);
+            background-color: rgb(230, 230, 230);
+            border-radius: 0.2vw;
+            box-shadow: rgb(0 0 0 / 75%) 0px 0.2vw 4px;
+            box-sizing: border-box;
+            white-space: nowrap;
+            animation: fade-in 150ms ease;
+        }
+        &[data-hint]:hover::after {
+            content: "";
+            display: block;
+            position: absolute;
+            border-top: 0.6vw solid rgb(230, 230, 230);
+            border-left: 0.6vw solid transparent;
+            border-right: 0.6vw solid transparent;
+            left: 50%;
+            top: -1vw;
+            transform: translate(-50%, -25%);
+            animation: fade-in 150ms ease;
+        }
         &:last-child {
             margin-right: auto;
             margin-left: 0;
@@ -51,8 +91,9 @@
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;
-                width: 22%;
+                width: 18%;
                 border-radius: 3px;
+                padding: 5px;
                 // &::after {
                 //     content: "הפעל";
                 //     font-size: 18px;
@@ -69,5 +110,13 @@
                 fill: black;
             }
         }
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
     }
 }

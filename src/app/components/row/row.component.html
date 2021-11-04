@@ -1,23 +1,33 @@
-<div *ngIf="!asList; else listTitle" [routerLink]="'' + row?.title" class="row-header clickable">
-    <h1 class="row-title">{{row?.title}}</h1>
-    <div class="see-all">
-        <span class="see-all-link">הצג את כל התכנים</span>
-        <span class="arrow-icon"></span>
+<div class="row-wrapper">
+    <div *ngIf="!asList; else listTitle" [routerLink]="'' + row?.title" class="row-header clickable">
+        <div class="row-title">
+            <h1 class="row-title">{{row?.title}}</h1>
+            <div class="see-all">
+                <span class="see-all-link">הצג את כל התכנים</span>
+                <span class="arrow-icon"></span>
+            </div>
+        </div>
+        <ul *ngIf="mouseOverContainer && (maxPage$.getValue() !== 0)" class="pagination-indicator">
+            <li *ngFor="let i of [].constructor(maxPage$.getValue() + 1); index as index"
+                [class.active]="page === index">
+            </li>
+        </ul>
     </div>
-</div>
-<ng-template #listTitle>
-    <div class="row-header">
-        <h1 class="row-title">{{row?.title}}</h1>
-    </div>
-</ng-template>
+    <ng-template #listTitle>
+        <div class="row-header">
+            <h1 class="row-title">{{row?.title}}</h1>
+        </div>
+    </ng-template>
 
-<div class="row-container" (scroll)="clearTimer()">
-    <button [hidden]="page === 0" class="scroll-btn back" (click)="scroll(-1)"></button>
-    <div #container class="cubes-container" (scroll)="clearTimer()" [class.list]="asList">
-        <hupi-cube *ngFor="let cube of row?.cubes" #cubeElement [cube]="cube" (click)="expandCube()"
-            (mouseout)="onMouseOut()" (mouseenter)="onMouseEnter(cube, cubeElement);">
-        </hupi-cube>
+    <div class="row-container" (mouseleave)="mouseOverContainer = false" (mouseenter)="mouseOverContainer = true"
+        (scroll)="clearTimer()">
+        <button [hidden]="page === 0" class="scroll-btn back" (click)="scroll(-1)"></button>
+        <div #container class="cubes-container" (scroll)="clearTimer()" [class.list]="asList">
+            <hupi-cube *ngFor="let cube of row?.cubes" #cubeElement [cube]="cube" (click)="expandCube()"
+                (mouseleave)="onMouseOut()" (mouseenter)="onMouseEnter(cube, cubeElement);">
+            </hupi-cube>
+        </div>
+        <button #scrollBtn [hidden]="page === (maxPage$ | async)" class="scroll-btn" (click)="scroll(1)">
+        </button>
     </div>
-    <button #scrollBtn [hidden]="page === (maxPage$ | async)" class="scroll-btn" (click)="scroll(1)">
-    </button>
 </div>

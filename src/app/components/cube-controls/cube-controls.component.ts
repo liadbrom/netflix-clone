@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Event } from '@angular/router';
 
 @Component({
   selector: 'hupi-cube-controls',
@@ -7,9 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CubeControlsComponent implements OnInit {
   @Input() expanded: boolean = false;
+  muted = true;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleAudio(): void {
+    this.muted = !this.muted;
+  }
 }

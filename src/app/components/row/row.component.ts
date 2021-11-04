@@ -35,6 +35,7 @@ export class RowComponent implements OnInit, OnDestroy {
   destroy$ = new Subject<void>();
   showPreviewTimer: any;
   mouseOverCube = false;
+  mouseOverContainer = false;
   currCubeElement?: object;
 
   constructor(private cssService: CssService, private cdRef: ChangeDetectorRef, private cubeDataService: CubeDataService) { }
@@ -84,8 +85,6 @@ export class RowComponent implements OnInit, OnDestroy {
   }
 
   setMaxPage(): void {
-    console.log(this.cubesContainer?.nativeElement.scrollWidth);
-    // console.log(this.cubesContainer?.nativeElement.scrollWidth / this.cubesContainer?.nativeElement.offsetWidth);
     let maxPage = this.cubesContainer?.nativeElement.scrollWidth / this.cubesContainer?.nativeElement.clientWidth;
     maxPage = Math.ceil(maxPage) - 1;
     this.maxPage$.next(maxPage);

@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /hupix_exe
+/release-builds
 
 
 # Only exists if Bazel was run

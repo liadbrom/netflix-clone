@@ -7,7 +7,7 @@
     }
 }
 
-@keyframes transparent {
+@keyframes fadeOut {
     from {
         opacity: 1;
     } 
@@ -173,7 +173,6 @@
                                 &:hover {
                                     background-color: rgb(77, 77, 77)
                                 }
-                                // break-inside: avoid;
                             }
                         }
                     }
@@ -191,6 +190,6 @@
     }
 }
 
-.transparent {
-    animation: transparent 200ms ease-out forwards;
+.faded-out {
+    animation: fadeOut 200ms ease-out forwards;
 }

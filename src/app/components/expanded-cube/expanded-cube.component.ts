@@ -77,7 +77,8 @@ export class ExpandedCubeComponent implements OnInit {
   shrinked = true;
   itemsFilterOpen = false;
 
-  constructor(public cubeDataService: CubeDataService) { }
+  constructor(public cubeDataService: CubeDataService) {
+  }
 
   ngOnInit(): void {
     this.cubeDataService.currentCubeData$.subscribe(value => {
@@ -98,7 +99,6 @@ export class ExpandedCubeComponent implements OnInit {
       if (this.modal) {
         this.modal.nativeElement.scroll(0, 0);
       }
-      console.log(this.shrinked)
     }
   }
 
@@ -111,13 +111,13 @@ export class ExpandedCubeComponent implements OnInit {
     this.shrinked = false;
   }
 
-  // TODO: fix translateY
   getAnimationParams(): any {
+    let modalWidth = Math.min(0.9 * document.body.clientWidth, 850);
     return {
       top: this.shrinked ? `calc((-0.75 * var(--cube-height)) + ${this.position?.expandedTop}px)` : this.position?.expandedTop + "px",
       left: this.position?.left,
       transformFactor: this.position?.transformFactor,
-      scale: this.shrinked ? (this.position?.baseWidth * 1.5 / 850) : (this.position?.baseWidth / 850),
+      scale: this.shrinked ? (this.position?.baseWidth * 1.5 / modalWidth) : (this.position?.baseWidth / modalWidth),
       opacity: this.shrinked ? 1 : 0
     }
   }

@@ -1,13 +1,14 @@
 @import './stylesheets/fonts.scss';
 
 html, body{
-    overflow-x: hidden; margin: 0;
+    overflow: hidden; margin: 0;
     background: var(--background-color);
     direction: rtl;
     width: calc(100vw - (100vw - 100%));
     height: 100%;
     //* global vars *//
     --background-color: #141414;
+    --top: 38px;
     --top-bar-height: 68px;
     --sides: calc( 0.04 * var(--virtual-width)); 
     --cube-margin: 4px;
@@ -20,8 +21,8 @@ html, body{
     --cube-height: calc(var(--cube-width) * 9 / 16);
 }
 
-html.hidden-scrollbar {
-    overflow-y: hidden;
+#app-root.hidden-scrollbar {
+    overflow: hidden;
 }
 
 body {
@@ -33,10 +34,6 @@ body {
     &.hidden-scrollbar::-webkit-scrollbar-thumb {
         visibility: hidden;
     }
-}
-
-html {
-    overflow-y: hidden;
 }
 
 button:hover{
@@ -52,11 +49,17 @@ button:hover{
 }
 
 .stylized-scrollbar::-webkit-scrollbar-thumb{
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.5);
     border: 7px solid transparent; background-clip: padding-box;
     border-radius: 20rem;
 }
 
 #getCubeWidth {
     width: var(--cube-width);
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        --items-in-row: 4;
+    }
 }

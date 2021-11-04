@@ -6,7 +6,7 @@
             <hupi-cube class="expanded-cube" #hupiCube [isPreviewCube]="true"
                 [cube]="(cubeDataService.currentCubeData$ | async)?.cube">
             </hupi-cube>
-            <div class="hud" [class.transparent]="!shrinked">
+            <div class="hud" [class.faded-out]="!shrinked">
                 <div class="gradient"></div>
                 <div class="title-area">
                     <!-- <h2 class="title">{{cube?.title}}</h2> -->
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="content" [class.transparent]="!shrinked">
+        <div class="content" [class.faded-out]="!shrinked">
             <div class="details">
                 <div class="description">
                     {{cube?.description}}
@@ -35,7 +35,7 @@
                     <span>פריטים</span>
                     <div class="items-filter">
                         <button [class.open]="itemsFilterOpen" (click)="toggleItemsFilter()"
-                            (blur)="toggleItemsFilter()">כל הפריטים</button>
+                            (blur)="itemsFilterOpen = false">כל הפריטים</button>
                         <ul *ngIf="itemsFilterOpen">
                             <li>לומדות&nbsp;&nbsp;<span>(1 פריטים)</span></li>
                             <li>מודל 3D&nbsp;&nbsp;<span>(1 פריטים)</span></li>
