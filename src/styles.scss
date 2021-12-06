@@ -21,10 +21,6 @@ html, body{
     --cube-height: calc(var(--cube-width) * 9 / 16);
 }
 
-#app-root.hidden-scrollbar {
-    overflow: hidden;
-}
-
 body {
     direction: ltr; 
     & > * {

@@ -10,4 +10,4 @@
 
 <hupi-footer></hupi-footer>
 
-<hupi-intro *ngIf="introEnabled" (ended)="introEnabled = $event"></hupi-intro>
+<hupi-intro *ngIf="introEnabled" (ended)="introEnded($event)"></hupi-intro>

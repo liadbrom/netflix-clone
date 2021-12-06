@@ -5,6 +5,9 @@
     position: absolute;
     overflow-x: hidden;
     overflow-y: overlay;
+    &.hidden-scrollbar {
+        overflow: hidden;
+    }
 }
 
 hupi-titlebar {

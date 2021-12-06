@@ -3,6 +3,7 @@ import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { IRow } from 'src/app/components/row/row.component';
 import { rows } from 'src/app/mock/rows-mock';
+import { CssService } from '../../services/css.service';
 import { CubeDataService } from 'src/app/services/cube-data.service';
 
 @Component({
@@ -17,39 +18,42 @@ export class HomepageComponent implements OnInit {
   previewActive = false;
   expandedActive = false;
 
-  constructor(private renderer2: Renderer2, private cubeDataService: CubeDataService) { }
+  constructor(private renderer2: Renderer2, private cubeDataService: CubeDataService, private cssService: CssService) { }
 
   ngOnInit(): void {
-    this.enableTestMode();
+    // this.enableTestMode();
     if (sessionStorage.getItem("firstVisit") === "false") {
       this.introEnabled = false;
+      this.cssService.scrollingEnabled$.next(true);
+      this.subscribeToCubeData();
     } else {
       sessionStorage.setItem("firstVisit", "false")
     }
-    this.cubeDataService.previewActive$.subscribe(value => {
-      this.previewActive = value;
-    });
-    this.cubeDataService.expandedActive$.subscribe(value => {
-      this.expandedActive = value;
-      if (this.expandedActive) {
-        this.renderer2.addClass(document.getElementById("app-root"), 'hidden-scrollbar');
-      } else {
-        this.renderer2.removeClass(document.getElementById("app-root"), 'hidden-scrollbar');
-      }
-    });
-  }
-
-  ngAfterContentInit(): void {
-
   }
 
   hidePreview(): void {
     this.cubeDataService.previewActive$.next(false);
   }
 
+  introEnded(event: any): void {
+    this.introEnabled = event;
+    this.subscribeToCubeData();
+  }
+
+  subscribeToCubeData(): void {
+    this.cubeDataService.previewActive$.subscribe(value => {
+      this.previewActive = value;
+    });
+    this.cubeDataService.expandedActive$.subscribe(value => {
+      this.expandedActive = value;
+      this.cssService.scrollingEnabled$.next(!this.expandedActive);
+    });
+  }
+
   enableTestMode(): void {
     setTimeout(() => {
       this.introEnabled = false;
+      this.subscribeToCubeData();
     }, 0);
   }
 
