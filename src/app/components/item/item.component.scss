@@ -1,6 +1,6 @@
 .item-container {
     --border-radius: 2px;
-    --height: 7.3em;
+    --height: 5em;
     display: flex;
     align-items: center;
     height: fit-content;
@@ -14,9 +14,9 @@
     }
     .number {
         color: #d2d2d2;
-        margin: 0 0.4em;
+        margin: 0 0.8em;
         text-align: center;
-        font-size: 1em;
+        font-size: 1.5em;
     }
     img {
         height: var(--height);
@@ -40,23 +40,12 @@
                 float: left;
             }
         }
-        .data {
-            margin: 1em 0 0; padding: 0;
-            font-size: 12px;
-            .description {
-                font-size: 14px;
-                // font-style: italic;
-                border-right: solid #b6b6b6 0.1px;
-                height: min-content;
-                margin-bottom: 0.7em; padding-right: 0.3em;
-            }
-            li {
-                list-style-type: none;
-                label {
-                    // color: #848484;
-                    color: #b6b6b6;
-                }
-            }
+        .description {
+            font-size: 14px;
+            // font-style: italic;
+            height: min-content;
+            margin-bottom: 0.7em;
+            color: #d2d2d2;
         }
     }
 }

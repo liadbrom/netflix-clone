@@ -1,0 +1,9 @@
+@mixin expand-arrow($margin) {
+    content: "";
+    border-right: 0.32em solid transparent;
+    border-left: 0.32em solid transparent;
+    border-top: 0.42em solid white;
+    transition: transform 0.2s linear 0s;
+    margin-right: $margin;
+    transform: none;
+}

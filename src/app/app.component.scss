@@ -1,7 +1,6 @@
 :host {
     direction: ltr;
-    height: calc(100% - var(--top));
-    top: var(--top);
+    height: calc(100%);
     position: absolute;
     overflow-x: hidden;
     overflow-y: overlay;

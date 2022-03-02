@@ -1,130 +1,1233 @@
 import { IRow } from "../components/row/row.component";
 export const rows: IRow[] = [
     {
-        title: 'F-35 אדיר',
+        title: 'קומדיות טלוויזיה',
         cubes: [
             {
-                imgSrc: 'https://img.mako.co.il/2020/09/29/70432574_i.jpg',
-                tags: ["הנעה", "אדיר", "טעות כלכלית"],
-                title: "מערכת הנעה",
-                description: "לוקהיד מרטין F-35 לייטנינג II הוא מטוס קרב חמקן מתוצרת חברת לוקהיד מרטין האמריקאית. המטוס פותח ביוזמת ארצות הברית ובריטניה במטרה להחליף את מטוסי הקרב של הדור הרביעי.",
+                imgSrc: 'assets/thumbnails/suits.webp',
+                tags: ["שנון", "דרמה קומית", "פסקול ידוע"],
+                title: "Suits",
+                description: "בחור צעיר וחריף מצליח להרשים עורך דין בכיר, שמקבל אותו לתפקיד נחשק במשרד עורכי הדין שלו – על אף שנשר מהלימודים ואין לו תואר במשפטים.",
+                metaData: {
+                    participants: "גבריאל מאכט, פטריק ג'יי אדמס, ריק הופמן, עוד",
+                    genres: "תוכניות טלוויזיה - בית משפט, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "שנון"
+                },
                 items: [
                     {
-                        id: 1283,
-                        title: 'מנוע פראט אנד ויטני F135',
-                        description: 'צפו בסרטון הדרכה שסוקר את את כלל רכיבי המנוע',
-                        thumbnail: "https://upload.wikimedia.org/wikipedia/commons/6/6a/F110-GE_Turbofan_Engine.jpg",
-                        type: "2D Movie"
+                        id: 1,
+                        title: 'פיילוט חלק 1 ו-2',
+                        description: 'הרווי מקבל קידום בעבודה ונדרש לגייס למשרד עובד בעל תואר מבית הספר למשפטים של אוניברסיטת הרווארד. הוא בוחר במייק רוס, אך למייק אין תואר במשפטים.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbchAc586ZNPdqoMTfh3bhf62258NTkUzojfRnK0G49LJLUapqVWnFDZsrPFxT2BeC4f1q759KTrwHKghQ7Zw0SfCnGzJhc-94pfwhAPZwFxztzn.webp?r=1b9",
+                        length: 81
                     },
                     {
-                        id: 1098,
-                        title: 'מערכת בקרה',
-                        description: 'מודל תלת מימדי להמחשה והתמצאות במערכת הבקרה של המנוע',
-                        thumbnail: "https://static.rikoooo.com/images/jdownloads/screenshots/LOCKHEED_MARTIN_F-16_Fighting_Falcon_VIPER_4.jpg",
-                        type: "3D Model"
+                        id: 2,
+                        title: 'שגיאות ומחדלים',
+                        description: 'מקרה פשוט מסתבך כאשר הרווי מואשם בקשר רומנטי בלתי הולם עם אישה נשואה.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABULbumMFepaNF75HK7Ry_HdOzhck9E6UG8YbhUIjgdX1pHxBHZwkuscj7sB1ar29g9V_j-pwBk3SwXVPINMJhQ1lStoVtFwTMxYLgbsYiE7w4h2r.webp?r=72a",
+                        length: 43
                     },
                 ]
             },
             {
-                imgSrc: 'https://www.israelhayom.co.il/sites/default/files/styles/566x349/public/images/articles/2018/07/29/15328540885019_b.jpg',
-                title: "מערכת היגוי",
+                imgSrc: 'assets/thumbnails/friends.webp',
+                tags: ["שנון", "אקסצנטרי", "סיטקום"],
+                title: "חברים",
+                description: "סיטקום מצליח שעוקב אחר הרפתקאותיהם הכושלות אך המשעשעות של שישה חברים בגילאי העשרים פלוס  שמתמודדים עם מהמורות בקריירה, בחיים ובאהבה במנהטן של שנות ה-90.",
+                metaData: {
+                    participants: "ג'ניפר אניסטון, קורטני קוקס, ליסה קודרו, עוד",
+                    genres: "קומדיות סיטקום, קומדיות טלוויזיה, תוכניות טלוויזיה אמריקאיות",
+                    tags: "שנון, אקסצנטרי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'הפרק שבו מוניקה מקבלת שותפה לדירה (פיילוט)',
+                        description: "רייצ'ל בורחת מהחתונה שלה ופוגשת את החברים בבית הקפה. רוס מדוכא מהגירושים שלו, אבל עדיין מאוהב ברייצ'ל.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYNxZy-KPW08N_V_2cnzjfvZS5IoQwEq8UlA1afJW0kqOp4J6I6L0uEQtPQlW147Vi9vE3u5jBGuU_CxWcXKrdFZGf-3AYUMuiiBOHVFMIQ0MuFi.webp?r=42d",
+                        length: 22
+                    },
+                    {
+                        id: 2,
+                        title: 'הפרק עם האולטרה-סאונד',
+                        description: 'גרושתו הלסבית של רוס בהיריון ממנו, והוא לא מרוצה משם המשפחה שהיא בוחרת לתינוק.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa7FdcZmBtTko6yr2XCoDwojZjBLchwLh81m8w-L8eLxBKSDMV9Ln7kEC6OC9hNuVHn2A2DyfwvhhsYo7mnmY5pmxKlUWWil3gaPpbp-qiNX-Q21.webp?r=32a",
+                        length: 22
+                    },
+                ]
             },
             {
-                imgSrc: 'https://kanstatic.azureedge.net/download/pictures/cat23623_img846291904.jpg',
-                title: "תא טייס",
+                imgSrc: 'assets/thumbnails/orange-is-the-new-black.jpg',
+                tags: ["שנון", "בועט", "קומדיה שחורה"],
+                title: "כתום הוא השחור החדש",
+                description: "ניו יורקרית ממעמד גבוה מתמודדת עם תוצאות מעשיה ומגיעה לכלא נשים. עד מהרה יש לה חברות ואויבות חדשות.",
+                metaData: {
+                    participants: "טיילור שילינג, קייט מאלגרו, לורה פריפון, עוד",
+                    genres: "סדרות המבוססות על ספרים, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "שנון, בועט"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'לא הייתי מוכנה',
+                        description: "אחרי שנידונה ל-15 חודשי מאסר על פשע שביצעה בנעוריה, פייפר צ'פמן עוזבת את ארוסה התומך לארי ועוברת לביתה החדש: בית סוהר לנשים.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABblWFnLulwQUVQk7_cHPRqENbWfa7qN66sVooMCT9BtqkrAr9xkUSZNfDWxcHdcMkTkFkXdUEIPY-bQJQvptCaLCOYNyyp_s7O39vCdrLqr7aI3r.jpg?r=752",
+                        length: 52
+                    },
+                    {
+                        id: 2,
+                        title: 'אגרוף בציצי',
+                        description: 'מנהלת המטבח מרעיבה את פייפר אחרי שהעליבה את האוכל שלה, ופייפר מתקשה להביע התנצלות משביעת רצון.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABckPBPHb0ElGJY8YLGbyeAO7_x9U1r-Q-8iVPnZRxdRXBIRA-JU3iGcUTzn8aipVVNPK1yL4EjudmDkP9CORgySj3ksOhLNAYU_bobAju__F8l4n.jpg?r=3a0",
+                        length: 53
+                    },
+                ]
             },
             {
-                imgSrc: 'https://img.mako.co.il/2020/06/08/827338pic_Orig_i.jpg',
-                title: "מערכת בלימה",
+                imgSrc: 'assets/thumbnails/cobra-kai.jpg',
+                tags: ["סוחף", "נוגע ללב", "מלהיב"],
+                title: "קוברה קאי",
+                description: "סדרת המשך לסרטי \"קראטה קיד\" שבה מתחדשת היריבות בין ג'וני לדניאל, עשרות שנים אחרי הקרב ששינה את חייהם.",
+                metaData: {
+                    participants: "ראלף מאצ'יו, ויליאם זבקה, שולו מרידוונייה, עוד",
+                    genres: "דרמות טלוויזיה, קומדיות טלוויזיה, תוכניות פעולה והרפתקאות",
+                    tags: "נוגע ללב, מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'נשראת צעיר',
+                        description: "ג'וני הוא שתיין כבד שחי כבר עשרות שנים בצל ההפסד ליריבו דניאל. כשהוא מגיע לתחתית, הוא מחליט לפתוח דוג'ו קראטה חדש – קוברה קאי.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUENODFpasEIK1Qe52lny4oqVBeGnibGI5ceAbuQRNRQgXsR48iOuYgDuTD-_wQ70qR6rHfhlwLeO_yCkRN3omlT8TdMHHci01xflCZdMmehC-rR.jpg?r=983",
+                        length: 29
+                    },
+                    {
+                        id: 2,
+                        title: 'הכה ראשון',
+                        description: "דניאל מגלה את הדוג'ו החדש של קוברה קאי והדבר מטריד אותו. בהמשך הוא שומע מקיילר, הבחור שסאם יוצאת איתו, על קטטה אלימה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQ9QWhExyV_0gL-S_tpCugAIP9Ww0pYQOn9NQOBsQyJCHh4FMvfdEZHbgzgCxkBNoFNhHf7AYe7SEFpNE5HswFu93FjCsTITEMOz51X6R766LwXu.jpg?r=fb0",
+                        length: 28
+                    },
+                ]
             },
             {
-                imgSrc: 'http://ashkubit.com/wp-content/uploads/2016/07/Israel-First-F-35-Flight-Take-Off.jpg',
-                title: "מערכת קירור",
+                imgSrc: 'assets/thumbnails/the-ranch.jpg',
+                tags: ["בועט", "אמוציונלי", "סיטקום"],
+                title: "החווה",
+                description: "הניסיון של קולט להפוך לספורטאי מקצועי לא הצליח. עכשיו הוא עוזר לאביו ולאחיו להחזיק את החווה מעל המים ומנסה להבין איך הוא משתלב במשפחה.",
+                metaData: {
+                    participants: "אשטון קוצ'ר, סם אליוט, דברה וינגר, עוד",
+                    genres: "קומדיות סיטקום, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "בועט, אמוציונלי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'Back Where I Come From',
+                        description: "כשקולט בנט שב הביתה מקנדה למבחנים בקבוצה המקצוענית למחצה של דנבר, הוא מבין שהחווה של משפחתו נקלעה לקשיים.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVsOiGXUCycKLb_mZUWN59_DpLTFqcgsg3cHuNofOiLcpu5eDQDruXUyOoPej7FaRBqItdJy38yXgfLd8x-6gHMBGxfNjivbsF4v-zNRAPYEhY8k.jpg?r=485",
+                        length: 29
+                    },
+                    {
+                        id: 2,
+                        title: 'Some People Change',
+                        description: "קולט פוגש חברה לשעבר בבר של מגי וחולק בקבוק וויסקי וזכרונות מהעבר עם רוסטר. זכיה בחיבתו המחודשת של בו מתגלה כמשימה אבודה.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSXdKVdBeI4ytV0XkPwB7qT2MZDdeRH-4ffMCslQOWLRBC03KILRPl5MEee80uNqR9DLJ0psjgBagD-Swpx-VQiUWGLKr7PpCMnjr-WmJ-JDrinV.jpg?r=e91",
+                        length: 32
+                    },
+                ]
             },
             {
-                imgSrc: 'https://img.mako.co.il/2016/12/12/825863_I.jpg',
+                imgSrc: 'assets/thumbnails/the-good-place.webp',
+                tags: ["שנון", "אקסצנטרי", "סיטקום"],
+                title: "המקום הטוב",
+                description: "בעקבות טעות, אלינור שלסטרופ האגוצנטרית מגיעה לאחר מותה דווקא אל 'המקום הטוב', שאליו מגיעים רק אנשים טובים. כדי שתוכל להישאר, עליה להפוך לאדם טוב יותר.",
+                metaData: {
+                    participants: "קריסטן בל, טד דנסון, ויליאם ג'קסון הארפר, עוד",
+                    genres: "קומדיות סיטקום, תוכניות טלוויזיה אמריקאיות, קומדיות טלוויזיה",
+                    tags: "שנון, אקסצנטרי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'הכול בסדר',
+                        description: "אלינור מתה ומגיעה לגן עדן, ומבינה מהר מאוד שהגיעה לשם בטעות.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABep-1T1OOjO8ejWWCLphLicDHdFavv0oZCRRjegDkCfyGg2KHEj9eGJx0Uj2Go6TcKjdzjGW8fioG3mJ51sTEZTTGBb3A9-ujI019sgLC5dn9ix1.webp?r=296",
+                        length: 32
+                    },
+                    {
+                        id: 2,
+                        title: 'לעוף',
+                        description: "אלינור רוצה שצ'ידי ילמד אותה להיות אדם טוב, והוא מתעקש שהיא תיקח חלק בניקוי השכונה במקום ללמוד לעוף.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSX4DbojPdfzI4HE-p6TEaiNGzdJrvxF4nuyyKgj2oP7ikDc3QMb-qj_v99C-EryzGNN5a_XHq39AeP0RJIZMhhrtNL3mC0ea-df-pL34GGj2qYe.webp?r=1e6",
+                        length: 22
+                    },
+                ]
             },
             {
-                imgSrc: 'https://www.idf.il/media/58482/whatsapp-image-2019-11-20-at-185023-1.jpeg?mode=?mode=crop&height=342&width=610',
+                imgSrc: 'assets/thumbnails/suits.webp',
+                tags: ["שנון", "דרמה קומית", "פסקול ידוע"],
+                title: "Suits",
+                description: "בחור צעיר וחריף מצליח להרשים עורך דין בכיר, שמקבל אותו לתפקיד נחשק במשרד עורכי הדין שלו – על אף שנשר מהלימודים ואין לו תואר במשפטים.",
+                metaData: {
+                    participants: "גבריאל מאכט, פטריק ג'יי אדמס, ריק הופמן, עוד",
+                    genres: "תוכניות טלוויזיה - בית משפט, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "שנון"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פיילוט חלק 1 ו-2',
+                        description: 'הרווי מקבל קידום בעבודה ונדרש לגייס למשרד עובד בעל תואר מבית הספר למשפטים של אוניברסיטת הרווארד. הוא בוחר במייק רוס, אך למייק אין תואר במשפטים.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbchAc586ZNPdqoMTfh3bhf62258NTkUzojfRnK0G49LJLUapqVWnFDZsrPFxT2BeC4f1q759KTrwHKghQ7Zw0SfCnGzJhc-94pfwhAPZwFxztzn.webp?r=1b9",
+                        length: 81
+                    },
+                    {
+                        id: 2,
+                        title: 'שגיאות ומחדלים',
+                        description: 'מקרה פשוט מסתבך כאשר הרווי מואשם בקשר רומנטי בלתי הולם עם אישה נשואה.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABULbumMFepaNF75HK7Ry_HdOzhck9E6UG8YbhUIjgdX1pHxBHZwkuscj7sB1ar29g9V_j-pwBk3SwXVPINMJhQ1lStoVtFwTMxYLgbsYiE7w4h2r.webp?r=72a",
+                        length: 43
+                    },
+                ]
             },
             {
-                imgSrc: 'https://www.israeldefense.co.il/sites/default/files/styles/full_article_image/public/_Uploads/dbsArticles/AP_%D7%9B35_7.jpg?itok=7HVuo4x4',
+                imgSrc: 'assets/thumbnails/friends.webp',
+                tags: ["שנון", "אקסצנטרי", "סיטקום"],
+                title: "חברים",
+                description: "סיטקום מצליח שעוקב אחר הרפתקאותיהם הכושלות אך המשעשעות של שישה חברים בגילאי העשרים פלוס  שמתמודדים עם מהמורות בקריירה, בחיים ובאהבה במנהטן של שנות ה-90.",
+                metaData: {
+                    participants: "ג'ניפר אניסטון, קורטני קוקס, ליסה קודרו, עוד",
+                    genres: "קומדיות סיטקום, קומדיות טלוויזיה, תוכניות טלוויזיה אמריקאיות",
+                    tags: "שנון, אקסצנטרי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'הפרק שבו מוניקה מקבלת שותפה לדירה (פיילוט)',
+                        description: "רייצ'ל בורחת מהחתונה שלה ופוגשת את החברים בבית הקפה. רוס מדוכא מהגירושים שלו, אבל עדיין מאוהב ברייצ'ל.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYNxZy-KPW08N_V_2cnzjfvZS5IoQwEq8UlA1afJW0kqOp4J6I6L0uEQtPQlW147Vi9vE3u5jBGuU_CxWcXKrdFZGf-3AYUMuiiBOHVFMIQ0MuFi.webp?r=42d",
+                        length: 22
+                    },
+                    {
+                        id: 2,
+                        title: 'הפרק עם האולטרה-סאונד',
+                        description: 'גרושתו הלסבית של רוס בהיריון ממנו, והוא לא מרוצה משם המשפחה שהיא בוחרת לתינוק.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa7FdcZmBtTko6yr2XCoDwojZjBLchwLh81m8w-L8eLxBKSDMV9Ln7kEC6OC9hNuVHn2A2DyfwvhhsYo7mnmY5pmxKlUWWil3gaPpbp-qiNX-Q21.webp?r=32a",
+                        length: 22
+                    },
+                ]
             },
             {
-                imgSrc: 'https://img.wcdn.co.il/f_auto,q_auto,w_1200,t_54/3/0/7/2/3072445-46.jpg',
+                imgSrc: 'assets/thumbnails/orange-is-the-new-black.jpg',
+                tags: ["שנון", "בועט", "קומדיה שחורה"],
+                title: "כתום הוא השחור החדש",
+                description: "ניו יורקרית ממעמד גבוה מתמודדת עם תוצאות מעשיה ומגיעה לכלא נשים. עד מהרה יש לה חברות ואויבות חדשות.",
+                metaData: {
+                    participants: "טיילור שילינג, קייט מאלגרו, לורה פריפון, עוד",
+                    genres: "סדרות המבוססות על ספרים, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "שנון, בועט"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'לא הייתי מוכנה',
+                        description: "אחרי שנידונה ל-15 חודשי מאסר על פשע שביצעה בנעוריה, פייפר צ'פמן עוזבת את ארוסה התומך לארי ועוברת לביתה החדש: בית סוהר לנשים.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABblWFnLulwQUVQk7_cHPRqENbWfa7qN66sVooMCT9BtqkrAr9xkUSZNfDWxcHdcMkTkFkXdUEIPY-bQJQvptCaLCOYNyyp_s7O39vCdrLqr7aI3r.jpg?r=752",
+                        length: 52
+                    },
+                    {
+                        id: 2,
+                        title: 'אגרוף בציצי',
+                        description: 'מנהלת המטבח מרעיבה את פייפר אחרי שהעליבה את האוכל שלה, ופייפר מתקשה להביע התנצלות משביעת רצון.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABckPBPHb0ElGJY8YLGbyeAO7_x9U1r-Q-8iVPnZRxdRXBIRA-JU3iGcUTzn8aipVVNPK1yL4EjudmDkP9CORgySj3ksOhLNAYU_bobAju__F8l4n.jpg?r=3a0",
+                        length: 53
+                    },
+                ]
             },
             {
-                imgSrc: 'https://www.news-desk.co.il/wp-content/uploads/Ez1TbdOXIAAwgIm.jpg',
+                imgSrc: 'assets/thumbnails/cobra-kai.jpg',
+                tags: ["סוחף", "נוגע ללב", "מלהיב"],
+                title: "קוברה קאי",
+                description: "סדרת המשך לסרטי \"קראטה קיד\" שבה מתחדשת היריבות בין ג'וני לדניאל, עשרות שנים אחרי הקרב ששינה את חייהם.",
+                metaData: {
+                    participants: "ראלף מאצ'יו, ויליאם זבקה, שולו מרידוונייה, עוד",
+                    genres: "דרמות טלוויזיה, קומדיות טלוויזיה, תוכניות פעולה והרפתקאות",
+                    tags: "נוגע ללב, מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'נשראת צעיר',
+                        description: "ג'וני הוא שתיין כבד שחי כבר עשרות שנים בצל ההפסד ליריבו דניאל. כשהוא מגיע לתחתית, הוא מחליט לפתוח דוג'ו קראטה חדש – קוברה קאי.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUENODFpasEIK1Qe52lny4oqVBeGnibGI5ceAbuQRNRQgXsR48iOuYgDuTD-_wQ70qR6rHfhlwLeO_yCkRN3omlT8TdMHHci01xflCZdMmehC-rR.jpg?r=983",
+                        length: 29
+                    },
+                    {
+                        id: 2,
+                        title: 'הכה ראשון',
+                        description: "דניאל מגלה את הדוג'ו החדש של קוברה קאי והדבר מטריד אותו. בהמשך הוא שומע מקיילר, הבחור שסאם יוצאת איתו, על קטטה אלימה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQ9QWhExyV_0gL-S_tpCugAIP9Ww0pYQOn9NQOBsQyJCHh4FMvfdEZHbgzgCxkBNoFNhHf7AYe7SEFpNE5HswFu93FjCsTITEMOz51X6R766LwXu.jpg?r=fb0",
+                        length: 28
+                    },
+                ]
             },
             {
-                imgSrc: 'https://www.israelhayom.co.il/sites/default/files/styles/566x349/public/images/articles/2018/07/29/15328540885019_b.jpg',
+                imgSrc: 'assets/thumbnails/the-ranch.jpg',
+                tags: ["בועט", "אמוציונלי", "סיטקום"],
+                title: "החווה",
+                description: "הניסיון של קולט להפוך לספורטאי מקצועי לא הצליח. עכשיו הוא עוזר לאביו ולאחיו להחזיק את החווה מעל המים ומנסה להבין איך הוא משתלב במשפחה.",
+                metaData: {
+                    participants: "אשטון קוצ'ר, סם אליוט, דברה וינגר, עוד",
+                    genres: "קומדיות סיטקום, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "בועט, אמוציונלי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'Back Where I Come From',
+                        description: "כשקולט בנט שב הביתה מקנדה למבחנים בקבוצה המקצוענית למחצה של דנבר, הוא מבין שהחווה של משפחתו נקלעה לקשיים.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVsOiGXUCycKLb_mZUWN59_DpLTFqcgsg3cHuNofOiLcpu5eDQDruXUyOoPej7FaRBqItdJy38yXgfLd8x-6gHMBGxfNjivbsF4v-zNRAPYEhY8k.jpg?r=485",
+                        length: 29
+                    },
+                    {
+                        id: 2,
+                        title: 'Some People Change',
+                        description: "קולט פוגש חברה לשעבר בבר של מגי וחולק בקבוק וויסקי וזכרונות מהעבר עם רוסטר. זכיה בחיבתו המחודשת של בו מתגלה כמשימה אבודה.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSXdKVdBeI4ytV0XkPwB7qT2MZDdeRH-4ffMCslQOWLRBC03KILRPl5MEee80uNqR9DLJ0psjgBagD-Swpx-VQiUWGLKr7PpCMnjr-WmJ-JDrinV.jpg?r=e91",
+                        length: 32
+                    },
+                ]
             },
             {
-                imgSrc: 'https://kanstatic.azureedge.net/download/pictures/cat23623_img846291904.jpg',
+                imgSrc: 'assets/thumbnails/the-good-place.webp',
+                tags: ["שנון", "אקסצנטרי", "סיטקום"],
+                title: "המקום הטוב",
+                description: "בעקבות טעות, אלינור שלסטרופ האגוצנטרית מגיעה לאחר מותה דווקא אל 'המקום הטוב', שאליו מגיעים רק אנשים טובים. כדי שתוכל להישאר, עליה להפוך לאדם טוב יותר.",
+                metaData: {
+                    participants: "קריסטן בל, טד דנסון, ויליאם ג'קסון הארפר, עוד",
+                    genres: "קומדיות סיטקום, תוכניות טלוויזיה אמריקאיות, קומדיות טלוויזיה",
+                    tags: "שנון, אקסצנטרי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'הכול בסדר',
+                        description: "אלינור מתה ומגיעה לגן עדן, ומבינה מהר מאוד שהגיעה לשם בטעות.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABep-1T1OOjO8ejWWCLphLicDHdFavv0oZCRRjegDkCfyGg2KHEj9eGJx0Uj2Go6TcKjdzjGW8fioG3mJ51sTEZTTGBb3A9-ujI019sgLC5dn9ix1.webp?r=296",
+                        length: 32
+                    },
+                    {
+                        id: 2,
+                        title: 'לעוף',
+                        description: "אלינור רוצה שצ'ידי ילמד אותה להיות אדם טוב, והוא מתעקש שהיא תיקח חלק בניקוי השכונה במקום ללמוד לעוף.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSX4DbojPdfzI4HE-p6TEaiNGzdJrvxF4nuyyKgj2oP7ikDc3QMb-qj_v99C-EryzGNN5a_XHq39AeP0RJIZMhhrtNL3mC0ea-df-pL34GGj2qYe.webp?r=1e6",
+                        length: 22
+                    },
+                ]
             },
             {
-                imgSrc: 'https://img.mako.co.il/2020/06/08/827338pic_Orig_i.jpg',
+                imgSrc: 'assets/thumbnails/suits.webp',
+                tags: ["שנון", "דרמה קומית", "פסקול ידוע"],
+                title: "Suits",
+                description: "בחור צעיר וחריף מצליח להרשים עורך דין בכיר, שמקבל אותו לתפקיד נחשק במשרד עורכי הדין שלו – על אף שנשר מהלימודים ואין לו תואר במשפטים.",
+                metaData: {
+                    participants: "גבריאל מאכט, פטריק ג'יי אדמס, ריק הופמן, עוד",
+                    genres: "תוכניות טלוויזיה - בית משפט, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "שנון"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פיילוט חלק 1 ו-2',
+                        description: 'הרווי מקבל קידום בעבודה ונדרש לגייס למשרד עובד בעל תואר מבית הספר למשפטים של אוניברסיטת הרווארד. הוא בוחר במייק רוס, אך למייק אין תואר במשפטים.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbchAc586ZNPdqoMTfh3bhf62258NTkUzojfRnK0G49LJLUapqVWnFDZsrPFxT2BeC4f1q759KTrwHKghQ7Zw0SfCnGzJhc-94pfwhAPZwFxztzn.webp?r=1b9",
+                        length: 81
+                    },
+                    {
+                        id: 2,
+                        title: 'שגיאות ומחדלים',
+                        description: 'מקרה פשוט מסתבך כאשר הרווי מואשם בקשר רומנטי בלתי הולם עם אישה נשואה.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABULbumMFepaNF75HK7Ry_HdOzhck9E6UG8YbhUIjgdX1pHxBHZwkuscj7sB1ar29g9V_j-pwBk3SwXVPINMJhQ1lStoVtFwTMxYLgbsYiE7w4h2r.webp?r=72a",
+                        length: 43
+                    },
+                ]
             },
             {
-                imgSrc: 'http://ashkubit.com/wp-content/uploads/2016/07/Israel-First-F-35-Flight-Take-Off.jpg',
+                imgSrc: 'assets/thumbnails/friends.webp',
+                tags: ["שנון", "אקסצנטרי", "סיטקום"],
+                title: "חברים",
+                description: "סיטקום מצליח שעוקב אחר הרפתקאותיהם הכושלות אך המשעשעות של שישה חברים בגילאי העשרים פלוס  שמתמודדים עם מהמורות בקריירה, בחיים ובאהבה במנהטן של שנות ה-90.",
+                metaData: {
+                    participants: "ג'ניפר אניסטון, קורטני קוקס, ליסה קודרו, עוד",
+                    genres: "קומדיות סיטקום, קומדיות טלוויזיה, תוכניות טלוויזיה אמריקאיות",
+                    tags: "שנון, אקסצנטרי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'הפרק שבו מוניקה מקבלת שותפה לדירה (פיילוט)',
+                        description: "רייצ'ל בורחת מהחתונה שלה ופוגשת את החברים בבית הקפה. רוס מדוכא מהגירושים שלו, אבל עדיין מאוהב ברייצ'ל.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYNxZy-KPW08N_V_2cnzjfvZS5IoQwEq8UlA1afJW0kqOp4J6I6L0uEQtPQlW147Vi9vE3u5jBGuU_CxWcXKrdFZGf-3AYUMuiiBOHVFMIQ0MuFi.webp?r=42d",
+                        length: 22
+                    },
+                    {
+                        id: 2,
+                        title: 'הפרק עם האולטרה-סאונד',
+                        description: 'גרושתו הלסבית של רוס בהיריון ממנו, והוא לא מרוצה משם המשפחה שהיא בוחרת לתינוק.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa7FdcZmBtTko6yr2XCoDwojZjBLchwLh81m8w-L8eLxBKSDMV9Ln7kEC6OC9hNuVHn2A2DyfwvhhsYo7mnmY5pmxKlUWWil3gaPpbp-qiNX-Q21.webp?r=32a",
+                        length: 22
+                    },
+                ]
             },
             {
-                imgSrc: 'https://img.mako.co.il/2016/12/12/825863_I.jpg',
+                imgSrc: 'assets/thumbnails/orange-is-the-new-black.jpg',
+                tags: ["שנון", "בועט", "קומדיה שחורה"],
+                title: "כתום הוא השחור החדש",
+                description: "ניו יורקרית ממעמד גבוה מתמודדת עם תוצאות מעשיה ומגיעה לכלא נשים. עד מהרה יש לה חברות ואויבות חדשות.",
+                metaData: {
+                    participants: "טיילור שילינג, קייט מאלגרו, לורה פריפון, עוד",
+                    genres: "סדרות המבוססות על ספרים, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "שנון, בועט"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'לא הייתי מוכנה',
+                        description: "אחרי שנידונה ל-15 חודשי מאסר על פשע שביצעה בנעוריה, פייפר צ'פמן עוזבת את ארוסה התומך לארי ועוברת לביתה החדש: בית סוהר לנשים.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABblWFnLulwQUVQk7_cHPRqENbWfa7qN66sVooMCT9BtqkrAr9xkUSZNfDWxcHdcMkTkFkXdUEIPY-bQJQvptCaLCOYNyyp_s7O39vCdrLqr7aI3r.jpg?r=752",
+                        length: 52
+                    },
+                    {
+                        id: 2,
+                        title: 'אגרוף בציצי',
+                        description: 'מנהלת המטבח מרעיבה את פייפר אחרי שהעליבה את האוכל שלה, ופייפר מתקשה להביע התנצלות משביעת רצון.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABckPBPHb0ElGJY8YLGbyeAO7_x9U1r-Q-8iVPnZRxdRXBIRA-JU3iGcUTzn8aipVVNPK1yL4EjudmDkP9CORgySj3ksOhLNAYU_bobAju__F8l4n.jpg?r=3a0",
+                        length: 53
+                    },
+                ]
             },
             {
-                imgSrc: 'https://www.idf.il/media/58482/whatsapp-image-2019-11-20-at-185023-1.jpeg?mode=?mode=crop&height=342&width=610',
+                imgSrc: 'assets/thumbnails/cobra-kai.jpg',
+                tags: ["סוחף", "נוגע ללב", "מלהיב"],
+                title: "קוברה קאי",
+                description: "סדרת המשך לסרטי \"קראטה קיד\" שבה מתחדשת היריבות בין ג'וני לדניאל, עשרות שנים אחרי הקרב ששינה את חייהם.",
+                metaData: {
+                    participants: "ראלף מאצ'יו, ויליאם זבקה, שולו מרידוונייה, עוד",
+                    genres: "דרמות טלוויזיה, קומדיות טלוויזיה, תוכניות פעולה והרפתקאות",
+                    tags: "נוגע ללב, מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'נשראת צעיר',
+                        description: "ג'וני הוא שתיין כבד שחי כבר עשרות שנים בצל ההפסד ליריבו דניאל. כשהוא מגיע לתחתית, הוא מחליט לפתוח דוג'ו קראטה חדש – קוברה קאי.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUENODFpasEIK1Qe52lny4oqVBeGnibGI5ceAbuQRNRQgXsR48iOuYgDuTD-_wQ70qR6rHfhlwLeO_yCkRN3omlT8TdMHHci01xflCZdMmehC-rR.jpg?r=983",
+                        length: 29
+                    },
+                    {
+                        id: 2,
+                        title: 'הכה ראשון',
+                        description: "דניאל מגלה את הדוג'ו החדש של קוברה קאי והדבר מטריד אותו. בהמשך הוא שומע מקיילר, הבחור שסאם יוצאת איתו, על קטטה אלימה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQ9QWhExyV_0gL-S_tpCugAIP9Ww0pYQOn9NQOBsQyJCHh4FMvfdEZHbgzgCxkBNoFNhHf7AYe7SEFpNE5HswFu93FjCsTITEMOz51X6R766LwXu.jpg?r=fb0",
+                        length: 28
+                    },
+                ]
             },
             {
-                imgSrc: 'https://www.israeldefense.co.il/sites/default/files/styles/full_article_image/public/_Uploads/dbsArticles/AP_%D7%9B35_7.jpg?itok=7HVuo4x4',
-            },
-            {
-                imgSrc: 'https://img.wcdn.co.il/f_auto,q_auto,w_1200,t_54/3/0/7/2/3072445-46.jpg',
-            },
-            {
-                imgSrc: 'https://www.news-desk.co.il/wp-content/uploads/Ez1TbdOXIAAwgIm.jpg',
+                imgSrc: 'assets/thumbnails/the-ranch.jpg',
+                tags: ["בועט", "אמוציונלי", "סיטקום"],
+                title: "החווה",
+                description: "הניסיון של קולט להפוך לספורטאי מקצועי לא הצליח. עכשיו הוא עוזר לאביו ולאחיו להחזיק את החווה מעל המים ומנסה להבין איך הוא משתלב במשפחה.",
+                metaData: {
+                    participants: "אשטון קוצ'ר, סם אליוט, דברה וינגר, עוד",
+                    genres: "קומדיות סיטקום, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "בועט, אמוציונלי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'Back Where I Come From',
+                        description: "כשקולט בנט שב הביתה מקנדה למבחנים בקבוצה המקצוענית למחצה של דנבר, הוא מבין שהחווה של משפחתו נקלעה לקשיים.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVsOiGXUCycKLb_mZUWN59_DpLTFqcgsg3cHuNofOiLcpu5eDQDruXUyOoPej7FaRBqItdJy38yXgfLd8x-6gHMBGxfNjivbsF4v-zNRAPYEhY8k.jpg?r=485",
+                        length: 29
+                    },
+                    {
+                        id: 2,
+                        title: 'Some People Change',
+                        description: "קולט פוגש חברה לשעבר בבר של מגי וחולק בקבוק וויסקי וזכרונות מהעבר עם רוסטר. זכיה בחיבתו המחודשת של בו מתגלה כמשימה אבודה.",
+                        thumbnail: "https://occ-0-2621-784.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSXdKVdBeI4ytV0XkPwB7qT2MZDdeRH-4ffMCslQOWLRBC03KILRPl5MEee80uNqR9DLJ0psjgBagD-Swpx-VQiUWGLKr7PpCMnjr-WmJ-JDrinV.jpg?r=e91",
+                        length: 32
+                    },
+                ]
             },
         ]
     },
     {
-        title: 'F-15I רעם',
+        title: 'תוכניות טלוויזיה על פשע',
         cubes: [
             {
-                imgSrc: 'https://www.israelhayom.co.il/sites/default/files/styles/566x349/public/images/articles/2018/03/08/15205189336042_b.jpg',
-                title: "מערכת בלימה",
+                imgSrc: 'assets/thumbnails/stay-close.jpg',
+                tags: ["מקברי", "מותח", "אמוציונלי"],
+                title: "תישאר קרוב",
+                description: "קרלטון פלין נעלם בדיוק ביום השנה ה-17 להיעלמותו של סטיוארט גרין, ומחולל תגובת שרשרת בחייהם של האנשים שקשורים אל שניהם.",
+                metaData: {
+                    participants: "קאש ג'מבו, ג'יימס נסביט, ריצ'רד ארמיטג', עוד",
+                    genres: "קומדיות סיטקום, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "מקברי, מותח, אמוציונלי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פרק 1',
+                        description: "החתונה של מייגן פירס הולכת ומתקרבת, ואורחת מהעבר מגיעה ומטרידה אותה. הבלש מייק ברום מוצא קווי דמיון בין מקרה חדש של היעלמות לתיק ישן ולא פתור.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUJ_9YWzZPLu3bi116RGED3ooTEnXNESVE-c8Eif5nnh4azyr3prtYNOgKDKSoSHg78EXVfW8UbRSq3hbkAdv3dejRVtUzxqY25wPp588F1vk3HK.jpg?r=fdd",
+                        length: 53
+                    },
+                    {
+                        id: 2,
+                        title: 'פרק 2',
+                        description: "מייגן מנסה לחשוף את האמת על סטיוארט ומבקשת עזרה מחבר ותיק. עוד ועוד מקרים של נעדרים מתחילים להצטבר, וברום חושד שיש ביניהם קשר.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUpmtfrXei2IH7GhG8t8qcHcsEIXCg0tTUPEfG8Cras1t3uSUflq0-rnr8rfI63ZRh0QXAsbQVp1hyK3sW7e_5aaOQLpSLEi-S8x8MF2UTtqGj3i.jpg?r=46e",
+                        length: 45
+                    },
+                ]
             },
             {
-                imgSrc: 'https://pbs.twimg.com/media/EOvr6mxWAAEXFt7?format=jpg&name=large',
-                title: "מערכת קירור",
+                imgSrc: 'assets/thumbnails/unauthorized-living.jpg',
+                tags: ["מחוספס", "אמוציונלי", "מלהיב"],
+                title: "רשות לחיות",
+                description: "ברון סמים מגליסיה מסתיר שהוא חולה באלצהיימר ומתכנן לפרוש לגמלאות. בינתיים, הסגן שלו זומם לגזול מהיורש את האימפריה.",
+                metaData: {
+                    participants: "חוסה קורונדו, אלכס גונסלס, קלאודיה טרייסאק, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, ספרדי, סדרות המבוססות על ספרים",
+                    tags: "מחוספס, אמוציונלי, מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פרק 1',
+                        description: "בעקבות אבחון רפואי, טייקון סמים בשם נמו רוקם תוכניות חדשות שמפתיעות את קרוביו. לארה, עובדת מפעל, נלחמת כדי למלא את משאלותיה של אימא שלה השרויה בתרדמת.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABS3fwQgTsIOelBFlOXfxwKoYyRHdblUIs4Agfd3vtLbe__WrQLu-oArX0mHdx9CUnkQ5VKgCLtvwWf3lZBoSfAzueOswMap6Tx-M3vSVIMLJFtmX.jpg?r=ea4",
+                        length: 79
+                    },
+                    {
+                        id: 2,
+                        title: 'פרק 2',
+                        description: "נמו מנסה לטשטש את עקבותיו כשגופה ומכולה אבודה מתגלות. מריו מבצע מעשה אכזרי כדי לזכות בחיבתה של נינה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTLjSkcSdsyaEJ6bvAwbvT1pMwusgdDK1OwDYwzZBnxyPmIIf7SAPZG0K-zqpeqN8HAzBBgxDSuNJtglQZmRUuYfRore94XOW5BmW_9HyUEoUeUN.jpg?r=eb2",
+                        length: 76
+                    },
+                ]
             },
             {
-                imgSrc: 'https://img.mako.co.il/2021/03/04/F15EStrikeEagle_autoOrient_i.jpg',
-                title: "מערכת היגוי",
+                imgSrc: 'assets/thumbnails/peaky-blinders.jpg',
+                tags: ["אלים", "תקופתי", "דרמה"],
+                title: "כנופיית ברמינגהם",
+                description: "בשנת 1919, כנופיה ידועה לשמצה פועלת בברמינגהם שבאנגליה. מנהיגהּ האכזרי, תומס שלבי, נחוש להגיע רחוק בכל מחיר.",
+                metaData: {
+                    participants: "קיליאן מרפי, סם ניל, הלן מקרורי, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, בריטי, כותרים תקופתיים",
+                    tags: "אלים"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פרק 1',
+                        description: "מנהיג הכנופיה השאפתני תומס שלבי מזהה הזדמנות להתקדם בחיים הודות לתיבה של רובים שנעלמה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRVuj3UIyFlQD7lpQQgqwtpilT0espIdS9nKWFeFoTY-qeKujNOLQUXJwNqhR7VlUUeH7TYf1AZfSmyNUf5QV7yQX6v0-lUAmYCiqMkMRUGJpUyO.webp?r=c76",
+                        length: 57
+                    },
+                    {
+                        id: 2,
+                        title: 'פרק 2',
+                        description: 'תומס מתגרה במנהיג מקומי ו"מוכר" מירוץ סוסים, ופותח במלחמה עם משפחה של צוענים. פקד קמפבל יוזם פשיטה אכזרית.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXFB56KFAG2asGyt2yjdVBF8wweGvMUMZwiijywJTV7KYiaMWcbnddaCryZcVECcmoWWRpwBgOVyvcEAfq4OGQUad-JEkbdcYejH_opY6Agc6N82.webp?r=c06",
+                        length: 58
+                    },
+                ]
             },
             {
-                imgSrc: 'https://img.mako.co.il/2021/07/24/fjsdfjksdfjkff15raam_autoOrient_w.jpg',
-                title: "מערכת הנעה",
+                imgSrc: 'assets/thumbnails/blacklist.webp',
+                tags: ["מלהיב", "מתח", "דרמה"],
+                title: "הרשימה השחורה",
+                description: "אחרי שהסגיר את עצמו לידי המשטרה, אסיר נמלט ומבריק מציע לעזור ל-FBI לתפוס נבלים אחרים בתנאי שאליזבת קין, מאפיינת הפרופילים החדשה, תהיה השותפה שלו.",
+                metaData: {
+                    participants: "ג'יימס ספיידר, מייגן בון, דייגו קלאטנהוף, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, סדרות מתח, דרמות טלוויזיה",
+                    tags: "מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פילוט',
+                        description: "ארכי-פושע מסגיר את עצמו לסוכני ה-FBI ומציע להם הצעה שמשאירה אותם בהלם – ללכוד טרוריסט חמקמק. אבל הוא מוכן לדבר רק עם מאפיינת פרופילים ספציפית.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABavFz5FnkwBai3LYqrFZKJ3zIPUWSgO_CrMInLLfJNZBDfVnzWsFsiRzmshWRT21BMF3I7qCWJ31WuSA6aEokELRsyB3rrYvk0nLDNI8YX30CU0_.webp?r=759",
+                        length: 45
+                    },
+                    {
+                        id: 2,
+                        title: "העצמאי (מס' 145)",
+                        description: 'ליז ורד עוקבים אחרי רוצח שמסווה את רציחותיו בתוך אסונות גדולים. מחלקת המשפטים מתקשה להבין את מניעיו של רד.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABawqSM5IgC3grC11AUhrN742iEOKJzV6Zi7loWomC4FjGeN0Cy169X3Mp5yf80Bd8feEHHXhbwTBDgghi34aw6jY1jTbVMumFUZyFSbcbK8zTViP.webp?r=4cb",
+                        length: 40
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/locked-up.jpg',
+                tags: ["מתח", "להטב\"ק", "בית-סוהר"],
+                title: "בפנים",
+                description: "בחורה צעירה נשלחת למאסר על מעילה שביצעה עבור בן זוגה הערמומי. כשהמציאות הקשוחה של הכלא מקלפת ממנה את שרידי התמימות האחרונים, היא מבינה שעליה ללמוד לשרוד – ומהר.",
+                metaData: {
+                    participants: "נג'ווה נימרי, מגי סיוונטוס, איסטיאר קסטרו, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, ספרדי, סדרות מתח",
+                    tags: "מותח"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'כלבה מצורעת',
+                        description: "החיים של מקרֶנה מתרסקים כשהיא נידונה לשבע שנות מאסר בגין עבירות מס. את העובדה הזאת היא מתקשה להסתיר מהוריה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABV6u-Ynrw3J03JgOw_HyFDkhfaYvHf1BVGmo5OJQ_38eebc8YHzb_TtSnUb7zBSAINIR9ZZ8pRWo1UioLBfNy5e9iTA-HAq57QLNsR2Qx0nL4lbb.jpg?r=1b1",
+                        length: 74
+                    },
+                    {
+                        id: 2,
+                        title: "לתפור את טינקרבל",
+                        description: 'סולֶה סובלת ממשבר בריאותי. מקרנה מנסה למצוא דרך להזהיר את הוריה מפני סכנה מיידית.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaYEWlb-siPvQJrLO_TiTAIe9qE9m61n1YCiqkxG3iUwLRv_uBxE9mAHG7oueCxR9S-4ZsQpTcUbxttaN15s2j2jVXD1ioR1RpNQ5dBz2sqjSYIJ.jpg?r=f35",
+                        length: 71
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/mr-robot.webp',
+                tags: ["פרובוקטיבי", "פסיכולוגי", "מתח"],
+                title: "מר רובוט",
+                description: "מהנדס אבטחת סייבר ביום, האקר פורע חוק בלילה. כשקבוצה מסתורית של האקרים מגייסת אותו, הוא יוצא לחסל תאגיד בינלאומי.",
+                metaData: {
+                    participants: "רמי מאלק, כריסטיאן סלייטר, פורשיה דאבלדיי, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, תוכניות טלוויזיה פוליטיות, סדרות מתח",
+                    tags: "פרובוקטיבי, מותח"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'eps1.0_hellofriend.mov',
+                        description: 'אליוט מתמודד עם פריצת אבטחה חמורה ב"אולסייף", ודמות מסתורית שולחת לו הזמנה מוצפנת להצטרף לקבוצת ההאקרים "אף - סוסייטי".',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABR43bqStIvIC7EQUWgmE1eeuZI9VjZDDO_8gHnrNH6Qv9QnPSE1Jehuoz5_pijHYFO0W_pE7iSbBIiIekna-j0ZVbjX0FMLfxU1S8_WHw-PxudQE.webp?r=dc5",
+                        length: 65
+                    },
+                    {
+                        id: 2,
+                        title: "eps1.1_ones-and-zer0es.mpeg",
+                        description: 'אליוט מקבל הצעת עבודה מ"אי-קורפ", והוא מתלבט בין שתי אפשרויות מסוכנות וחושש לשלומה של שיילה.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABU2NYPO5SCl1Kh0u-rKwB6-ZLQfsPVcPUEwpZYkveGgjkeBU3uZf8vh2s3s4fX4LOhjgFSD6-oxaoDiv4b2ObNOSl5FMWu_csyQef9utsfQC_AAp.webp?r=a75",
+                        length: 47
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/stay-close.jpg',
+                tags: ["מקברי", "מותח", "אמוציונלי"],
+                title: "תישאר קרוב",
+                description: "קרלטון פלין נעלם בדיוק ביום השנה ה-17 להיעלמותו של סטיוארט גרין, ומחולל תגובת שרשרת בחייהם של האנשים שקשורים אל שניהם.",
+                metaData: {
+                    participants: "קאש ג'מבו, ג'יימס נסביט, ריצ'רד ארמיטג', עוד",
+                    genres: "קומדיות סיטקום, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "מקברי, מותח, אמוציונלי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פרק 1',
+                        description: "החתונה של מייגן פירס הולכת ומתקרבת, ואורחת מהעבר מגיעה ומטרידה אותה. הבלש מייק ברום מוצא קווי דמיון בין מקרה חדש של היעלמות לתיק ישן ולא פתור.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUJ_9YWzZPLu3bi116RGED3ooTEnXNESVE-c8Eif5nnh4azyr3prtYNOgKDKSoSHg78EXVfW8UbRSq3hbkAdv3dejRVtUzxqY25wPp588F1vk3HK.jpg?r=fdd",
+                        length: 53
+                    },
+                    {
+                        id: 2,
+                        title: 'פרק 2',
+                        description: "מייגן מנסה לחשוף את האמת על סטיוארט ומבקשת עזרה מחבר ותיק. עוד ועוד מקרים של נעדרים מתחילים להצטבר, וברום חושד שיש ביניהם קשר.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUpmtfrXei2IH7GhG8t8qcHcsEIXCg0tTUPEfG8Cras1t3uSUflq0-rnr8rfI63ZRh0QXAsbQVp1hyK3sW7e_5aaOQLpSLEi-S8x8MF2UTtqGj3i.jpg?r=46e",
+                        length: 45
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/unauthorized-living.jpg',
+                tags: ["מחוספס", "אמוציונלי", "מלהיב"],
+                title: "רשות לחיות",
+                description: "ברון סמים מגליסיה מסתיר שהוא חולה באלצהיימר ומתכנן לפרוש לגמלאות. בינתיים, הסגן שלו זומם לגזול מהיורש את האימפריה.",
+                metaData: {
+                    participants: "חוסה קורונדו, אלכס גונסלס, קלאודיה טרייסאק, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, ספרדי, סדרות המבוססות על ספרים",
+                    tags: "מחוספס, אמוציונלי, מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פרק 1',
+                        description: "בעקבות אבחון רפואי, טייקון סמים בשם נמו רוקם תוכניות חדשות שמפתיעות את קרוביו. לארה, עובדת מפעל, נלחמת כדי למלא את משאלותיה של אימא שלה השרויה בתרדמת.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABS3fwQgTsIOelBFlOXfxwKoYyRHdblUIs4Agfd3vtLbe__WrQLu-oArX0mHdx9CUnkQ5VKgCLtvwWf3lZBoSfAzueOswMap6Tx-M3vSVIMLJFtmX.jpg?r=ea4",
+                        length: 79
+                    },
+                    {
+                        id: 2,
+                        title: 'פרק 2',
+                        description: "נמו מנסה לטשטש את עקבותיו כשגופה ומכולה אבודה מתגלות. מריו מבצע מעשה אכזרי כדי לזכות בחיבתה של נינה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTLjSkcSdsyaEJ6bvAwbvT1pMwusgdDK1OwDYwzZBnxyPmIIf7SAPZG0K-zqpeqN8HAzBBgxDSuNJtglQZmRUuYfRore94XOW5BmW_9HyUEoUeUN.jpg?r=eb2",
+                        length: 76
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/peaky-blinders.jpg',
+                tags: ["אלים", "תקופתי", "דרמה"],
+                title: "כנופיית ברמינגהם",
+                description: "בשנת 1919, כנופיה ידועה לשמצה פועלת בברמינגהם שבאנגליה. מנהיגהּ האכזרי, תומס שלבי, נחוש להגיע רחוק בכל מחיר.",
+                metaData: {
+                    participants: "קיליאן מרפי, סם ניל, הלן מקרורי, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, בריטי, כותרים תקופתיים",
+                    tags: "אלים"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פרק 1',
+                        description: "מנהיג הכנופיה השאפתני תומס שלבי מזהה הזדמנות להתקדם בחיים הודות לתיבה של רובים שנעלמה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRVuj3UIyFlQD7lpQQgqwtpilT0espIdS9nKWFeFoTY-qeKujNOLQUXJwNqhR7VlUUeH7TYf1AZfSmyNUf5QV7yQX6v0-lUAmYCiqMkMRUGJpUyO.webp?r=c76",
+                        length: 57
+                    },
+                    {
+                        id: 2,
+                        title: 'פרק 2',
+                        description: 'תומס מתגרה במנהיג מקומי ו"מוכר" מירוץ סוסים, ופותח במלחמה עם משפחה של צוענים. פקד קמפבל יוזם פשיטה אכזרית.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXFB56KFAG2asGyt2yjdVBF8wweGvMUMZwiijywJTV7KYiaMWcbnddaCryZcVECcmoWWRpwBgOVyvcEAfq4OGQUad-JEkbdcYejH_opY6Agc6N82.webp?r=c06",
+                        length: 58
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/blacklist.webp',
+                tags: ["מלהיב", "מתח", "דרמה"],
+                title: "הרשימה השחורה",
+                description: "אחרי שהסגיר את עצמו לידי המשטרה, אסיר נמלט ומבריק מציע לעזור ל-FBI לתפוס נבלים אחרים בתנאי שאליזבת קין, מאפיינת הפרופילים החדשה, תהיה השותפה שלו.",
+                metaData: {
+                    participants: "ג'יימס ספיידר, מייגן בון, דייגו קלאטנהוף, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, סדרות מתח, דרמות טלוויזיה",
+                    tags: "מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פילוט',
+                        description: "ארכי-פושע מסגיר את עצמו לסוכני ה-FBI ומציע להם הצעה שמשאירה אותם בהלם – ללכוד טרוריסט חמקמק. אבל הוא מוכן לדבר רק עם מאפיינת פרופילים ספציפית.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABavFz5FnkwBai3LYqrFZKJ3zIPUWSgO_CrMInLLfJNZBDfVnzWsFsiRzmshWRT21BMF3I7qCWJ31WuSA6aEokELRsyB3rrYvk0nLDNI8YX30CU0_.webp?r=759",
+                        length: 45
+                    },
+                    {
+                        id: 2,
+                        title: "העצמאי (מס' 145)",
+                        description: 'ליז ורד עוקבים אחרי רוצח שמסווה את רציחותיו בתוך אסונות גדולים. מחלקת המשפטים מתקשה להבין את מניעיו של רד.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABawqSM5IgC3grC11AUhrN742iEOKJzV6Zi7loWomC4FjGeN0Cy169X3Mp5yf80Bd8feEHHXhbwTBDgghi34aw6jY1jTbVMumFUZyFSbcbK8zTViP.webp?r=4cb",
+                        length: 40
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/locked-up.jpg',
+                tags: ["מתח", "להטב\"ק", "בית-סוהר"],
+                title: "בפנים",
+                description: "בחורה צעירה נשלחת למאסר על מעילה שביצעה עבור בן זוגה הערמומי. כשהמציאות הקשוחה של הכלא מקלפת ממנה את שרידי התמימות האחרונים, היא מבינה שעליה ללמוד לשרוד – ומהר.",
+                metaData: {
+                    participants: "נג'ווה נימרי, מגי סיוונטוס, איסטיאר קסטרו, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, ספרדי, סדרות מתח",
+                    tags: "מותח"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'כלבה מצורעת',
+                        description: "החיים של מקרֶנה מתרסקים כשהיא נידונה לשבע שנות מאסר בגין עבירות מס. את העובדה הזאת היא מתקשה להסתיר מהוריה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABV6u-Ynrw3J03JgOw_HyFDkhfaYvHf1BVGmo5OJQ_38eebc8YHzb_TtSnUb7zBSAINIR9ZZ8pRWo1UioLBfNy5e9iTA-HAq57QLNsR2Qx0nL4lbb.jpg?r=1b1",
+                        length: 74
+                    },
+                    {
+                        id: 2,
+                        title: "לתפור את טינקרבל",
+                        description: 'סולֶה סובלת ממשבר בריאותי. מקרנה מנסה למצוא דרך להזהיר את הוריה מפני סכנה מיידית.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaYEWlb-siPvQJrLO_TiTAIe9qE9m61n1YCiqkxG3iUwLRv_uBxE9mAHG7oueCxR9S-4ZsQpTcUbxttaN15s2j2jVXD1ioR1RpNQ5dBz2sqjSYIJ.jpg?r=f35",
+                        length: 71
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/mr-robot.webp',
+                tags: ["פרובוקטיבי", "פסיכולוגי", "מתח"],
+                title: "מר רובוט",
+                description: "מהנדס אבטחת סייבר ביום, האקר פורע חוק בלילה. כשקבוצה מסתורית של האקרים מגייסת אותו, הוא יוצא לחסל תאגיד בינלאומי.",
+                metaData: {
+                    participants: "רמי מאלק, כריסטיאן סלייטר, פורשיה דאבלדיי, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, תוכניות טלוויזיה פוליטיות, סדרות מתח",
+                    tags: "פרובוקטיבי, מותח"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'eps1.0_hellofriend.mov',
+                        description: 'אליוט מתמודד עם פריצת אבטחה חמורה ב"אולסייף", ודמות מסתורית שולחת לו הזמנה מוצפנת להצטרף לקבוצת ההאקרים "אף - סוסייטי".',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABR43bqStIvIC7EQUWgmE1eeuZI9VjZDDO_8gHnrNH6Qv9QnPSE1Jehuoz5_pijHYFO0W_pE7iSbBIiIekna-j0ZVbjX0FMLfxU1S8_WHw-PxudQE.webp?r=dc5",
+                        length: 65
+                    },
+                    {
+                        id: 2,
+                        title: "eps1.1_ones-and-zer0es.mpeg",
+                        description: 'אליוט מקבל הצעת עבודה מ"אי-קורפ", והוא מתלבט בין שתי אפשרויות מסוכנות וחושש לשלומה של שיילה.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABU2NYPO5SCl1Kh0u-rKwB6-ZLQfsPVcPUEwpZYkveGgjkeBU3uZf8vh2s3s4fX4LOhjgFSD6-oxaoDiv4b2ObNOSl5FMWu_csyQef9utsfQC_AAp.webp?r=a75",
+                        length: 47
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/stay-close.jpg',
+                tags: ["מקברי", "מותח", "אמוציונלי"],
+                title: "תישאר קרוב",
+                description: "קרלטון פלין נעלם בדיוק ביום השנה ה-17 להיעלמותו של סטיוארט גרין, ומחולל תגובת שרשרת בחייהם של האנשים שקשורים אל שניהם.",
+                metaData: {
+                    participants: "קאש ג'מבו, ג'יימס נסביט, ריצ'רד ארמיטג', עוד",
+                    genres: "קומדיות סיטקום, דרמות טלוויזיה, קומדיות טלוויזיה",
+                    tags: "מקברי, מותח, אמוציונלי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פרק 1',
+                        description: "החתונה של מייגן פירס הולכת ומתקרבת, ואורחת מהעבר מגיעה ומטרידה אותה. הבלש מייק ברום מוצא קווי דמיון בין מקרה חדש של היעלמות לתיק ישן ולא פתור.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUJ_9YWzZPLu3bi116RGED3ooTEnXNESVE-c8Eif5nnh4azyr3prtYNOgKDKSoSHg78EXVfW8UbRSq3hbkAdv3dejRVtUzxqY25wPp588F1vk3HK.jpg?r=fdd",
+                        length: 53
+                    },
+                    {
+                        id: 2,
+                        title: 'פרק 2',
+                        description: "מייגן מנסה לחשוף את האמת על סטיוארט ומבקשת עזרה מחבר ותיק. עוד ועוד מקרים של נעדרים מתחילים להצטבר, וברום חושד שיש ביניהם קשר.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUpmtfrXei2IH7GhG8t8qcHcsEIXCg0tTUPEfG8Cras1t3uSUflq0-rnr8rfI63ZRh0QXAsbQVp1hyK3sW7e_5aaOQLpSLEi-S8x8MF2UTtqGj3i.jpg?r=46e",
+                        length: 45
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/unauthorized-living.jpg',
+                tags: ["מחוספס", "אמוציונלי", "מלהיב"],
+                title: "רשות לחיות",
+                description: "ברון סמים מגליסיה מסתיר שהוא חולה באלצהיימר ומתכנן לפרוש לגמלאות. בינתיים, הסגן שלו זומם לגזול מהיורש את האימפריה.",
+                metaData: {
+                    participants: "חוסה קורונדו, אלכס גונסלס, קלאודיה טרייסאק, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, ספרדי, סדרות המבוססות על ספרים",
+                    tags: "מחוספס, אמוציונלי, מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פרק 1',
+                        description: "בעקבות אבחון רפואי, טייקון סמים בשם נמו רוקם תוכניות חדשות שמפתיעות את קרוביו. לארה, עובדת מפעל, נלחמת כדי למלא את משאלותיה של אימא שלה השרויה בתרדמת.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABS3fwQgTsIOelBFlOXfxwKoYyRHdblUIs4Agfd3vtLbe__WrQLu-oArX0mHdx9CUnkQ5VKgCLtvwWf3lZBoSfAzueOswMap6Tx-M3vSVIMLJFtmX.jpg?r=ea4",
+                        length: 79
+                    },
+                    {
+                        id: 2,
+                        title: 'פרק 2',
+                        description: "נמו מנסה לטשטש את עקבותיו כשגופה ומכולה אבודה מתגלות. מריו מבצע מעשה אכזרי כדי לזכות בחיבתה של נינה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTLjSkcSdsyaEJ6bvAwbvT1pMwusgdDK1OwDYwzZBnxyPmIIf7SAPZG0K-zqpeqN8HAzBBgxDSuNJtglQZmRUuYfRore94XOW5BmW_9HyUEoUeUN.jpg?r=eb2",
+                        length: 76
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/peaky-blinders.jpg',
+                tags: ["אלים", "תקופתי", "דרמה"],
+                title: "כנופיית ברמינגהם",
+                description: "בשנת 1919, כנופיה ידועה לשמצה פועלת בברמינגהם שבאנגליה. מנהיגהּ האכזרי, תומס שלבי, נחוש להגיע רחוק בכל מחיר.",
+                metaData: {
+                    participants: "קיליאן מרפי, סם ניל, הלן מקרורי, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, בריטי, כותרים תקופתיים",
+                    tags: "אלים"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פרק 1',
+                        description: "מנהיג הכנופיה השאפתני תומס שלבי מזהה הזדמנות להתקדם בחיים הודות לתיבה של רובים שנעלמה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRVuj3UIyFlQD7lpQQgqwtpilT0espIdS9nKWFeFoTY-qeKujNOLQUXJwNqhR7VlUUeH7TYf1AZfSmyNUf5QV7yQX6v0-lUAmYCiqMkMRUGJpUyO.webp?r=c76",
+                        length: 57
+                    },
+                    {
+                        id: 2,
+                        title: 'פרק 2',
+                        description: 'תומס מתגרה במנהיג מקומי ו"מוכר" מירוץ סוסים, ופותח במלחמה עם משפחה של צוענים. פקד קמפבל יוזם פשיטה אכזרית.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXFB56KFAG2asGyt2yjdVBF8wweGvMUMZwiijywJTV7KYiaMWcbnddaCryZcVECcmoWWRpwBgOVyvcEAfq4OGQUad-JEkbdcYejH_opY6Agc6N82.webp?r=c06",
+                        length: 58
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/blacklist.webp',
+                tags: ["מלהיב", "מתח", "דרמה"],
+                title: "הרשימה השחורה",
+                description: "אחרי שהסגיר את עצמו לידי המשטרה, אסיר נמלט ומבריק מציע לעזור ל-FBI לתפוס נבלים אחרים בתנאי שאליזבת קין, מאפיינת הפרופילים החדשה, תהיה השותפה שלו.",
+                metaData: {
+                    participants: "ג'יימס ספיידר, מייגן בון, דייגו קלאטנהוף, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, סדרות מתח, דרמות טלוויזיה",
+                    tags: "מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פילוט',
+                        description: "ארכי-פושע מסגיר את עצמו לסוכני ה-FBI ומציע להם הצעה שמשאירה אותם בהלם – ללכוד טרוריסט חמקמק. אבל הוא מוכן לדבר רק עם מאפיינת פרופילים ספציפית.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABavFz5FnkwBai3LYqrFZKJ3zIPUWSgO_CrMInLLfJNZBDfVnzWsFsiRzmshWRT21BMF3I7qCWJ31WuSA6aEokELRsyB3rrYvk0nLDNI8YX30CU0_.webp?r=759",
+                        length: 45
+                    },
+                    {
+                        id: 2,
+                        title: "העצמאי (מס' 145)",
+                        description: 'ליז ורד עוקבים אחרי רוצח שמסווה את רציחותיו בתוך אסונות גדולים. מחלקת המשפטים מתקשה להבין את מניעיו של רד.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABawqSM5IgC3grC11AUhrN742iEOKJzV6Zi7loWomC4FjGeN0Cy169X3Mp5yf80Bd8feEHHXhbwTBDgghi34aw6jY1jTbVMumFUZyFSbcbK8zTViP.webp?r=4cb",
+                        length: 40
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/locked-up.jpg',
+                tags: ["מתח", "להטב\"ק", "בית-סוהר"],
+                title: "בפנים",
+                description: "בחורה צעירה נשלחת למאסר על מעילה שביצעה עבור בן זוגה הערמומי. כשהמציאות הקשוחה של הכלא מקלפת ממנה את שרידי התמימות האחרונים, היא מבינה שעליה ללמוד לשרוד – ומהר.",
+                metaData: {
+                    participants: "נג'ווה נימרי, מגי סיוונטוס, איסטיאר קסטרו, עוד",
+                    genres: "תוכניות טלוויזיה על פשע, ספרדי, סדרות מתח",
+                    tags: "מותח"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'כלבה מצורעת',
+                        description: "החיים של מקרֶנה מתרסקים כשהיא נידונה לשבע שנות מאסר בגין עבירות מס. את העובדה הזאת היא מתקשה להסתיר מהוריה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABV6u-Ynrw3J03JgOw_HyFDkhfaYvHf1BVGmo5OJQ_38eebc8YHzb_TtSnUb7zBSAINIR9ZZ8pRWo1UioLBfNy5e9iTA-HAq57QLNsR2Qx0nL4lbb.jpg?r=1b1",
+                        length: 74
+                    },
+                    {
+                        id: 2,
+                        title: "לתפור את טינקרבל",
+                        description: 'סולֶה סובלת ממשבר בריאותי. מקרנה מנסה למצוא דרך להזהיר את הוריה מפני סכנה מיידית.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaYEWlb-siPvQJrLO_TiTAIe9qE9m61n1YCiqkxG3iUwLRv_uBxE9mAHG7oueCxR9S-4ZsQpTcUbxttaN15s2j2jVXD1ioR1RpNQ5dBz2sqjSYIJ.jpg?r=f35",
+                        length: 71
+                    },
+                ]
             },
         ]
     },
     {
-        title: 'C-130 הרקולס',
+        title: 'תוכניות רטרו',
         cubes: [
             {
-                imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsjNdpQReh2rGfZSBiScDvLiMAgGyrxOuYJIdeKvAOw073yL_zbDpE41xhjME9wBX1_pqU5QULYRPm3Q&usqp=CAU',
-                title: "מערכת היגוי",
+                imgSrc: 'assets/thumbnails/gilmore-girls.webp',
+                tags: ["שנון", "אינטימי", "רומנטי"],
+                title: "בנות גילמור",
+                description: "לורליי, אם חד-הורית, מגדלת את רורי, בתה המחוננת ששואפת ללמוד באוניברסיטה פרטית ויוקרתית, והקשר ביניהן רצוף דיאלוגים שנונים.",
+                metaData: {
+                    participants: "לורן גרהאם, אלקסיס בלדל, סקוט פטרסון, עוד",
+                    genres: "דרמות טלוויזיה רומנטיות, קומדיות טלוויזיה רומנטיות, סדרות נוער",
+                    tags: "שנון, אינטימי, רומנטי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פיילוט',
+                        description: "רורי מתקבלת למכינה יוקרתית, ולורליי חייבת לכבוש את גאוותה ולבקש מהוריה העשירים לסייע בתשלום שכר הלימוד.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQUM8TfGXO0faZhjiRnyyxXdwTGm2lHiiGyzT7up5fDnvNsJDM3xoZ-bj62H-fE_FBBp9G3ny2A_PQq0G_2l0r1HQ6wVDnvop-Oo8Luwdz6tkV2n.webp?r=0fd",
+                        length: 44
+                    },
+                    {
+                        id: 2,
+                        title: "היום הראשון של לורליי בצ'ילטון",
+                        description: "יומה הראשון של רורי בצ'ילטון אינו מתנהל על מי מנוחות: לבושה של לורליי מעליב את אמילי ואת המנהל ואחר כך היא פוגשת כמה חברים מעצבנים לספסל הלימודים.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABY0cVevxVP1wSNzVpup4gR3Y-n4u9kbrkAayj_ZZ_sLpwISHfPboIho7yci9MMXbP0ZGKDK9PMYmHLWGMD0Isf7Oenp4k7D9jFOFP-CXQcunE3t7.webp?r=38b",
+                        length: 43
+                    },
+                ]
             },
             {
-                imgSrc: 'data:image/jpeg;base64,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',
-                title: "מערכת הנעה",
+                imgSrc: 'assets/thumbnails/south-park.webp',
+                tags: ["אבסורדי", "הומור בוטה", "שנון"],
+                title: "סאות' פארק",
+                description: "קומדיית הסיטקום הסטירית, הלועגת בשמחה לטרנדים, לידוענים ולפוליטיקאים, מציגה את העולם דרך עיניהם של ארבעה ילדים גסי רוח.",
+                metaData: {
+                    participants: "מאט סטון, טריי פארקר, אייזק הייז, עוד",
+                    genres: "קומדיות סיטקום, אנימציה למבוגרים, קומדיות טלוויזיה",
+                    tags: "אבסורדי, הומור בוטה, שנון"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'לכו להתממן',
+                        description: "הבנים מקימים חברת סטארט-אפ בתקווה שלא לעבוד עוד לעולם, אבל מסתבכים עם ליגת ה-NFL בגלל השם שבחרו לחברה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZf8Lj2fsw1XFeBuRB9i-4lhUfTko4TyXNc7O-HIGVNupynOuh8dCRAKuRVHzlSbVD55EwVBrhnToU6IFXWKmhvDpz9upuT5ze2zseuPtD4vxqaK.webp?r=5df",
+                        length: 22
+                    },
+                    {
+                        id: 2,
+                        title: 'אבולה ללא גלוטן',
+                        description: "מוות כתוצאה מתזונה לקויה מעורר פאניקה, וסאות'פארק הופכת לעיר נטולת הגלוטן הראשונה באמריקה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWCQ6aoX1GwcbIAVeZ8hjtlJYY71Q_OXwubMy-1NFVODpn72BXyd18J6JDxF1VF-y_BozX6KU5XpElQFm4J6lztNR4XG8f3gU77Tk46zHCMNVAWG.webp?r=138",
+                        length: 22
+                    },
+                ]
             },
             {
-                imgSrc: 'https://www.iaf.org.il/Sip_Storage/FILES/1/448X0/69721.jpg',
-                title: "מערכת קירור",
+                imgSrc: 'assets/thumbnails/the-it-crowd.webp',
+                tags: ["אבסורדי", "שנון", "בועט"],
+                title: "צוות איי.טי.",
+                description: "יחד עם מנהלת נטולת כל ידע טכנולוגי, צמד חנונים מפיקים את המיטב מהעבודה בתחום ה-IT בחברה שהבעלים והמנהל החדש שלה הוא אידיוט מושלם.",
+                metaData: {
+                    participants: "כריס אודאוד, ריצ'רד איואדה, קתרין פרקינסון, עוד",
+                    genres: "בריטי, קומדיות סיטקום, קומדיות טלוויזיה",
+                    tags: "אבסורדי, שנון, בועט"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'ריבה מאתמול',
+                        description: "עם קורות חיים מרשימים ומזויפים לגמרי, ועם כמה מושגים טכניים שהמציאה בזמן הראיון, ג'ן זוכה במשרה ב'תעשיות ריינהולם'.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSsPsjznRqCTpnBtZv1pgLy50fUvUp_l489vgl1dOl9GNVbRwE383bRLiraiUr3xS4qiBqhi3fs8xN-qKfRixZBgHcBxEBHxsFsFaZc_fyOO5xaE.webp?r=693",
+                        length: 23
+                    },
+                    {
+                        id: 2,
+                        title: "ג'ן ההרסנית",
+                        description: "דנהולם מאלץ את כל עובדי 'תעשיות ריינהולם' לעבור בדיקת לחץ, ואז מאיים לפטר את כל מי שעדיין לחוץ בסוף היום.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABc3xugr9ibbATh1BTsq3KJuU6Q_Iw4LDMgCWlxmB9Xm3diht5tJ-S-G0T-yvBbIAPX4PUe_ObhmGFIvs5DivjHPIaLtitv0YMbhEnZPq0nJZRXCM.webp?r=baa",
+                        length: 24
+                    },
+                ]
             },
             {
-                imgSrc: 'https://www.israeldefense.co.il/sites/default/files/styles/full_article_image/public/_Uploads/dbsArticles/85216.jpg?itok=esQQ_gXY',
-                title: "תא טייס",
-            }
+                imgSrc: 'assets/thumbnails/startrek.webp',
+                tags: ["מד\"ב - חייזרים", "תוכנית מד\"ב", "פעולה"],
+                title: "מסע בין כוכבים: הדור הבא",
+                description: "עשורים חלפו מאז ההרפתקאות של צוות האנטרפרייז המקורי, ועכשיו קפטן ז'אן-לוק פיקארד מוביל את ספינת האנטרפרייז החדשה למשימות מחקר בעולמות לא מוכרים.",
+                metaData: {
+                    participants: "פטריק סטיוארט, ג'ונתן פרייקס, לוואר ברטון, עוד",
+                    genres: "תוכניות מדע בדיוני, תוכניות פעולה והרפתקאות, דרמות טלוויזיה",
+                    tags: "מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פילוט',
+                        description: "ארכי-פושע מסגיר את עצמו לסוכני ה-FBI ומציע להם הצעה שמשאירה אותם בהלם – ללכוד טרוריסט חמקמק. אבל הוא מוכן לדבר רק עם מאפיינת פרופילים ספציפית.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABavFz5FnkwBai3LYqrFZKJ3zIPUWSgO_CrMInLLfJNZBDfVnzWsFsiRzmshWRT21BMF3I7qCWJ31WuSA6aEokELRsyB3rrYvk0nLDNI8YX30CU0_.webp?r=759",
+                        length: 45
+                    },
+                    {
+                        id: 2,
+                        title: "העצמאי (מס' 145)",
+                        description: 'ליז ורד עוקבים אחרי רוצח שמסווה את רציחותיו בתוך אסונות גדולים. מחלקת המשפטים מתקשה להבין את מניעיו של רד.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABawqSM5IgC3grC11AUhrN742iEOKJzV6Zi7loWomC4FjGeN0Cy169X3Mp5yf80Bd8feEHHXhbwTBDgghi34aw6jY1jTbVMumFUZyFSbcbK8zTViP.webp?r=4cb",
+                        length: 40
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/the-office.webp',
+                tags: ["שנון", "בועט", "סיטקום"],
+                title: "המשרד",
+                description: 'סדרה קומית מצליחה על מעלליהם של עובדי משרד בחברת הנייר "דאנדר מיפלין", כולל מייקל סקוט, הבוס שחי בסרט.',
+                metaData: {
+                    participants: "סטיב קארל, ג'ון קראסינסקי, ג'נה פישר, עוד",
+                    genres: "קומדיות סיטקום, קומדיות טלוויזיה, תוכניות טלוויזיה אמריקאיות",
+                    tags: "שנון, בועט"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פיילוט',
+                        description: "מייקל סקוט, מנהל קלולס בחברת דאנדר מיפלין, מארח צוות צילום שמגיע לתעד את העבודה במשרד ומגלה שמטה החברה שוקל לסגור את הסניף שבניהולו.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABV58UXtcbET98UBHugWUGQEyHotdyIXVeF3xubVT_764vAzje_bIZx1ZzMxuTZlH98QbOAU1T124kNZ4ODhuxT90gwjvvK1t0JPtfWNaeK4T3IIv.webp?r=9b7",
+                        length: 23
+                    },
+                    {
+                        id: 2,
+                        title: 'יום הסובלנות',
+                        description: 'העובדים משתתפים בסדנת סובלנות בעקבות תלונות על בדיחה פוגענית שאחד מהם סיפר.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRBu6RCWTMMYmneWn_lkIiYhwpq0ugM2EQW7_jhRIdjy0f8m8ycvRXkm3jS0JyKMvE9l-7HL0MaJ5MmAS6PGB3c-Hl3UY1liPGC9y7dye_3hR8uF.webp?r=9dc",
+                        length: 21
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/friends.webp',
+                tags: ["שנון", "אקסצנטרי", "סיטקום"],
+                title: "חברים",
+                description: "סיטקום מצליח שעוקב אחר הרפתקאותיהם הכושלות אך המשעשעות של שישה חברים בגילאי העשרים פלוס  שמתמודדים עם מהמורות בקריירה, בחיים ובאהבה במנהטן של שנות ה-90.",
+                metaData: {
+                    participants: "ג'ניפר אניסטון, קורטני קוקס, ליסה קודרו, עוד",
+                    genres: "קומדיות סיטקום, קומדיות טלוויזיה, תוכניות טלוויזיה אמריקאיות",
+                    tags: "שנון, אקסצנטרי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'הפרק שבו מוניקה מקבלת שותפה לדירה (פיילוט)',
+                        description: "רייצ'ל בורחת מהחתונה שלה ופוגשת את החברים בבית הקפה. רוס מדוכא מהגירושים שלו, אבל עדיין מאוהב ברייצ'ל.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYNxZy-KPW08N_V_2cnzjfvZS5IoQwEq8UlA1afJW0kqOp4J6I6L0uEQtPQlW147Vi9vE3u5jBGuU_CxWcXKrdFZGf-3AYUMuiiBOHVFMIQ0MuFi.webp?r=42d",
+                        length: 22
+                    },
+                    {
+                        id: 2,
+                        title: 'הפרק עם האולטרה-סאונד',
+                        description: 'גרושתו הלסבית של רוס בהיריון ממנו, והוא לא מרוצה משם המשפחה שהיא בוחרת לתינוק.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa7FdcZmBtTko6yr2XCoDwojZjBLchwLh81m8w-L8eLxBKSDMV9Ln7kEC6OC9hNuVHn2A2DyfwvhhsYo7mnmY5pmxKlUWWil3gaPpbp-qiNX-Q21.webp?r=32a",
+                        length: 22
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/gilmore-girls.webp',
+                tags: ["שנון", "אינטימי", "רומנטי"],
+                title: "בנות גילמור",
+                description: "לורליי, אם חד-הורית, מגדלת את רורי, בתה המחוננת ששואפת ללמוד באוניברסיטה פרטית ויוקרתית, והקשר ביניהן רצוף דיאלוגים שנונים.",
+                metaData: {
+                    participants: "לורן גרהאם, אלקסיס בלדל, סקוט פטרסון, עוד",
+                    genres: "דרמות טלוויזיה רומנטיות, קומדיות טלוויזיה רומנטיות, סדרות נוער",
+                    tags: "שנון, אינטימי, רומנטי"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פיילוט',
+                        description: "רורי מתקבלת למכינה יוקרתית, ולורליי חייבת לכבוש את גאוותה ולבקש מהוריה העשירים לסייע בתשלום שכר הלימוד.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQUM8TfGXO0faZhjiRnyyxXdwTGm2lHiiGyzT7up5fDnvNsJDM3xoZ-bj62H-fE_FBBp9G3ny2A_PQq0G_2l0r1HQ6wVDnvop-Oo8Luwdz6tkV2n.webp?r=0fd",
+                        length: 44
+                    },
+                    {
+                        id: 2,
+                        title: "היום הראשון של לורליי בצ'ילטון",
+                        description: "יומה הראשון של רורי בצ'ילטון אינו מתנהל על מי מנוחות: לבושה של לורליי מעליב את אמילי ואת המנהל ואחר כך היא פוגשת כמה חברים מעצבנים לספסל הלימודים.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABY0cVevxVP1wSNzVpup4gR3Y-n4u9kbrkAayj_ZZ_sLpwISHfPboIho7yci9MMXbP0ZGKDK9PMYmHLWGMD0Isf7Oenp4k7D9jFOFP-CXQcunE3t7.webp?r=38b",
+                        length: 43
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/south-park.webp',
+                tags: ["אבסורדי", "הומור בוטה", "שנון"],
+                title: "סאות' פארק",
+                description: "קומדיית הסיטקום הסטירית, הלועגת בשמחה לטרנדים, לידוענים ולפוליטיקאים, מציגה את העולם דרך עיניהם של ארבעה ילדים גסי רוח.",
+                metaData: {
+                    participants: "מאט סטון, טריי פארקר, אייזק הייז, עוד",
+                    genres: "קומדיות סיטקום, אנימציה למבוגרים, קומדיות טלוויזיה",
+                    tags: "אבסורדי, הומור בוטה, שנון"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'לכו להתממן',
+                        description: "הבנים מקימים חברת סטארט-אפ בתקווה שלא לעבוד עוד לעולם, אבל מסתבכים עם ליגת ה-NFL בגלל השם שבחרו לחברה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZf8Lj2fsw1XFeBuRB9i-4lhUfTko4TyXNc7O-HIGVNupynOuh8dCRAKuRVHzlSbVD55EwVBrhnToU6IFXWKmhvDpz9upuT5ze2zseuPtD4vxqaK.webp?r=5df",
+                        length: 22
+                    },
+                    {
+                        id: 2,
+                        title: 'אבולה ללא גלוטן',
+                        description: "מוות כתוצאה מתזונה לקויה מעורר פאניקה, וסאות'פארק הופכת לעיר נטולת הגלוטן הראשונה באמריקה.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWCQ6aoX1GwcbIAVeZ8hjtlJYY71Q_OXwubMy-1NFVODpn72BXyd18J6JDxF1VF-y_BozX6KU5XpElQFm4J6lztNR4XG8f3gU77Tk46zHCMNVAWG.webp?r=138",
+                        length: 22
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/the-it-crowd.webp',
+                tags: ["אבסורדי", "שנון", "בועט"],
+                title: "צוות איי.טי.",
+                description: "יחד עם מנהלת נטולת כל ידע טכנולוגי, צמד חנונים מפיקים את המיטב מהעבודה בתחום ה-IT בחברה שהבעלים והמנהל החדש שלה הוא אידיוט מושלם.",
+                metaData: {
+                    participants: "כריס אודאוד, ריצ'רד איואדה, קתרין פרקינסון, עוד",
+                    genres: "בריטי, קומדיות סיטקום, קומדיות טלוויזיה",
+                    tags: "אבסורדי, שנון, בועט"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'ריבה מאתמול',
+                        description: "עם קורות חיים מרשימים ומזויפים לגמרי, ועם כמה מושגים טכניים שהמציאה בזמן הראיון, ג'ן זוכה במשרה ב'תעשיות ריינהולם'.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSsPsjznRqCTpnBtZv1pgLy50fUvUp_l489vgl1dOl9GNVbRwE383bRLiraiUr3xS4qiBqhi3fs8xN-qKfRixZBgHcBxEBHxsFsFaZc_fyOO5xaE.webp?r=693",
+                        length: 23
+                    },
+                    {
+                        id: 2,
+                        title: "ג'ן ההרסנית",
+                        description: "דנהולם מאלץ את כל עובדי 'תעשיות ריינהולם' לעבור בדיקת לחץ, ואז מאיים לפטר את כל מי שעדיין לחוץ בסוף היום.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABc3xugr9ibbATh1BTsq3KJuU6Q_Iw4LDMgCWlxmB9Xm3diht5tJ-S-G0T-yvBbIAPX4PUe_ObhmGFIvs5DivjHPIaLtitv0YMbhEnZPq0nJZRXCM.webp?r=baa",
+                        length: 24
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/startrek.webp',
+                tags: ["מד\"ב - חייזרים", "תוכנית מד\"ב", "פעולה"],
+                title: "מסע בין כוכבים: הדור הבא",
+                description: "עשורים חלפו מאז ההרפתקאות של צוות האנטרפרייז המקורי, ועכשיו קפטן ז'אן-לוק פיקארד מוביל את ספינת האנטרפרייז החדשה למשימות מחקר בעולמות לא מוכרים.",
+                metaData: {
+                    participants: "פטריק סטיוארט, ג'ונתן פרייקס, לוואר ברטון, עוד",
+                    genres: "תוכניות מדע בדיוני, תוכניות פעולה והרפתקאות, דרמות טלוויזיה",
+                    tags: "מלהיב"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פילוט',
+                        description: "ארכי-פושע מסגיר את עצמו לסוכני ה-FBI ומציע להם הצעה שמשאירה אותם בהלם – ללכוד טרוריסט חמקמק. אבל הוא מוכן לדבר רק עם מאפיינת פרופילים ספציפית.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABavFz5FnkwBai3LYqrFZKJ3zIPUWSgO_CrMInLLfJNZBDfVnzWsFsiRzmshWRT21BMF3I7qCWJ31WuSA6aEokELRsyB3rrYvk0nLDNI8YX30CU0_.webp?r=759",
+                        length: 45
+                    },
+                    {
+                        id: 2,
+                        title: "העצמאי (מס' 145)",
+                        description: 'ליז ורד עוקבים אחרי רוצח שמסווה את רציחותיו בתוך אסונות גדולים. מחלקת המשפטים מתקשה להבין את מניעיו של רד.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABawqSM5IgC3grC11AUhrN742iEOKJzV6Zi7loWomC4FjGeN0Cy169X3Mp5yf80Bd8feEHHXhbwTBDgghi34aw6jY1jTbVMumFUZyFSbcbK8zTViP.webp?r=4cb",
+                        length: 40
+                    },
+                ]
+            },
+            {
+                imgSrc: 'assets/thumbnails/the-office.webp',
+                tags: ["שנון", "בועט", "סיטקום"],
+                title: "המשרד",
+                description: 'סדרה קומית מצליחה על מעלליהם של עובדי משרד בחברת הנייר "דאנדר מיפלין", כולל מייקל סקוט, הבוס שחי בסרט.',
+                metaData: {
+                    participants: "סטיב קארל, ג'ון קראסינסקי, ג'נה פישר, עוד",
+                    genres: "קומדיות סיטקום, קומדיות טלוויזיה, תוכניות טלוויזיה אמריקאיות",
+                    tags: "שנון, בועט"
+                },
+                items: [
+                    {
+                        id: 1,
+                        title: 'פיילוט',
+                        description: "מייקל סקוט, מנהל קלולס בחברת דאנדר מיפלין, מארח צוות צילום שמגיע לתעד את העבודה במשרד ומגלה שמטה החברה שוקל לסגור את הסניף שבניהולו.",
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABV58UXtcbET98UBHugWUGQEyHotdyIXVeF3xubVT_764vAzje_bIZx1ZzMxuTZlH98QbOAU1T124kNZ4ODhuxT90gwjvvK1t0JPtfWNaeK4T3IIv.webp?r=9b7",
+                        length: 23
+                    },
+                    {
+                        id: 2,
+                        title: 'יום הסובלנות',
+                        description: 'העובדים משתתפים בסדנת סובלנות בעקבות תלונות על בדיחה פוגענית שאחד מהם סיפר.',
+                        thumbnail: "https://occ-0-1855-2773.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRBu6RCWTMMYmneWn_lkIiYhwpq0ugM2EQW7_jhRIdjy0f8m8ycvRXkm3jS0JyKMvE9l-7HL0MaJ5MmAS6PGB3c-Hl3UY1liPGC9y7dye_3hR8uF.webp?r=9dc",
+                        length: 21
+                    },
+                ]
+            },
         ]
     },
 ]

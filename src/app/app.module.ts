@@ -8,7 +8,6 @@ import { CubeComponent } from './components/cube/cube.component';
 import { RowComponent } from './components/row/row.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
-import { IntroComponent } from './pages/intro/intro.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PreviewCubeComponent } from './components/preview-cube/preview-cube.component';
 import { ExpandedCubeComponent } from './components/expanded-cube/expanded-cube.component';
@@ -16,7 +15,6 @@ import { CubeControlsComponent } from './components/cube-controls/cube-controls.
 import { ListComponent } from './pages/list/list.component';
 import { ItemComponent } from './components/item/item.component';
 import { BillboardComponent } from './components/billboard/billboard.component';
-import { TitlebarComponent } from './components/titlebar/titlebar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +23,6 @@ import { TitlebarComponent } from './components/titlebar/titlebar.component';
     RowComponent,
     HomepageComponent,
     TopBarComponent,
-    IntroComponent,
     FooterComponent,
     PreviewCubeComponent,
     ExpandedCubeComponent,
@@ -33,7 +30,6 @@ import { TitlebarComponent } from './components/titlebar/titlebar.component';
     ListComponent,
     ItemComponent,
     BillboardComponent,
-    TitlebarComponent
   ],
   imports: [
     BrowserModule,

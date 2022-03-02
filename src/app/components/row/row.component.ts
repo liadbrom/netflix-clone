@@ -32,6 +32,7 @@ export class RowComponent implements OnInit, OnDestroy {
   page = 0;
   maxPage$ = new BehaviorSubject(0);
   toScroll = 0;
+  thumbnailWidth = 0;
   destroy$ = new Subject<void>();
   showPreviewTimer: any;
   mouseOverCube = false;
@@ -48,6 +49,7 @@ export class RowComponent implements OnInit, OnDestroy {
       takeUntil(this.destroy$)
     ).subscribe(() => {
       this.calculateScroll();
+      this.setMaxPage();
       this.scroll(0);
     });
   }
@@ -61,8 +63,8 @@ export class RowComponent implements OnInit, OnDestroy {
 
   initialize(): void {
     this.cssService.setVirtualWidth();
-    this.setMaxPage();
     this.calculateScroll();
+    this.setMaxPage();
   }
 
 
@@ -75,17 +77,17 @@ export class RowComponent implements OnInit, OnDestroy {
 
   calculateScroll(): void {
     if (this.cubesContainer && this.scrollBtn) {
-      let thumbnailWidth = this.scrollBtn.nativeElement.getBoundingClientRect().width;
-      if (thumbnailWidth === 0) {
-        thumbnailWidth = + (window.getComputedStyle(this.scrollBtn.nativeElement).getPropertyValue('width')).replace('px', '');
+      this.thumbnailWidth = this.scrollBtn.nativeElement.getBoundingClientRect().width;
+      if (this.thumbnailWidth === 0) {
+        this.thumbnailWidth = + (window.getComputedStyle(this.scrollBtn.nativeElement).getPropertyValue('width')).replace('px', '');
       }
       const containerWidth = this.cubesContainer.nativeElement.getBoundingClientRect().width;
-      this.toScroll = - containerWidth + 2 * thumbnailWidth;
+      this.toScroll = - containerWidth + 2 * this.thumbnailWidth;
     }
   }
 
   setMaxPage(): void {
-    let maxPage = this.cubesContainer?.nativeElement.scrollWidth / this.cubesContainer?.nativeElement.clientWidth;
+    let maxPage = this.cubesContainer?.nativeElement.scrollWidth / (this.cubesContainer?.nativeElement.getBoundingClientRect().width - this.thumbnailWidth);
     maxPage = Math.ceil(maxPage) - 1;
     this.maxPage$.next(maxPage);
     this.cdRef.detectChanges();
@@ -106,9 +108,6 @@ export class RowComponent implements OnInit, OnDestroy {
   onMouseOut(): void {
     this.mouseOverCube = false;
     this.clearTimer();
-  }
-
-  sendData(cube: ICube, cubeElement: any): void {
   }
 
   startTimer() {

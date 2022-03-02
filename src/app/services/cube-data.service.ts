@@ -16,7 +16,6 @@ export class CubeDataService {
   constructor() { }
   setData(cubeElement: any, cube: ICube | undefined): void {
     const titlebarContainer = document.getElementById("titlebar-container");
-    const titlebarHeight = titlebarContainer ? titlebarContainer.clientHeight : 38;
     let cubeRect = cubeElement.hostElement.nativeElement.getBoundingClientRect();
     let appRoot = document.getElementById("app-root");
     let left = cubeRect.left + appRoot?.scrollLeft;
@@ -32,7 +31,7 @@ export class CubeDataService {
       transformOrigin = "right top";
     }
     let position = {
-      previewTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + appRoot?.scrollTop - titlebarHeight,
+      previewTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top + appRoot?.scrollTop,
       expandedTop: cubeElement.hostElement.nativeElement.getBoundingClientRect().top,
       left: left,
       right: right,

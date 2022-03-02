@@ -23,43 +23,9 @@
         color: white;
         padding: 4% 4% 6% 4%;
         box-sizing: border-box;
-        font-size: 0.8vw;
+        font-size: 0.7rem;
         --text-margin: 0.4vw;
-        .controls {
-            display: flex;
-            button {
-                margin: 0.2vw;
-                background-color: #160e17;
-                border: solid #848184 0.15vw;
-                border-radius: 100%;
-                display: flex;
-                padding: 0.2vw;
-                width: 1.8vw;
-                height: 1.8vw;
-                svg path {
-                    fill: white;
-                }
-                &:hover {
-                    background-color: #2a2a2a;
-                    border-color: white;
-                }
-                &:last-child {
-                    margin-right: auto;
-                    margin-left: 0;
-                }
-                &.play-btn {
-                    margin-right: 0;
-                    background-color: white;
-                    border-color: transparent;
-                    &:hover {
-                        background-color: #e7e7e7;
-                    }
-                    svg path {
-                        fill: black;
-                    }
-                }
-            }
-        }
+        
         .meta-data {
             display: flex;
             span {

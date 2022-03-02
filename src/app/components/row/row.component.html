@@ -1,7 +1,7 @@
 <div class="row-wrapper">
     <div *ngIf="!asList; else listTitle" [routerLink]="'' + row?.title" class="row-header clickable">
         <div class="row-title">
-            <h1 class="row-title">{{row?.title}}</h1>
+            <h1>{{row?.title}}</h1>
             <div class="see-all">
                 <span class="see-all-link">הצג את כל התכנים</span>
                 <span class="arrow-icon"></span>

@@ -1,7 +1,24 @@
 span {
+    direction: ltr;
     width: fit-content;
     color: white;
-    font-size: 1.5vw;
+    font-size: max(1vw, 10px);
     display: block;
     margin: 8vw auto 2vw;
+    a {
+        text-decoration: none;
+        color: transparent;
+        font-weight: bold;
+        background: linear-gradient(to right, white 50%, #d3666a 50%);
+        -webkit-background-clip: text;
+        background-size: 200% 100%;
+        background-position: 100%;
+        transition: all 0.3s;
+        &:visited {
+            color: transparent;
+        }
+        &:hover {
+            background-position: 0%;
+        }
+    }
 }

@@ -93,21 +93,22 @@
     .row-title {
         width: max-content;
         display: flex;
+        font-size: max(1.4vw, 10px);
         h1 {
-            font-size: 1.6vw;
+            font-size: 1em;
             margin: 0;
         }
         &:hover {
             color: white;
             .see-all {
-                --deviation: 15px;
+                --deviation: 1.5em;
                 .see-all-link {
                     right: var(--deviation);
                     opacity: 1;
                 }
                 .arrow-icon {
                     right: calc(100% + var(--deviation));
-                    width: 1vw; height: 1vw;
+                    width: 0.8em; height: 0.8em;
                 }
             }
         }
@@ -117,10 +118,10 @@
         align-items: center;
         cursor: pointer;
         position: relative;
+        font-size: 0.6em;
         .see-all-link {
             opacity: 0;
             font-weight: bold;
-            font-size: 1vw;
             transition: all 500ms ease-out;
             position: relative;
             right: 0px;
@@ -133,7 +134,7 @@
             right: 0;
             opacity: 0;
             display: inline-block;
-            width: 1.2vw; height: 1.2vw;
+            width: 1vw; height: 1vw;
             background-image: url("../../../assets/icons/arrow-icon.png");
             background-size: cover;
             background-repeat: no-repeat;

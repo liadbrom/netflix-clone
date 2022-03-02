@@ -19,7 +19,6 @@ export class AppComponent implements OnInit {
       }
     });
     cssService.scrollingEnabled$.subscribe(value => {
-      console.log(value);
       if (value) {
         this.hostElement.nativeElement.classList.remove("hidden-scrollbar");
       } else {

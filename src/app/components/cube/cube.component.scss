@@ -1,9 +1,4 @@
 :host {
-    // position: relative;
-    // &:hover .popup{
-    //     display: block;
-    // }
-    // overflow: visible;
     height: var(--cube-height); width: var(--cube-width);
     &.expanded-cube {
         transition: width 300ms linear;

@@ -27,14 +27,14 @@
     }
     button {
         position: relative;
-        margin: 0.2vw;
+        margin: max(0.2vw, 3px);
         background-color: #2a2a2a;
         border: solid #848184 0.1vw;
         border-radius: 100%;
         display: flex;
-        padding: 0 0.2vw;
-        width: 1.8vw;
-        height: 1.8vw;
+        padding: 0 max(0.2vw, 4px);
+        width: clamp(20px, 1.8vw, 30px);
+        height: clamp(20px, 1.8vw, 30px);
         
         svg {
             height: 100%;
@@ -53,7 +53,7 @@
             left: 50%; transform: translateX(-50%);
             margin-bottom: 1vw;
             padding: 0.3vw 0.8vw;
-            font-size: 0.9vw;
+            font-size: max(0.8vw, 0.5rem);
             font-weight: 700;
             color: rgb(24, 24, 24);
             background-color: rgb(230, 230, 230);

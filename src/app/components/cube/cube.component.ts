@@ -21,7 +21,11 @@ export class CubeComponent implements OnInit {
 export interface ICube {
   imgSrc?: string;
   tags?: Array<String>;
-  metaData?: Object;
+  metaData?: {
+    participants: string,
+    genres: string,
+    tags: string
+  };
   description?: string;
   title?: string;
   items?: IItem[];

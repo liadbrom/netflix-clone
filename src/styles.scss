@@ -8,11 +8,10 @@ html, body{
     height: 100%;
     //* global vars *//
     --background-color: #141414;
-    --top: 38px;
     --top-bar-height: 68px;
     --sides: calc( 0.04 * var(--virtual-width)); 
     --cube-margin: 4px;
-    --items-in-row: 5;
+    --items-in-row: 6;
     --cube-width: calc(
     (var(--virtual-width) - 2 * var(--sides) - (var(--items-in-row) ) * var(--cube-margin) )
     /
@@ -54,8 +53,20 @@ button:hover{
     width: var(--cube-width);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1400px) {
+    body {
+        --items-in-row: 5;
+    }
+}
+@media screen and (max-width: 1100px) {
     body {
         --items-in-row: 4;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        --items-in-row: 3;
+        --top-bar-height: 41px;
     }
 }

@@ -21,7 +21,7 @@ export class HomepageComponent implements OnInit {
   constructor(private renderer2: Renderer2, private cubeDataService: CubeDataService, private cssService: CssService) { }
 
   ngOnInit(): void {
-    // this.enableTestMode();
+    this.enableTestMode();
     if (sessionStorage.getItem("firstVisit") === "false") {
       this.introEnabled = false;
       this.cssService.scrollingEnabled$.next(true);

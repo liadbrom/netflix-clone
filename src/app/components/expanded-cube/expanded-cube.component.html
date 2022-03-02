@@ -10,9 +10,9 @@
                 <div class="gradient"></div>
                 <div class="title-area">
                     <!-- <h2 class="title">{{cube?.title}}</h2> -->
-                    <svg class="title" viewBox="0 0 200 24">
+                    <!-- <svg class="title" viewBox="0 0 200 24">
                         <text x="200" y="18" style="font-weight: bold;">{{cube?.title}}</text>
-                    </svg>
+                    </svg> -->
                     <hupi-cube-controls class="expanded" [expanded]="true"></hupi-cube-controls>
                 </div>
                 <div class="close-btn" (click)="close()">
@@ -29,20 +29,31 @@
                 <div class="description">
                     {{cube?.description}}
                 </div>
+                <ul class="data">
+                    <li>
+                        <label>בהשתתפות: </label><span>{{cube?.metaData?.participants}}</span>
+                    </li>
+                    <li>
+                        <label>ז'אנרים: </label><span>{{cube?.metaData?.genres}}</span>
+                    </li>
+                    <li>
+                        <label>כותר זה הוא: </label><span>{{cube?.metaData?.tags}}</span>
+                    </li>
+                </ul>
             </div>
             <div class="items-selector">
                 <div class="items-selector-header">
-                    <span>פריטים</span>
+                    <span>פרקים</span>
                     <div class="items-filter">
                         <button [class.open]="itemsFilterOpen" (click)="toggleItemsFilter()"
-                            (blur)="itemsFilterOpen = false">כל הפריטים</button>
+                            (blur)="itemsFilterOpen = false">עונה 1</button>
                         <ul *ngIf="itemsFilterOpen">
-                            <li>לומדות&nbsp;&nbsp;<span>(1 פריטים)</span></li>
-                            <li>מודל 3D&nbsp;&nbsp;<span>(1 פריטים)</span></li>
-                            <li>סרטי 2D&nbsp;&nbsp;<span>(1 פריטים)</span></li>
-                            <li>מצגות&nbsp;&nbsp;<span>(1 פריטים)</span></li>
+                            <li>עונה 1&nbsp;&nbsp;<span>(12 פרקים)</span></li>
+                            <li>עונה 2&nbsp;&nbsp;<span>(16 פרקים)</span></li>
+                            <li>עונה 3&nbsp;&nbsp;<span>(16 פרקים)</span></li>
+                            <li>עונה 4&nbsp;&nbsp;<span>(16 פרקים)</span></li>
                             <div class="divider"></div>
-                            <li>כל הפריטים&nbsp;&nbsp;<span>(4 פריטים)</span></li>
+                            <li>לכל הפרקים</li>
                         </ul>
                     </div>
                 </div>

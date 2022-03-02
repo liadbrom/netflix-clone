@@ -21,5 +21,5 @@ export interface IItem {
   title: string;
   description: string;
   thumbnail: string;
-  type: string;
+  length: number;
 }

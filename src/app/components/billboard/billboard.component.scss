@@ -9,7 +9,7 @@
         width: 100%;
         background: linear-gradient(to top,#141414, transparent 100%);
     }
-    img {
+    .cover {
         width: 100%;
         aspect-ratio: 16/9;
     }
@@ -93,7 +93,7 @@
             }
         }
     }
-    .group-flag {
+    .flag {
         position: absolute;
         bottom: 35%; left: 0;
         border: solid 3px #dcdcdc;
