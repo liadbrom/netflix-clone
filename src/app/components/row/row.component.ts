@@ -40,6 +40,7 @@ export class RowComponent implements OnInit, OnDestroy {
   mouseOverCube = false;
   mouseOverContainer = false;
   currCubeElement?: object;
+  currCube?: ICube;
 
   constructor(private cssService: CssService, private cdRef: ChangeDetectorRef, private cubeDataService: CubeDataService) { }
 
@@ -108,7 +109,7 @@ export class RowComponent implements OnInit, OnDestroy {
   onMouseEnter(cube: ICube, cubeElement: any): void {
     this.mouseOverCube = true;
     this.currCubeElement = cubeElement;
-    this.cubeDataService.setData(cubeElement, cube);
+    this.currCube = cube;
     this.startTimer();
   }
 
@@ -117,8 +118,9 @@ export class RowComponent implements OnInit, OnDestroy {
     this.clearTimer();
   }
 
-  startTimer() {
+  startTimer(): void {
     this.showPreviewTimer = setTimeout(() => {
+      this.cubeDataService.setData(this.currCubeElement, this.currCube);
       this.cubeDataService.previewActive$.next(true);
     }, 500);
   }

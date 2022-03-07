@@ -14,30 +14,17 @@ import { CubeDataService } from 'src/app/services/cube-data.service';
 export class HomepageComponent implements OnInit {
 
   rows: IRow[] = rows;
-  introEnabled = true;
   previewActive = false;
   expandedActive = false;
 
   constructor(private renderer2: Renderer2, private cubeDataService: CubeDataService, private cssService: CssService) { }
 
   ngOnInit(): void {
-    this.enableTestMode();
-    if (sessionStorage.getItem("firstVisit") === "false") {
-      this.introEnabled = false;
-      this.cssService.scrollingEnabled$.next(true);
-      this.subscribeToCubeData();
-    } else {
-      sessionStorage.setItem("firstVisit", "false")
-    }
+    this.subscribeToCubeData();
   }
 
   hidePreview(): void {
     this.cubeDataService.previewActive$.next(false);
-  }
-
-  introEnded(event: any): void {
-    this.introEnabled = event;
-    this.subscribeToCubeData();
   }
 
   subscribeToCubeData(): void {
@@ -49,12 +36,4 @@ export class HomepageComponent implements OnInit {
       this.cssService.scrollingEnabled$.next(!this.expandedActive);
     });
   }
-
-  enableTestMode(): void {
-    setTimeout(() => {
-      this.introEnabled = false;
-      this.subscribeToCubeData();
-    }, 0);
-  }
-
 }

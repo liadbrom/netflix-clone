@@ -18,23 +18,6 @@ import {
   styleUrls: ['./expanded-cube.component.scss'],
   animations: [
     trigger('expand', [
-      // state('shrinked', style({
-      //   transform: 'scale({{scale}}) translateY({{translateY}})',
-      //   left: "{{left}}px",
-      //   top: "{{top}}px",
-      //   width: "var(--cube-width)",
-      //   fontSize: "5px",
-      //   transformOrigin: "{{transformOrigin}}"
-      // }), { params: { top: 0, left: 0, transformOrigin: "center", scale: 1, translateY: 0, opacity: 1 } }),
-      // state('expanded', style({
-      //   transformOrigin: 'left top',
-      //   transform: 'scale({{scale}}) translateX(-50%)',
-      //   width: 'calc(850px / {{scale}})',
-      //   maxWidth: 'calc(90vw / {{scale}})',
-      //   fontSize: "16px",
-      //   top: '2em',
-      //   left: '50%',
-      // }), { params: { scale: 1 } }),
       state('shrinked', style({
         transformOrigin: "top left",
         transform: 'scale({{scale}}) translateX(calc(-50% * {{transformFactor}}))',
@@ -57,7 +40,6 @@ export class ExpandedCubeComponent implements OnInit {
   @ViewChild('modalWrapper', { static: true }) modal: ElementRef | undefined;
   @ViewChild('modalContainer', { static: true }) modalContainer: ElementRef | undefined;
   modalElement: HTMLElement | undefined;
-  // _active = false; DELETE
   cube: ICube | undefined;
   position: ICubePosition = {
     previewTop: 0,

@@ -1,8 +1,8 @@
 <hupi-top-bar [fixed]="true"></hupi-top-bar>
 <hupi-billboard></hupi-billboard>
 
-<div class="rows-container" [hidden]="introEnabled">
-    <hupi-row *ngFor="let row of rows" [row]="row" [viewReady]="!introEnabled"></hupi-row>
+<div class="rows-container">
+    <hupi-row *ngFor="let row of rows" [row]="row" [viewReady]="true"></hupi-row>
 </div>
 
 <hupi-preview-cube [active]="previewActive" (mouseleave)="hidePreview()"></hupi-preview-cube>
