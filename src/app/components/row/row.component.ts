@@ -30,9 +30,11 @@ export class RowComponent implements OnInit, OnDestroy {
   _viewReady = false;
   viewInitialized = false;
   page = 0;
+  pageScrollAccuracy = 0.05
   maxPage$ = new BehaviorSubject(0);
   toScroll = 0;
   thumbnailWidth = 0;
+
   destroy$ = new Subject<void>();
   showPreviewTimer: any;
   mouseOverCube = false;
@@ -87,10 +89,15 @@ export class RowComponent implements OnInit, OnDestroy {
   }
 
   setMaxPage(): void {
-    let maxPage = this.cubesContainer?.nativeElement.scrollWidth / (this.cubesContainer?.nativeElement.getBoundingClientRect().width - this.thumbnailWidth);
-    maxPage = Math.ceil(maxPage) - 1;
+    let maxPage = this.cubesContainer?.nativeElement.scrollWidth / (this.cubesContainer?.nativeElement.getBoundingClientRect().width);
+    maxPage = Math.ceil(maxPage) - (this.isFullPage(maxPage) ? 0 : 1);
     this.maxPage$.next(maxPage);
     this.cdRef.detectChanges();
+  }
+
+  isFullPage(maxPage: number): boolean {
+    const diff = Math.ceil(maxPage) - maxPage;
+    return (diff > 0 && diff < this.pageScrollAccuracy);
   }
 
   ngOnDestroy(): void {
@@ -132,6 +139,7 @@ export class RowComponent implements OnInit, OnDestroy {
     clearTimeout(this.showPreviewTimer);
   }
 }
+
 
 export interface IRow {
   cubes: ICube[];

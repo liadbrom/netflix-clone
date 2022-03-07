@@ -27,7 +27,7 @@
                 (mouseleave)="onMouseOut()" (mouseenter)="onMouseEnter(cube, cubeElement);">
             </hupi-cube>
         </div>
-        <button #scrollBtn [hidden]="page === (maxPage$ | async)" class="scroll-btn" (click)="scroll(1)">
+        <button #scrollBtn [hidden]="this.page === this.maxPage$.getValue()" class="scroll-btn" (click)="scroll(1)">
         </button>
     </div>
 </div>
