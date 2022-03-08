@@ -9,6 +9,11 @@ import { IItem } from '../item/item.component';
 export class CubeComponent implements OnInit {
 
   @Input() cube: ICube | undefined;
+  // @Input() set cube(cube: ICube | undefined) {
+  //   this._cube = cube;
+  //   this._cube!.liked = true;
+  // }
+  // _cube: ICube | undefined;
   @Input() isPreviewCube = false;
 
   constructor(private hostElement: ElementRef) { }
@@ -29,6 +34,7 @@ export interface ICube {
   description?: string;
   title?: string;
   items?: IItem[];
+  liked?: boolean;
   height?: string;
   width?: string;
 }

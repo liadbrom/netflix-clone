@@ -1,5 +1,5 @@
-import { Component, Directive, ElementRef, Input, OnInit } from '@angular/core';
-import { Event } from '@angular/router';
+import { Component, Directive, ElementRef, Input, OnInit, Output } from '@angular/core';
+import { ICube } from '../cube/cube.component';
 
 @Component({
   selector: 'hupi-cube-controls',
@@ -8,10 +8,19 @@ import { Event } from '@angular/router';
 })
 export class CubeControlsComponent implements OnInit {
   @Input() expanded: boolean = false;
+  @Input() cube: ICube | undefined;
   muted = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setLike(event: MouseEvent, like: boolean): void {
+    event.stopPropagation();
+    if (this.cube) {
+      this.cube.liked = this.cube.liked === like ? undefined : like;
+    }
   }
 
   toggleAudio(): void {

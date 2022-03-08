@@ -1,6 +1,4 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { fromEvent } from 'rxjs';
-import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { IRow } from 'src/app/components/row/row.component';
 import { rows } from 'src/app/mock/rows-mock';
 import { CssService } from '../../services/css.service';

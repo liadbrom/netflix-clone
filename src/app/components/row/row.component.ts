@@ -1,13 +1,9 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnDestroy, OnInit, ViewChild, ViewChildren } from '@angular/core';
-import { Observable } from 'rxjs';
+import { ChangeDetectorRef, Component, ElementRef, HostListener, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { BehaviorSubject, fromEvent, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, max, takeUntil, timeout } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { CssService } from 'src/app/services/css.service';
 import { CubeDataService } from 'src/app/services/cube-data.service';
 import { ICube } from '../cube/cube.component';
-import { ICubePosition } from 'src/app/services/cube-data.service';
-import { ConditionalExpr } from '@angular/compiler';
-import { Scroll } from '@angular/router';
 
 @Component({
   selector: 'hupi-row',

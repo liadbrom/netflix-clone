@@ -7,13 +7,7 @@
     [style.left.px]="this.cubeData?.position?.left">
     <hupi-cube [isPreviewCube]="true" [cube]="this.cubeData?.cube"></hupi-cube>
     <div class="preview-bar" [style.opacity]="barOpacity">
-        <hupi-cube-controls></hupi-cube-controls>
-        <!-- <div class="meta-data">
-            <span>טקסט בובה</span>
-            <span>meta data</span>
-            <span>טקסט בובה</span>
-            <span>meta data</span>
-        </div> -->
+        <hupi-cube-controls [cube]="this.cubeData?.cube"></hupi-cube-controls>
         <div class="tags">
             <span *ngFor="let tag of this.cubeData?.cube?.tags">{{tag}}</span>
         </div>

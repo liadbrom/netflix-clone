@@ -18,6 +18,9 @@ img {
     &.preview-img {
         border-radius: 4px 4px 0 0;
     }
+    &.disliked {
+        filter: grayscale(1);
+    }
 }
 
 .title {
