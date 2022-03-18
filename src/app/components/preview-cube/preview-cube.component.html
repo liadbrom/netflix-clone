@@ -1,5 +1,3 @@
-<!-- preview-container: [hidden]="!active && shrinked"  -->
-<!-- preview-bar: [style.opacity]="barOpacity" -->
 <div class="preview-container" (click)="expand()" [hidden]="!active && shrinked"
     [style.transformOrigin]="this.cubeData?.position?.transformOrigin"
     [@growShrink]="(active && shrinked) ? 'grow' : 'shrink'" (@growShrink.done)="onAnimationEnd($event)"

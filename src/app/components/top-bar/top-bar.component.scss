@@ -1,5 +1,9 @@
 @import '../../../stylesheets/mixins';
 
+:host {
+    direction: rtl;
+}
+
 .top-bar-container {
     height: var(--top-bar-height); width: var(--virtual-width);
     display: flex; align-items: center;

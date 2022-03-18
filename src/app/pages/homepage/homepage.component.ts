@@ -15,7 +15,9 @@ export class HomepageComponent implements OnInit {
   previewActive = false;
   expandedActive = false;
 
-  constructor(private renderer2: Renderer2, private cubeDataService: CubeDataService, private cssService: CssService) { }
+  constructor(private renderer2: Renderer2, private cubeDataService: CubeDataService, private cssService: CssService) {
+    this.cssService.topBarFixed = true;
+  }
 
   ngOnInit(): void {
     this.subscribeToCubeData();

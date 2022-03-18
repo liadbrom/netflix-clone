@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit } from '@angular/core';
 import { CssService } from './services/css.service';
 import { CubeDataService } from './services/cube-data.service';
 import { Event, NavigationStart, Router } from '@angular/router';
@@ -10,8 +10,9 @@ import { Event, NavigationStart, Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'hupix';
+  topBarFixed: boolean | undefined;
 
-  constructor(private cssService: CssService, private cubeDataService: CubeDataService, private router: Router, private hostElement: ElementRef) {
+  constructor(public cssService: CssService, private cubeDataService: CubeDataService, private router: Router, private hostElement: ElementRef, private cdRef: ChangeDetectorRef) {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         this.cubeDataService.expandedActive$.next(false);
